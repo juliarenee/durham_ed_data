@@ -1,0 +1,107 @@
+---
+title: "Unpaid Lunch Debt in Durham, NC"
+author: "Julia Donheiser"
+date: "11/2/2018"
+output: pdf_document
+---
+
+Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Other demographic data obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, include = FALSE)
+
+library(readxl) # read spreadsheets
+library(dplyr) # wrangling
+library(ggplot2) # graphing
+library(tidyr) # reshaping
+library(stringr) # string work
+library(data.table) # working with tables
+
+# get all older files, .xls format
+old.dat = list.files("./data") %>%
+  grep(".xls$", ., value = TRUE)
+
+# read files as table
+dat = lapply(paste("./data/",old.dat,sep=""), function(x) read_xls(x))
+
+# clean empty rows
+head(dat[[1]])
+dat[[1]] = dat[[1]][2:dim(dat[[1]])[1],]
+head(dat[[2]])
+dat[[2]] = dat[[2]][5:dim(dat[[2]])[1],]
+head(dat[[3]])
+dat[[3]] = dat[[3]][7:dim(dat[[3]])[1],]
+head(dat[[4]])
+dat[[4]] = dat[[4]][7:dim(dat[[4]])[1],]
+head(dat[[5]])
+
+# get newer files, .xlsx format
+new.dat = list.files("./data") %>%
+  grep(".xlsx$", ., value = TRUE)
+dat2 = lapply(paste("./data/",new.dat,sep=""), function(x) read_xlsx(x))
+
+# check for cleaning
+head(dat2[[1]])
+head(dat2[[2]])
+
+# join all data
+dat[6:7] = dat2
+dat = lapply(dat, function(x) select(x, 1:9)) # only want first 9 columns for rbind
+
+# check dimensions
+lapply(dat, function(x) dim(x))
+
+# transform to data frames
+dat = lapply(dat, function(x) data.frame(x))
+
+# add id for year
+yrs = c(old.dat, new.dat) %>% substr(., 0, 7) # get year to bind as column
+for(i in 1:length(dat)) {
+  dat[[i]]$year = yrs[i]
+}
+
+# set colnames for binding
+dat = lapply(dat, setNames, colnames(dat[[5]]))
+
+# merge
+df = do.call(rbind, dat)
+
+# easier col names
+colnames(df) = c("lea_no","lea","school_no","school_name","adm","reduced","free","perc_needy","grade","year")
+
+# filter to just durham county
+df = df[grepl("Durham Public Schools", df$lea, ignore.case = TRUE),]
+
+# load lunch debt data
+debt = read.csv("./data/meal_debt.csv")
+debt = debt[1:dim(debt)[1]-1,1:10] # remove totals at bottom, only full year data
+colnames(debt)[1:2] = c("school_no", "school_name")
+colnames(debt)[3:9] = yrs # reform years
+colnames(debt)[10] = "2017-18"
+
+# reshape wide to long
+debt = gather(debt, year, unpaid, 3:10)
+
+# convert to integer
+debt$unpaid = debt$unpaid %>%
+  gsub("\\$","",.) %>%
+  gsub("\\,","",.) %>%
+  as.numeric()
+
+# convert to factor for joining
+df$school_no = as.factor(df$school_no)
+debt$school_no = as.factor(debt$school_no)
+
+# join unpaid lunch with free/reduced lunch data
+df = left_join(debt, df, by = c("year","school_no"))
+
+# dedupe school name cols
+df = df[-which(colnames(df)=="school_name.x")]
+colnames(df)[which(colnames(df)=="school_name.y")] = "school_name"
+```
+
+## EDA
+```{r}
+
+```
+
