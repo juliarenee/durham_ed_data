@@ -8,7 +8,7 @@ output: pdf_document
 Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Other demographic data obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}.
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, include = FALSE)
+knitr::opts_chunk$set(warning = FALSE, echo = FALSE)
 
 library(readxl) # read spreadsheets
 library(dplyr) # wrangling
@@ -96,12 +96,37 @@ debt$school_no = as.factor(debt$school_no)
 df = left_join(debt, df, by = c("year","school_no"))
 
 # dedupe school name cols
-df = df[-which(colnames(df)=="school_name.x")]
-colnames(df)[which(colnames(df)=="school_name.y")] = "school_name"
+df = df[-which(colnames(df)=="school_name.y")]
+colnames(df)[which(colnames(df)=="school_name.x")] = "school_name"
 ```
 
 ## EDA
 ```{r}
+year_seq = seq(0,7)
+names(year_seq) = unique(df$year)
+df$year_seq = year_seq[df$year]
 
+df$adm = df$adm %>% as.numeric()
+
+ggplot(df, aes(year_seq, unpaid, col = school_no)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma)
+
+ggplot(df, aes(year_seq, unpaid/adm, col = school_no)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma)
 ```
 
+- look at schools where variance is high
+- break into bins by mean value/variance
+- external factors (paying off debt, CEP status)
+- add CEP status binary
+- get additional demographics, fill missing adm numbers
+- for next week: lots of eda, ready to formulate questions
+- double check merges, wrangling
+- think through when data is being pulled
+  - how to track people paying off debt/dates?
+- think about fairly comparing schools
+- LONG TERM: can a student graduate with debt? are they barred from anything? what are consequences besides food?
