@@ -24,7 +24,8 @@ library(tidyr) # reshaping
 library(stringr) # string manipulation
 library(data.table) # working with tables
 library(cowplot) # layout plots
-
+```
+```{r free_reduced_data}
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
   grep("freereduced.xls$", ., value = TRUE)
@@ -82,7 +83,8 @@ df$cep = ifelse(is.na(df$cep), 0, 1)
 
 # filter to durham county
 df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
-
+```
+```{r lunch_debt_data}
 # load lunch debt data
 debt = read.csv("./data/meal_debt.csv")
 debt = debt[1:nrow(debt)-1,1:10] # remove totals at bottom, only full year data
@@ -115,7 +117,8 @@ df$year = as.factor(df$year)
 
 # character to numeric
 df[c("adm","reduced","free","pct_needy")] = sapply(df[c("adm","reduced","free","pct_needy")], as.numeric)
-
+```
+```{r 17-18adm_data}
 # add 2017-18 adm data
 adm17 = read.csv("./data/2017-18adm.csv")
 
@@ -130,57 +133,66 @@ adm17$Total = as.character(adm17$Total) %>% trimws(.) %>% gsub("\\,","",.) %>% a
 
 # fill 2017-18 adm data
 df$adm[df$year=="2017-18"] = adm17$Total[df$school_no[df$year=="2017-18"]]
-
+```
+```{r demographic_data}
 # add demographic data
 dem = read.csv("./data/nces_demographics.csv")
 
 # remove state, only NC
 dem = dem[-c(2)]
 
-# reshape to get year as variable
-dem = gather(dem, var, val, 2:73)
-
-# remove id rows
+# also remove summary rows
 spchars = c("†","‡","–")
 dem = dem[!grepl(paste(spchars,collapse="|"),dem$School.Name),]
 
-# add year as variable
-dem$year = dem$var %>%
-  substr(., nchar(.)-6, nchar(.)) %>% 
-  gsub("\\.","\\-",.)
+# split to datasets by year
+dem11 = dem[c(1, grep("2010\\.11",colnames(dem)))]
+dem12 = dem[c(1, grep("2011\\.12",colnames(dem)))]
+dem13 = dem[c(1, grep("2012\\.13",colnames(dem)))]
+dem14 = dem[c(1, grep("2013\\.14",colnames(dem)))]
+dem15 = dem[c(1, grep("2014\\.15",colnames(dem)))]
+dem16 = dem[c(1, grep("2015\\.16",colnames(dem)))]
 
-# remove year and "public school" from var name
-dem$var = dem$var %>%
-  substr(., 0, nchar(.)-24)
+# vectorize
+x = list(dem11, dem12, dem13, dem14, dem15, dem16)
+
+# FUNCTION: reformat column names
+changeNames = function(z) {
+  newNames = colnames(z) %>%
+    gsub("\\.+","\\_",.) %>%
+    tolower() %>%
+    gsub("\\_students.*","",.) %>%
+    gsub("\\_public_school.*","",.)
+  colnames(z) = newNames
+  return(z)
+}
+
+# apply to dataframes
+x = lapply(x, changeNames)
+
+# add year as variable
+for(i in 1:length(x)) {
+  x[[i]]$year = yrs[i]
+}
+
+# merge to dataframe
+dem = do.call(plyr::rbind.fill, x) %>% data.frame()
 
 # set non-numeric values
-dem$val[dem$val %in% spchars] = NA
+dem[dem==spchars[1]] = NA
+dem[dem==spchars[2]] = NA
+dem[dem==spchars[3]] = NA
 
 # set alternative zeros to 0
-dem$val[dem$val %in% c("=0","=000")] = 0
-
-# break up into datasets by year
-dem11 = dem[dem$year=="2010-11",]
-dem12 = dem[dem$year=="2011-12",]
-dem13 = dem[dem$year=="2012-13",]
-dem14 = dem[dem$year=="2013-14",]
-dem15 = dem[dem$year=="2014-15",]
-dem16 = dem[dem$year=="2015-16",]
-
-## WHY ISN'T THIS WORKING!
-# long to wide
-dem = dcast(dem, School.Name + year ~ var, value.var = "val")
-
-# edit column names
-colnames(dem) = colnames(dem) %>%
-  gsub("\\.+","_",.) %>%
-  tolower(.)
-
-colnames(dem) = colnames(dem) %>% gsub("\\_students","",.)
+dem[dem=="=0"] = 0
+dem[dem=="=000"] = 0
 
 # filter to durham
 dem = dem[grepl("Durham", dem$county_name, ignore.case = TRUE),]
 ```
+
+
+
 
 ## Exploratory Data Analysis
 ```{r debt_over_time, fig.width=8, fig.height=4}
