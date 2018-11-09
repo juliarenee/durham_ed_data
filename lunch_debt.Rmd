@@ -25,7 +25,7 @@ library(stringr) # string manipulation
 library(data.table) # working with tables
 library(cowplot) # layout plots
 ```
-```{r free_reduced_data}
+```{r free_reduced_data, include=FALSE}
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
   grep("freereduced.xls$", ., value = TRUE)
@@ -84,7 +84,7 @@ df$cep = ifelse(is.na(df$cep), 0, 1)
 # filter to durham county
 df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
 ```
-```{r lunch_debt_data}
+```{r lunch_debt_data, include=FALSE}
 # load lunch debt data
 debt = read.csv("./data/meal_debt.csv")
 debt = debt[1:nrow(debt)-1,1:10] # remove totals at bottom, only full year data
@@ -118,7 +118,7 @@ df$year = as.factor(df$year)
 # character to numeric
 df[c("adm","reduced","free","pct_needy")] = sapply(df[c("adm","reduced","free","pct_needy")], as.numeric)
 ```
-```{r 17-18adm_data}
+```{r 17-18adm_data, include=FALSE}
 # add 2017-18 adm data
 adm17 = read.csv("./data/2017-18adm.csv")
 
@@ -176,12 +176,15 @@ for(i in 1:length(x)) {
 }
 
 # merge to dataframe
-dem = do.call(plyr::rbind.fill, x) %>% data.frame()
+dem = do.call(rbind, x)
 
 # set non-numeric values
 dem[dem==spchars[1]] = NA
 dem[dem==spchars[2]] = NA
 dem[dem==spchars[3]] = NA
+
+# all vars as char
+dem[,1:14] = lapply(dem[,1:14],as.character)
 
 # set alternative zeros to 0
 dem[dem=="=0"] = 0
@@ -189,10 +192,16 @@ dem[dem=="=000"] = 0
 
 # filter to durham
 dem = dem[grepl("Durham", dem$county_name, ignore.case = TRUE),]
+
+# clean school num
+dem$state_school_id[nchar(dem$state_school_id) > 3] = dem$state_school_id[nchar(dem$state_school_id) > 3] %>% substr(., nchar(.)-2, nchar(.))
+
+# vars to numeric
+dem[,c(2:9)] = lapply(dem[,c(2:9)],as.numeric)
+
+# merge with df
+df = left_join(df, dem, by=c("school_no"="state_school_id","year"))
 ```
-
-
-
 
 ## Exploratory Data Analysis
 ```{r debt_over_time, fig.width=8, fig.height=4}
