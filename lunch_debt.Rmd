@@ -16,6 +16,7 @@ library(ggplot2) # graphing
 library(tidyr) # reshaping
 library(stringr) # string work
 library(data.table) # working with tables
+library(plyr) # more wrangling
 
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
@@ -26,14 +27,19 @@ dat = lapply(paste("./data/",old.dat,sep=""), function(x) read_xls(x))
 
 # clean empty rows
 head(dat[[1]])
+colnames(dat[[1]]) = c("lea_no","lea_name","school_no","school_name","adm","reduced","free","pct_needy","grade")
 dat[[1]] = dat[[1]][2:dim(dat[[1]])[1],]
 head(dat[[2]])
+colnames(dat[[2]]) = c("lea_no","lea_name","school_no","school_name","adm","reduced","free","pct_needy","grade")
 dat[[2]] = dat[[2]][5:dim(dat[[2]])[1],]
 head(dat[[3]])
+colnames(dat[[3]]) = c("lea_no","lea_name","school_no","school_name","adm","reduced","free","pct_needy","grade")
 dat[[3]] = dat[[3]][7:dim(dat[[3]])[1],]
 head(dat[[4]])
+colnames(dat[[4]]) = c("lea_no","lea_name","school_no","school_name","adm","reduced","free","pct_needy","grade")
 dat[[4]] = dat[[4]][7:dim(dat[[4]])[1],]
 head(dat[[5]])
+colnames(dat[[5]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy","pct_needy_mlt")
 
 # get newer files, .xlsx format
 new.dat = list.files("./data") %>%
@@ -42,17 +48,18 @@ dat2 = lapply(paste("./data/",new.dat,sep=""), function(x) read_xlsx(x))
 
 # check for cleaning
 head(dat2[[1]])
+colnames(dat2[[1]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy","pct_needy_mlt")
 head(dat2[[2]])
+colnames(dat2[[2]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy")
 
 # join all data
 dat[6:7] = dat2
-dat = lapply(dat, function(x) select(x, 1:9)) # only want first 9 columns for rbind
-
-# check dimensions
-lapply(dat, function(x) dim(x))
 
 # transform to data frames
 dat = lapply(dat, function(x) data.frame(x))
+
+# remove totals (last row)
+dat = lapply(dat, function(x) x[-nrow(x),])
 
 # add id for year
 yrs = c(old.dat, new.dat) %>% substr(., 0, 7) # get year to bind as column
@@ -60,21 +67,15 @@ for(i in 1:length(dat)) {
   dat[[i]]$year = yrs[i]
 }
 
-# set colnames for binding
-dat = lapply(dat, setNames, colnames(dat[[5]]))
-
 # merge
-df = do.call(rbind, dat)
+df = do.call(rbind.fill, dat)
 
-# easier col names
-colnames(df) = c("lea_no","lea","school_no","school_name","adm","reduced","free","perc_needy","grade","year")
-
-# filter to just durham county
-df = df[grepl("Durham Public Schools", df$lea, ignore.case = TRUE),]
+# filter to durham county
+df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
 
 # load lunch debt data
 debt = read.csv("./data/meal_debt.csv")
-debt = debt[1:dim(debt)[1]-1,1:10] # remove totals at bottom, only full year data
+debt = debt[1:nrow(debt)-1,1:10] # remove totals at bottom, only full year data
 colnames(debt)[1:2] = c("school_no", "school_name")
 colnames(debt)[3:9] = yrs # reform years
 colnames(debt)[10] = "2017-18"
@@ -96,34 +97,81 @@ debt$school_no = as.factor(debt$school_no)
 df = left_join(debt, df, by = c("year","school_no"))
 
 # dedupe school name cols
-df = df[-which(colnames(df)=="school_name.y")]
 colnames(df)[which(colnames(df)=="school_name.x")] = "school_name"
+colnames(df)[which(colnames(df)=="school_name.y")] = "school_name2"
+
+# year as factor
+df$year = as.factor(df$year)
+
+# character to numeric
+df[c("adm","reduced","free","pct_needy")] = sapply(df[c("adm","reduced","free","pct_needy")], as.numeric)
+
+# add demographic data
+dem = read.csv("./data/nces_demographics.csv")
+
+# remove state, only NC
+dem = dem[-c(2)]
+
+# reshape to get year as variable
+dem = gather(dem, var, val, 2:73)
+
+# remove id rows
+spchars = c("†","‡","–")
+dem = dem[!grepl(paste(spchars,collapse="|"),dem$School.Name),]
+
+# add year as variable
+dem$year = dem$var %>%
+  substr(., nchar(.)-6, nchar(.)) %>% 
+  gsub("\\.","\\-",.)
+
+# remove year and "public school" from var name
+dem$var = dem$var %>%
+  substr(., 0, nchar(.)-24)
+
+# set non-numeric values
+dem$val[dem$val %in% spchars] = NA
+
+# set alternative zeros to 0
+dem$val[dem$val %in% c("=0","=000")] = 0
+
+# long to wide
+dem = dcast(dem, School.Name + year ~ var, value.var = "val")
+
+## WHY ISN'T THIS WORKING!
+
+# edit column names
+colnames(dem) = colnames(dem) %>%
+  gsub("\\.+","_",.) %>%
+  tolower(.)
+
+colnames(dem) = colnames(dem) %>% gsub("\\_students","",.)
+
+# filter to durham
+dem = dem[grepl("Durham", dem$county_name, ignore.case = TRUE),]
 ```
 
 ## EDA
 ```{r}
-year_seq = seq(0,7)
-names(year_seq) = unique(df$year)
-df$year_seq = year_seq[df$year]
-
-df$adm = df$adm %>% as.numeric()
-
-ggplot(df, aes(year_seq, unpaid, col = school_no)) +
+# debt by school over time
+ggplot(df, aes(year, unpaid, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
-  scale_y_continuous(labels = scales::comma)
+  xlab("unpaid Lunch Debt") + 
+  scale_y_continuous(labels = scales::dollar)
 
-ggplot(df, aes(year_seq, unpaid/adm, col = school_no)) +
+# debt/student over time
+ggplot(df, aes(year, unpaid/adm, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
-  scale_y_continuous(labels = scales::comma)
+  xlab("unpaid Lunch Debt") + 
+  scale_y_continuous(labels = scales::dollar)
 ```
 
+- get additional demographics, fill missing adm numbers
 - look at schools where variance is high
 - break into bins by mean value/variance
 - external factors (paying off debt, CEP status)
 - add CEP status binary
-- get additional demographics, fill missing adm numbers
 - for next week: lots of eda, ready to formulate questions
 - double check merges, wrangling
 - think through when data is being pulled
