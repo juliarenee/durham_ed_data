@@ -5,7 +5,10 @@ date: "11/2/2018"
 output: pdf_document
 ---
 
-Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Free/reduced price lunch data was obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}. Demographic data was obtained from the \href{https://nces.ed.gov/ccd/elsi/tableGenerator.aspx}{NCES ELSI table generator}. You can access this specific table using the code 91803. 2017-18 ADM data from \href{http://www.ncpublicschools.org/fbs/accounting/data/}{Average Daily Membership and Membership Last Day by School (ADM & MLD)}.
+Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS.
+-Free/reduced price lunch data was obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}
+-Demographic data was obtained from the \href{https://nces.ed.gov/ccd/elsi/tableGenerator.aspx}{NCES ELSI table generator}
+-You can access this specific table using the code 91803. 2017-18 ADM data from \href{http://www.ncpublicschools.org/fbs/accounting/data/}{Average Daily Membership and Membership Last Day by School}.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, echo = FALSE)
@@ -14,7 +17,7 @@ library(readxl) # read spreadsheets
 library(dplyr) # wrangling
 library(ggplot2) # graphing
 library(tidyr) # reshaping
-library(stringr) # string work
+library(stringr) # string manipulation
 library(data.table) # working with tables
 
 # get all older files, .xls format
@@ -68,6 +71,9 @@ for(i in 1:length(dat)) {
 
 # merge
 df = do.call(plyr::rbind.fill, dat)
+
+# indicator for CEP data
+df$cep = ifelse(is.na(df$cep), 0, 1)
 
 # filter to durham county
 df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
@@ -247,12 +253,12 @@ ggplot(df[df$school_no %in% high.debt,], aes(year, debt_per_student, group = sch
   scale_fill_manual(labels = names)
 ```
 
-- fill missing adm numbers for 2017-18, get most recent race/gender data
-- break into bins by mean value/variance
-- external factors (paying off debt, CEP status)
-- add CEP status binary
-- double check merges, wrangling
+- get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data.
+- get demographic data for 2016-17 and 2017-18 academic years
+- double check datasets for conflicting ADM/counts
+
 - think through when data is being pulled
+- external factors (paying off debt, CEP status)
   - how to track people paying off debt/dates?
 - think about fairly comparing schools
 - LONG TERM: can a student graduate with debt? are they barred from anything? what are consequences besides food?
