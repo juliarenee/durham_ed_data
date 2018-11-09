@@ -192,7 +192,7 @@ p1 = ggplot(df, aes(year, unpaid, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
   ylab("total debt") +
-  ggtitle("Total Debt") +
+  ggtitle("Total Debt by School") +
   scale_y_continuous(labels = scales::dollar) +
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
@@ -204,7 +204,7 @@ p2 = ggplot(df, aes(year, debt_per_student, group = school_no, col = school_no))
   geom_point() +
   geom_line() +
   ylab("debt per student") +
-  ggtitle("Debt per Student") +
+  ggtitle("Debt per Student by School") +
   scale_y_continuous(labels = scales::dollar) +
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
@@ -214,14 +214,7 @@ p2 = ggplot(df, aes(year, debt_per_student, group = school_no, col = school_no))
 plot_grid(p1, p2)
 ```
 
-The total debt per schools fluctuates a lot over time. When we normalize by average daily membership---or total student enrollment---we see that debt per student stays relatively constant. However, there are some schools where debt per student spikes in the 2017-18 academic year. What happened here? Was there a policy change?
-
-```{r}
-df %>%
-  filter(year == "2017-18", debt_per_student > 25) %>%
-  select(school_name, school_no, adm, unpaid, debt_per_student, grade) %>%
-  arrange(-debt_per_student)
-```
+There's a lot of fluctuation in debt-per-student and total debt by school over time. Let's try to see which schools have the most variation in debt-per-student, and highest average debt-per-student.
 
 I also looked at the mean and variance of debt per student by school. This gives us a sense of \textit{how} much debt per student fluctuates within in each school. Schools with a high variance should be looked into---perhaps fluctuations in debt are tied to CEP status? Or someone bailing a school out of debt? Similarly, schools with a generally high mean debt per student are of interest. Why are these schools struggling more than others?
 
@@ -236,7 +229,6 @@ sums = df %>%
 # histogram of mean debt per student
 h1 = ggplot(sums, aes(mean_debt)) +
   geom_histogram() +
- # ggtitle("Mean Debt-per-Student, 2010-11 through 2017-18") +
   xlab("mean") +
   scale_x_continuous(labels = scales::dollar) +
   theme(legend.position = "none",
@@ -245,7 +237,6 @@ h1 = ggplot(sums, aes(mean_debt)) +
 # histogram of variance of mean debt per student
 h2 = ggplot(sums, aes(var)) +
   geom_histogram() +
- # ggtitle("Within-School Variance of Debt-per-Student, 2010-11 through 2017-18") + 
   xlab("variance") +
   scale_x_continuous(labels = scales::dollar) +
   theme(legend.position = "none",
@@ -258,42 +249,78 @@ plot_grid(h1, h2,
 
 There are definitely some outliers in our data when it comes to variance of within-school debt per student and mean debt-per-student. Let's pull any schools that fall greater than 2 standard deviations from the mean (proper outliers) and see what their debt-per-student looks like longitudinally.
 
-```{r}
+```{r, fig.width=12, fig.height=4}
 # grab school codes for high variance
 high.var = sums$school_no[sums$var > 100]
 
 # debt/student over time
-ggplot(df[df$school_no %in% high.var,], aes(year, debt_per_student, group = school_no, col = school_no)) +
+p1 = ggplot(df[df$school_no %in% high.var,], aes(year, debt_per_student, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
-  xlab("unpaid lunch debt") +
-  ggtitle("Unpaid Lunch Debt per Student by School") +
+  ylab("Debt-per-Student") +
   scale_y_continuous(labels = scales::dollar) +
-  scale_fill_manual(labels = names)
-```
+  scale_fill_manual(labels = names) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
 
-This is pretty weird. Could it be something to do with the dataset?
+# debt/student over time
+p2 = ggplot(df[df$school_no %in% high.var,], aes(year, unpaid, group = school_no, col = school_no)) +
+  geom_point() +
+  geom_line() +
+  ylab("Total Debt") +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_fill_manual(labels = names) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
+
+
+grid = plot_grid(p1 + theme(legend.position = "none"),
+          p2 + theme(legend.position = "none"),
+          legend = get_legend(p1),
+          ncol = 3)
+
+plot_grid(ggdraw() + draw_label("Schools with Most Variance of Debt-per-Student (Var > 100)", size = 12),
+          grid, ncol = 1, rel_heights=c(0.1, 1))
+```
 
 Let's also look at schools with outlier values for mean debt.
 
-```{r}
+```{r, fig.width=12, fig.height=4}
 # calculate z-scores for mean debt per student
 sums$z_debt = scale(sums$mean_debt, center = TRUE, scale = TRUE)
 
 high.debt = sums$school_no[sums$z_debt >= 2]
 
 # z-score greater than 2 is an outlier, plot those schools over time
-ggplot(df[df$school_no %in% high.debt,], aes(year, debt_per_student, group = school_no, col = school_no)) +
+p1 = ggplot(df[df$school_no %in% high.debt,], aes(year, debt_per_student, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
-  xlab("unpaid lunch debt") +
-  ggtitle("Unpaid Lunch Debt per Student by School") +
+  ylab("Debt-per-Student") +
   scale_y_continuous(labels = scales::dollar) +
-  scale_fill_manual(labels = names)
+  scale_fill_manual(labels = names) +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10))
+
+# z-score greater than 2 is an outlier, plot those schools over time
+p2 = ggplot(df[df$school_no %in% high.debt,], aes(year, unpaid, group = school_no, col = school_no)) +
+  geom_point() +
+  geom_line() +
+  ylab("Total Debt") + 
+  scale_y_continuous(labels = scales::dollar) +
+  scale_fill_manual(labels = names) +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10))
+
+grid = plot_grid(p1 + theme(legend.position = "none"),
+          p2 + theme(legend.position = "none"),
+          legend = get_legend(p1),
+          ncol = 3)
+
+plot_grid(ggdraw() + draw_label("Schools with Outlier Mean Debt-per-Student (Z > 2)", size = 12),
+          grid, ncol = 1, rel_heights=c(0.1, 1))
 ```
 
 FOR NEXT WEEK:
-- fix merge
 - get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
 - ask about when school lunch data pulled
 - get demographic data for 2016-17 and 2017-18 academic years
