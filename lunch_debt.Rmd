@@ -5,7 +5,7 @@ date: "11/2/2018"
 output: pdf_document
 ---
 
-Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Other demographic data obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}.
+Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Free/reduced price lunch data was obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}. Demographic data was obtained from the \href{https://nces.ed.gov/ccd/elsi/tableGenerator.aspx}{NCES ELSI table generator}. You can access this specific table using the code 91803.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, echo = FALSE)
@@ -16,7 +16,6 @@ library(ggplot2) # graphing
 library(tidyr) # reshaping
 library(stringr) # string work
 library(data.table) # working with tables
-library(plyr) # more wrangling
 
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
@@ -68,7 +67,7 @@ for(i in 1:length(dat)) {
 }
 
 # merge
-df = do.call(rbind.fill, dat)
+df = do.call(plyr::rbind.fill, dat)
 
 # filter to durham county
 df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
@@ -152,27 +151,92 @@ dem = dem[grepl("Durham", dem$county_name, ignore.case = TRUE),]
 
 ## EDA
 ```{r}
+# normalize debt by adm
+df$debt_per_student = df$unpaid/df$adm
+
 # debt by school over time
-ggplot(df, aes(year, unpaid, group = school_no, col = school_no)) +
+ggplot(df, aes(year, debt_per_student, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
-  xlab("unpaid Lunch Debt") + 
-  scale_y_continuous(labels = scales::dollar)
+  xlab("unpaid lunch debt") + 
+  ggtitle("Unpaid Lunch Debt by School") +
+  scale_y_continuous(labels = scales::dollar) +
+  theme(legend.position = "none")
 
 # debt/student over time
-ggplot(df, aes(year, unpaid/adm, group = school_no, col = school_no)) +
+ggplot(df, aes(year, debt_per_student, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
-  xlab("unpaid Lunch Debt") + 
-  scale_y_continuous(labels = scales::dollar)
+  xlab("unpaid lunch debt") +
+  ggtitle("Unpaid Lunch Debt per Student by School") +
+  scale_y_continuous(labels = scales::dollar) +
+  theme(legend.position = "none")
 ```
 
+When we look at total unpaid lunch debt as well as per student, we see a lot of variation. Let's try to find which schools fluctuate most when it comes to school lunch debt.
+
+```{r}
+# calculate mean and variance of debt/student by school
+sums = df %>%
+  group_by(school_no) %>%
+  summarise(mean_debt = mean(debt_per_student, na.rm = TRUE),
+            var = var(debt_per_student, na.rm = TRUE)) %>%
+  arrange(-var)
+
+# histogram of mean debt per student
+ggplot(sums, aes(mean_debt)) +
+  geom_histogram() +
+  xlab("mean debt per student") +
+  scale_x_continuous(labels = scales::dollar)
+
+# histogram of variance of mean debt per student
+ggplot(sums, aes(var)) +
+  geom_histogram() +
+  xlab("variance of mean debt per student") +
+  scale_x_continuous(labels = scales::dollar)
+```
+
+Some schools have really high variance. Let's check those out longitudinally.
+
+```{r}
+# grab school codes for high variance
+high.var = sums$school_no[sums$var > 100]
+
+# debt/student over time
+ggplot(df[df$school_no %in% high.var,], aes(year, debt_per_student, group = school_no, col = school_no)) +
+  geom_point() +
+  geom_line() +
+  xlab("unpaid lunch debt") +
+  ggtitle("Unpaid Lunch Debt per Student by School") +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_fill_manual(labels = names)
+```
+
+Debt decreased dramatically over multiple years for these schools. What happened?
+
+Let's also look at schools with outlier values for mean debt.
+
+```{r}
+# calculate z-scores for mean debt per student
+sums$z_debt = scale(sums$mean_debt, center = TRUE, scale = TRUE)
+
+high.debt = sums$school_no[sums$z_debt >= 2]
+
+# z-score greater than 2 is an outlier, plot those schools over time
+ggplot(df[df$school_no %in% high.debt,], aes(year, debt_per_student, group = school_no, col = school_no)) +
+  geom_point() +
+  geom_line() +
+  xlab("unpaid lunch debt") +
+  ggtitle("Unpaid Lunch Debt per Student by School") +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_fill_manual(labels = names)
+```
+
+
 - get additional demographics, fill missing adm numbers
-- look at schools where variance is high
 - break into bins by mean value/variance
 - external factors (paying off debt, CEP status)
 - add CEP status binary
-- for next week: lots of eda, ready to formulate questions
 - double check merges, wrangling
 - think through when data is being pulled
   - how to track people paying off debt/dates?
