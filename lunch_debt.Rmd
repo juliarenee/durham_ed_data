@@ -5,7 +5,7 @@ date: "11/2/2018"
 output: pdf_document
 ---
 
-Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Free/reduced price lunch data was obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}. Demographic data was obtained from the \href{https://nces.ed.gov/ccd/elsi/tableGenerator.aspx}{NCES ELSI table generator}. You can access this specific table using the code 91803.
+Looking at school lunch debt in Durham, North Carolina. EOY unpaid meal data from James Keaton, director of child nutrition services at DPS. Free/reduced price lunch data was obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}. Demographic data was obtained from the \href{https://nces.ed.gov/ccd/elsi/tableGenerator.aspx}{NCES ELSI table generator}. You can access this specific table using the code 91803. 2017-18 ADM data from \href{http://www.ncpublicschools.org/fbs/accounting/data/}{Average Daily Membership and Membership Last Day by School (ADM & MLD)}.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, echo = FALSE)
@@ -19,7 +19,7 @@ library(data.table) # working with tables
 
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
-  grep(".xls$", ., value = TRUE)
+  grep("freereduced.xls$", ., value = TRUE)
 
 # read files as table
 dat = lapply(paste("./data/",old.dat,sep=""), function(x) read_xls(x))
@@ -42,7 +42,7 @@ colnames(dat[[5]]) = c("lea_no","lea_name","school_no","school_name","cep","adm"
 
 # get newer files, .xlsx format
 new.dat = list.files("./data") %>%
-  grep(".xlsx$", ., value = TRUE)
+  grep("freereduced.xlsx$", ., value = TRUE)
 dat2 = lapply(paste("./data/",new.dat,sep=""), function(x) read_xlsx(x))
 
 # check for cleaning
@@ -105,6 +105,21 @@ df$year = as.factor(df$year)
 # character to numeric
 df[c("adm","reduced","free","pct_needy")] = sapply(df[c("adm","reduced","free","pct_needy")], as.numeric)
 
+# add 2017-18 adm data
+adm17 = read.csv("./data/2017-18adm.csv")
+
+# filter to durham
+adm17 = adm17[grepl("Durham", adm17$LEA.Name, ignore.case = TRUE),]
+
+# only need adm and school number
+adm17 = adm17[c("SCH","Total")]
+
+# total as numeric
+adm17$Total = as.numeric(adm17$Total)
+
+# fill 2017-18 adm data
+df$adm[df$year=="2017-18"] = adm17$Total[df$school_no[df$year=="2017-18"]]
+
 # add demographic data
 dem = read.csv("./data/nces_demographics.csv")
 
@@ -155,7 +170,7 @@ dem = dem[grepl("Durham", dem$county_name, ignore.case = TRUE),]
 df$debt_per_student = df$unpaid/df$adm
 
 # debt by school over time
-ggplot(df, aes(year, debt_per_student, group = school_no, col = school_no)) +
+ggplot(df, aes(year, unpaid, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
   xlab("unpaid lunch debt") + 
@@ -212,7 +227,7 @@ ggplot(df[df$school_no %in% high.var,], aes(year, debt_per_student, group = scho
   scale_fill_manual(labels = names)
 ```
 
-Debt decreased dramatically over multiple years for these schools. What happened?
+This is pretty weird. Could it be something to do with the dataset?
 
 Let's also look at schools with outlier values for mean debt.
 
@@ -232,8 +247,7 @@ ggplot(df[df$school_no %in% high.debt,], aes(year, debt_per_student, group = sch
   scale_fill_manual(labels = names)
 ```
 
-
-- get additional demographics, fill missing adm numbers
+- fill missing adm numbers for 2017-18, get most recent race/gender data
 - break into bins by mean value/variance
 - external factors (paying off debt, CEP status)
 - add CEP status binary
