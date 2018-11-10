@@ -204,6 +204,7 @@ df = left_join(df, dem, by=c("school_no"="state_school_id","year"))
 ```
 
 ## Exploratory Data Analysis
+### Longitudinal look at debt from 2010-11 through 2017-18
 ```{r debt_over_time, fig.width=8, fig.height=4}
 # normalize debt by adm
 df$debt_per_student = df$unpaid/df$adm
@@ -239,7 +240,8 @@ There's a lot of fluctuation in debt-per-student and total debt by school over t
 
 I also looked at the mean and variance of debt per student by school. This gives us a sense of \textit{how} much debt per student fluctuates within in each school. Schools with a high variance should be looked into---perhaps fluctuations in debt are tied to CEP status? Or someone bailing a school out of debt? Similarly, schools with a generally high mean debt per student are of interest. Why are these schools struggling more than others?
 
-```{r mean_var, fig.width=8, fig.height=4}
+### Mean and variance of debt within schools
+```{r histograms, fig.width=8, fig.height=4}
 # calculate mean and variance of debt/student by school
 sums = df %>%
   group_by(school_no) %>%
@@ -270,7 +272,8 @@ plot_grid(h1, h2,
 
 There are definitely some outliers in our data when it comes to variance of within-school debt per student and mean debt-per-student. Let's pull any schools that fall greater than 2 standard deviations from the mean (proper outliers) and see what their debt-per-student looks like longitudinally.
 
-```{r, fig.width=12, fig.height=4}
+### High variance schools
+```{r high_var, fig.width=12, fig.height=4}
 # grab school codes for high variance
 high.var = sums$school_no[sums$var > 100]
 
@@ -285,7 +288,7 @@ p1 = ggplot(df[df$school_no %in% high.var,], aes(year, debt_per_student, group =
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
 
-# debt/student over time
+# total debt over time
 p2 = ggplot(df[df$school_no %in% high.var,], aes(year, unpaid, group = school_no, col = school_no)) +
   geom_point() +
   geom_line() +
@@ -306,9 +309,8 @@ plot_grid(ggdraw() + draw_label("Schools with Most Variance of Debt-per-Student 
           grid, ncol = 1, rel_heights=c(0.1, 1))
 ```
 
-Let's also look at schools with outlier values for mean debt.
-
-```{r, fig.width=12, fig.height=4}
+### Schools with the most debt
+```{r mean_debt, fig.width=12, fig.height=4}
 # calculate z-scores for mean debt per student
 sums$z_debt = scale(sums$mean_debt, center = TRUE, scale = TRUE)
 
@@ -341,11 +343,57 @@ plot_grid(ggdraw() + draw_label("Schools with Outlier Mean Debt-per-Student (Z >
           grid, ncol = 1, rel_heights=c(0.1, 1))
 ```
 
+### CEP Schools
+```{r cep_schools, fig.width=12, fig.height=4}
+# grab schools with CEP status at any point in time
+cep.schools = df %>%
+  group_by(school_no) %>%
+  filter(sum(cep, na.rm = TRUE) > 0) %>%
+  select(school_no)
+
+cep = df[df$school_no %in% unique(cep.schools$school_no),]
+
+# cep as factor
+cep$cep = as.factor(cep$cep)
+
+# debt/student over time
+p1 = ggplot(cep, aes(year, debt_per_student, group = school_no)) +
+  geom_point(aes(col = cep)) +
+  geom_line() +
+  ylab("Debt-per-Student") +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_fill_manual(labels = names) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
+
+# total debt over time
+p2 = ggplot(cep, aes(year, unpaid, group = school_no)) +
+  geom_point(aes(col = cep)) +
+  geom_line() +
+  ylab("Total Debt") +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_fill_manual(labels = names) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
+
+
+grid = plot_grid(p1 + theme(legend.position = "none"),
+          p2 + theme(legend.position = "none"),
+          legend = get_legend(p1),
+          ncol = 3)
+
+plot_grid(ggdraw() + draw_label("CEP Schools", size = 12),
+          grid, ncol = 1, rel_heights=c(0.1, 1))
+```
+
+
 FOR NEXT WEEK:
 - get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
 - ask about when school lunch data pulled
 - get demographic data for 2016-17 and 2017-18 academic years
-- double check datasets for conflicting ADM/counts
+
 
 - external factors (paying off debt, CEP status)
   - how to track people paying off debt/dates?
