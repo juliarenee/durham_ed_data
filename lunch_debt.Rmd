@@ -14,6 +14,7 @@ When families can’t afford to pay for student lunches, school districts foot t
 * All free/reduced price lunch data was obtained from \href{http://www.ncpublicschools.org/fbs/resources/data/}{ncpublicschools.org}
 * 2010-11 through 2015-16 demographic data was obtained from the \href{https://nces.ed.gov/ccd/elsi/tableGenerator.aspx}{NCES ELSI table generator}, code 91803
 * 2017-18 ADM data from ncpublicschools.org's \href{http://www.ncpublicschools.org/fbs/accounting/data/}{Average Daily Membership and Membership Last Day by School}
+* 2016-17, 2017-18 demographic data from \href{https://www.dpsnc.net/site/Default.aspx?PageID=324}{Durham Public Schools}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, echo = FALSE, message = FALSE)
 
@@ -438,7 +439,6 @@ NOTES:
 FOR NEXT WEEK:
 - get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
 - ask about when school lunch data pulled
-- get demographic data for 2016-17 and 2017-18 academic years
 
 - external factors (paying off debt, CEP status)
   - how to track people paying off debt/dates?
