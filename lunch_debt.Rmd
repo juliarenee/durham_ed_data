@@ -24,8 +24,8 @@ library(tidyr) # reshaping
 library(stringr) # string manipulation
 library(data.table) # working with tables
 library(cowplot) # layout plots
-```
-```{r free_reduced_data, include=FALSE}
+library(pdftools) # pdf to data
+
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
   grep("freereduced.xls$", ., value = TRUE)
@@ -83,8 +83,7 @@ df$cep = ifelse(is.na(df$cep), 0, 1)
 
 # filter to durham county
 df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
-```
-```{r lunch_debt_data, include=FALSE}
+
 # load lunch debt data
 debt = read.csv("./data/meal_debt.csv")
 debt = debt[1:nrow(debt)-1,1:10] # remove totals at bottom, only full year data
@@ -117,8 +116,7 @@ df$year = as.factor(df$year)
 
 # character to numeric
 df[c("adm","reduced","free","pct_needy")] = sapply(df[c("adm","reduced","free","pct_needy")], as.numeric)
-```
-```{r 17-18adm_data, include=FALSE}
+
 # add 2017-18 adm data
 adm17 = read.csv("./data/2017-18adm.csv")
 
@@ -133,8 +131,7 @@ adm17$Total = as.character(adm17$Total) %>% trimws(.) %>% gsub("\\,","",.) %>% a
 
 # fill 2017-18 adm data
 df$adm[df$year=="2017-18"] = adm17$Total[df$school_no[df$year=="2017-18"]]
-```
-```{r demographic_data}
+
 # add demographic data
 dem = read.csv("./data/nces_demographics.csv")
 
@@ -198,6 +195,52 @@ dem$state_school_id[nchar(dem$state_school_id) > 3] = dem$state_school_id[nchar(
 
 # vars to numeric
 dem[,c(2:9)] = lapply(dem[,c(2:9)],as.numeric)
+
+# get 2016-17, 2017-18 demographic data from pdf
+# only need second page
+dem17 = pdf_text("./data/durham_dem_1617.pdf")[2]
+dem18.1 = pdf_text("./data/durham_dem_1718.pdf")[2]
+dem18.2 = pdf_text("./data/durham_dem_1718.pdf")[3]
+
+# FUNCTION: to extract data from PDFs
+clean_table = function(txt, start) {
+  v = str_split(txt, "\n", simplify = TRUE) # split into rows
+  v = v[start:length(v)] # ignore messy headers
+  split = str_split_fixed(v, "320", 2) # split on lea
+  lea = split[,1] # get school names
+  
+  # get vals as matrix
+  dat = lapply(split[,2], function(x) unlist(strsplit(x, "[[:blank:]]+"))) %>% 
+    unlist() %>%
+    matrix(., ncol = 32, byrow = TRUE)
+  
+  dat = dat[,c(1,30,31,seq(from = 4, to = 28, by = 4))] # only keep totals, school number
+  dat = cbind(lea, dat) %>% as.data.frame() # convert to data frame
+  colnames(dat) = c("school_name",
+                    "state_school_id",
+                    "male",
+                    "female",
+                    "american_indian_alaska_native",
+                    "asian_or_asian_pacific_islander",
+                    "hispanic",
+                    "black",
+                    "hawaiian_nat_pacific_isl",
+                    "white",
+                    "two_or_more_races")
+  return(dat)
+}
+
+# clean tables
+dem17 = clean_table(dem17, start = 4)
+dem18.1 = clean_table(dem18.1, start = 5)
+dem18.2 = clean_table(dem18.2, start = 3)
+dem18 = rbind(dem18.1, dem18.2) # bind all 2017-18 data
+
+# add year
+dem17$year = "2016-17"
+dem18$year = "2017-18"
+
+dem = plyr::rbind.fill(dem, dem17, dem18)
 
 # merge with df
 df = left_join(df, dem, by=c("school_no"="state_school_id","year"))
@@ -388,12 +431,14 @@ plot_grid(ggdraw() + draw_label("CEP Schools", size = 12),
           grid, ncol = 1, rel_heights=c(0.1, 1))
 ```
 
+NOTES:
+
+- CEP provisions began in 2010
 
 FOR NEXT WEEK:
 - get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
 - ask about when school lunch data pulled
 - get demographic data for 2016-17 and 2017-18 academic years
-
 
 - external factors (paying off debt, CEP status)
   - how to track people paying off debt/dates?
