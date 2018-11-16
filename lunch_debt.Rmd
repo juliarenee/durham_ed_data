@@ -248,6 +248,7 @@ df$high = ifelse(df$grade %in% grades[c(3,4,5,7,8,12,14,16)],1,0)
 ```
 
 ## Merging Checks
+### Disparities between datasets
 We're pulling data from lots of different sources. Let's see where there may be disparities.
 
 ```{r}
@@ -263,6 +264,27 @@ dim(tot.students)
 dim(df)
 ```
 Most of our student counts don't match up by the simplest measure: comparing the total ADM, retrieved from free/reduced lunch data, to the total number of male and female students. According to KC Elander at NC DPI, this is because data is pulled at different points in time, from different government agencies and for different requests.
+
+### Missing years
+
+```{r}
+# table of years where free/reduced lunch data is missing
+# schools with missing data
+missingYears = df$school_no[is.na(df$adm)] %>% unique()
+
+t = df %>%
+  filter(school_no %in% missingYears) %>%
+  select(school_no, year, adm) %>%
+  arrange(school_no, year) %>%
+  reshape(idvar = "school_no", timevar = "year", direction = "wide")
+
+colnames(t) = colnames(t) %>% gsub("adm\\.", "", .)
+t[,2:9][!is.na(t[,2:9])] = "X"
+t[,2:9][is.na(t[,2:9])] = ""
+kable(t)
+```
+
+There are some years where we don't have free/reduced lunch price data for schools, but they still seem to be operating. I've emailed KC about this.
 
 ## Exploratory Data Analysis
 
@@ -291,22 +313,7 @@ df %>%
 ```
 For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years. Also something to note: There are a decent number of NA's. After checking some schools out, we don't have data for them from any dataset outside of school lunch debt. But some of them are still running? I've emailed KC about this.
 
-```{r}
-# table of years where free/reduced lunch data is missing
-# schools with missing data
-missingYears = df$school_no[is.na(df$adm)] %>% unique()
 
-t = df %>%
-  filter(school_no %in% missingYears) %>%
-  select(school_no, year, adm) %>%
-  arrange(school_no, year) %>%
-  reshape(idvar = "school_no", timevar = "year", direction = "wide")
-
-colnames(t) = colnames(t) %>% gsub("adm\\.", "", .)
-t[,2:9][!is.na(t[,2:9])] = ""
-t[,2:9][is.na(t[,2:9])] = "X"
-kable(t)
-```
 
 
 Anyway, I'll stick to the log transformation and continue our EDA.
