@@ -26,6 +26,7 @@ library(stringr) # string manipulation
 library(data.table) # working with tables
 library(cowplot) # layout plots
 library(pdftools) # pdf to data
+library(knitr) # nice tables
 
 # get all older files, .xls format
 old.dat = list.files("./data") %>%
@@ -203,7 +204,7 @@ clean_table = function(txt, start) {
     matrix(., ncol = 32, byrow = TRUE)
   
   dat = dat[,c(1,30,31,seq(from = 4, to = 28, by = 4))] # only keep totals, school number
-  dat = cbind(lea, dat) %>% as.data.frame() # convert to data frame
+  dat = cbind(lea, dat) %>% as.data.frame(stringsAsFactors = FALSE) # convert to data frame
   colnames(dat) = c("school_name",
                     "state_school_id",
                     "male",
@@ -228,6 +229,10 @@ dem18 = rbind(dem18.1, dem18.2) # bind all 2017-18 data
 dem17$year = "2016-17"
 dem18$year = "2017-18"
 
+# vars to numeric
+dem17[,c(3:11)] = lapply(dem17[,c(3:11)], as.numeric)
+dem18[,c(3:11)] = lapply(dem18[,c(3:11)], as.numeric)
+
 dem = plyr::rbind.fill(dem, dem17, dem18)
 
 # merge with df
@@ -242,8 +247,26 @@ df$middle = ifelse(df$grade %in% grades[c(2,4,5,10,14,16,17)],1,0)
 df$high = ifelse(df$grade %in% grades[c(3,4,5,7,8,12,14,16)],1,0)
 ```
 
+## Merging Checks
+We're pulling data from lots of different sources. Let's see where there may be disparities.
+
+```{r}
+# merging checks
+tot.students = df %>%
+  filter(male+female != adm) %>%
+  group_by(school_no, year) %>%
+  summarise(mf = male+female,
+            adm = adm)
+
+head(tot.students)
+dim(tot.students)
+dim(df)
+```
+Most of our student counts don't match up by the simplest measure: comparing the total ADM, retrieved from free/reduced lunch data, to the total number of male and female students. According to KC Elander at NC DPI, this is because data is pulled at different points in time, from different government agencies and for different requests.
+
 ## Exploratory Data Analysis
-### Spread of Data
+
+First, let's try to get a sense of the spread of school lunch debt in Durham County.
 ```{r, fig.width=5, fig.height=3, fig.align="center"}
 # normalize debt by adm
 df$debt_per_student = df$unpaid/df$adm
@@ -257,10 +280,39 @@ df$log_dps = log(df$debt_per_student+.01)
 
 hist(df$log_dps, main = "", xlab = "log(debt-per-student)")
 ```
-Alright, much better! It's bimodal, but what we're seeing in the first node (centered around roughly -4) are years where a school had no debt. These are likely CEP schools.
+Alright, much better! Still, our data is bimodal. Let's check if the first node, centered around roughly -4, are years where a school had no debt. These may be years where are school had CEP status.
+
+```{r}
+# check CEP status for schools with no debt
+df %>%
+  filter(unpaid == 0) %>%
+  select(school_no, year, cep) %>%
+  arrange(school_no, year)
+```
+For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years. Also something to note: There are a decent number of NA's. After checking some schools out, we don't have data for them from any dataset outside of school lunch debt. But some of them are still running? I've emailed KC about this.
+
+```{r}
+# table of years where free/reduced lunch data is missing
+# schools with missing data
+missingYears = df$school_no[is.na(df$adm)] %>% unique()
+
+t = df %>%
+  filter(school_no %in% missingYears) %>%
+  select(school_no, year, adm) %>%
+  arrange(school_no, year) %>%
+  reshape(idvar = "school_no", timevar = "year", direction = "wide")
+
+colnames(t) = colnames(t) %>% gsub("adm\\.", "", .)
+t[,2:9][!is.na(t[,2:9])] = ""
+t[,2:9][is.na(t[,2:9])] = "X"
+kable(t)
+```
+
+
+Anyway, I'll stick to the log transformation and continue our EDA.
 
 ### Debt and Demographics
-```{r}
+```{r, fig.width=12, fig.height=4, fig.align="center"}
 # scatterplot of debt vs. pct needy
 ggplot(df, aes(pct_needy, log_dps)) +
   geom_point() +
@@ -315,21 +367,32 @@ plot_grid(g1, g2, g3, ncol = 3)
 Looks like as schools become more black, they also see more debt-per-student. The same trend is there for hispanic students, but less pronounced. And when it comes to white schools, the more white students---the less debt. We're also seeing that schools tend to be segregated---there is a negative correlation between the percentage of black students and and white students, and a slightly less strong, but still negative correlation between the percentage of white and hispanic students. The percentege of black and hispanic students are positively correlated.
 
 ### Debt and Locale
-```{r}
+```{r, fig.width=8,fig.height=4, fig.align="center"}
 # boxplot by urban centric local
 ggplot(df, aes(urban_centric_locale, log_dps)) +
   geom_boxplot()
-
-# boxplot by grades
-b1 = boxplot(df$debt_per_student[df$elementary==1])
-b2 = boxplot(df$debt_per_student[df$middle==1])
-b3 = boxplot(df$debt_per_student[df$high==1])
-
-plot_grid(b1, b2, b3, ncol = 3)
 ```
 
+Large cities, on average, have less debt than their smaller and more suburban and rural counterparts.
 
+```{r}
+# boxplot by grades
+elem = df[df$elementary==1,][c("school_no","unpaid","debt_per_student","log_dps")]
+elem$grade = "elementary"
 
+mid = df[df$middle==1,][c("school_no","unpaid","debt_per_student","log_dps")]
+mid$grade = "middle"
+
+high = df[df$high==1,][c("school_no","unpaid","debt_per_student","log_dps")]
+high$grade = "high"
+
+byGrade = rbind(high,mid,elem)
+
+ggplot(byGrade, aes(grade, log_dps)) +
+  geom_boxplot()
+```
+
+We also see that elementary and high schools tend to have more dept per student than middle schools.
 
 ### Longitudinal look at debt from 2010-11 through 2017-18
 ```{r debt_over_time, fig.width=8, fig.height=4}
@@ -561,7 +624,10 @@ plot_grid(ggdraw() + draw_label("CEP Schools", size = 12),
 
 NOTES:
 
-- CEP provisions began in 2010
+KC [dot] Elander @ dpi.nc.gov
+
+- CEP provisions began in 2014-15 in NC
+- data collected at different times so numbers won't match perfectly
 
 FOR NEXT WEEK:
 - get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
