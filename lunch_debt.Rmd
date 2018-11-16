@@ -279,8 +279,8 @@ t = df %>%
   reshape(idvar = "school_no", timevar = "year", direction = "wide")
 
 colnames(t) = colnames(t) %>% gsub("adm\\.", "", .)
-t[,2:9][!is.na(t[,2:9])] = "X"
 t[,2:9][is.na(t[,2:9])] = ""
+t[,2:9][t[,2:9] != ""] = "X"
 kable(t)
 ```
 
@@ -311,12 +311,9 @@ df %>%
   select(school_no, year, cep) %>%
   arrange(school_no, year)
 ```
-For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years. Also something to note: There are a decent number of NA's. After checking some schools out, we don't have data for them from any dataset outside of school lunch debt. But some of them are still running? I've emailed KC about this.
+For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
 
-
-
-
-Anyway, I'll stick to the log transformation and continue our EDA.
+Anyway, I'll stick to the log transformation and continue the EDA.
 
 ### Debt and Demographics
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
@@ -630,8 +627,6 @@ plot_grid(ggdraw() + draw_label("CEP Schools", size = 12),
 ```
 
 NOTES:
-
-KC [dot] Elander @ dpi.nc.gov
 
 - CEP provisions began in 2014-15 in NC
 - data collected at different times so numbers won't match perfectly
