@@ -60,9 +60,11 @@ head(dat2[[1]])
 colnames(dat2[[1]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy","pct_needy_mlt")
 head(dat2[[2]])
 colnames(dat2[[2]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy")
+head(dat2[[3]])
+colnames(dat2[[3]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy")
 
 # join all data
-dat[6:7] = dat2
+dat[6:8] = dat2
 
 # transform to data frames
 dat = lapply(dat, function(x) data.frame(x))
@@ -117,21 +119,6 @@ df$year = as.factor(df$year)
 
 # character to numeric
 df[c("adm","reduced","free","pct_needy")] = sapply(df[c("adm","reduced","free","pct_needy")], as.numeric)
-
-# add 2017-18 adm data
-adm17 = read.csv("./data/2017-18adm.csv")
-
-# filter to durham
-adm17 = adm17[grepl("Durham", adm17$LEA.Name, ignore.case = TRUE),]
-
-# only need adm and school number
-adm17 = adm17[c("SCH","Total")]
-
-# total as numeric
-adm17$Total = as.character(adm17$Total) %>% trimws(.) %>% gsub("\\,","",.) %>% as.numeric()
-
-# fill 2017-18 adm data
-df$adm[df$year=="2017-18"] = adm17$Total[df$school_no[df$year=="2017-18"]]
 
 # add demographic data
 dem = read.csv("./data/nces_demographics.csv")
@@ -245,14 +232,107 @@ dem = plyr::rbind.fill(dem, dem17, dem18)
 
 # merge with df
 df = left_join(df, dem, by=c("school_no"="state_school_id","year"))
+
+# see grades
+grades = unique(df$grade)
+
+# indicator for elementary school
+df$elementary = ifelse(df$grade %in% grades[c(1,5,9,11,13,14,15,16,18)], 1, 0)
+df$middle = ifelse(df$grade %in% grades[c(2,4,5,10,14,16,17)],1,0)
+df$high = ifelse(df$grade %in% grades[c(3,4,5,7,8,12,14,16)],1,0)
 ```
 
 ## Exploratory Data Analysis
-### Longitudinal look at debt from 2010-11 through 2017-18
-```{r debt_over_time, fig.width=8, fig.height=4}
+### Spread of Data
+```{r, fig.width=5, fig.height=3, fig.align="center"}
 # normalize debt by adm
 df$debt_per_student = df$unpaid/df$adm
 
+hist(df$debt_per_student, main = "", xlab = "debt-per-student")
+```
+Our data is pretty skewed. If we want to pick up on small differences, it may be worth trying a log transformation.
+
+```{r, fig.width=5, fig.height=3, fig.align="center"}
+df$log_dps = log(df$debt_per_student+.01)
+
+hist(df$log_dps, main = "", xlab = "log(debt-per-student)")
+```
+Alright, much better! It's bimodal, but what we're seeing in the first node (centered around roughly -4) are years where a school had no debt. These are likely CEP schools.
+
+### Debt and Demographics
+```{r}
+# scatterplot of debt vs. pct needy
+ggplot(df, aes(pct_needy, log_dps)) +
+  geom_point() +
+  xlab("Percent Needy") +
+  ylab("log(debt-per-student)") +
+  geom_smooth(method = "lm")
+
+# scatterplot of debt vs. pct black
+g1 = ggplot(df, aes(black/adm, log_dps)) +
+  geom_point() +
+  xlab("Percent Black") +
+  ylab("log(debt-per-student)") +
+  geom_smooth(method = "lm")
+
+# scatterplot of debt vs. pct hispanic
+g2 = ggplot(df, aes(hispanic/adm, log_dps)) +
+  geom_point() +
+  xlab("Percent Hispanic") +
+  ylab("log(debt-per-student)") +
+  geom_smooth(method = "lm")
+
+# scatterplot of debt vs. pct white
+g3 = ggplot(df, aes(white/adm, log_dps)) +
+  geom_point() +
+  xlab("Percent White") +
+  ylab("log(debt-per-student)") +
+  geom_smooth(method = "lm")
+
+plot_grid(g1, g2, g3, ncol = 3)
+
+g1 = ggplot(df, aes(white/adm, black/adm)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  xlab("Percent White") +
+  ylab("Percent Black")
+
+g2 = ggplot(df, aes(white/adm, hispanic/adm)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  xlab("Percent White") +
+  ylab("Percent Hispanic")
+
+g3 = ggplot(df, aes(black/adm, hispanic/adm)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  xlab("Percent Black") +
+  ylab("Percent Hispanic")
+
+plot_grid(g1, g2, g3, ncol = 3)
+```
+
+Looks like as schools become more black, they also see more debt-per-student. The same trend is there for hispanic students, but less pronounced. And when it comes to white schools, the more white students---the less debt. We're also seeing that schools tend to be segregated---there is a negative correlation between the percentage of black students and and white students, and a slightly less strong, but still negative correlation between the percentage of white and hispanic students. The percentege of black and hispanic students are positively correlated.
+
+### Debt and Locale
+```{r}
+# boxplot by urban centric local
+ggplot(df, aes(urban_centric_locale, log_dps)) +
+  geom_boxplot()
+
+# boxplot by grades
+b1 = boxplot(df$debt_per_student[df$elementary==1])
+b2 = boxplot(df$debt_per_student[df$middle==1])
+b3 = boxplot(df$debt_per_student[df$high==1])
+
+plot_grid(b1, b2, b3, ncol = 3)
+```
+
+
+
+
+### Longitudinal look at debt from 2010-11 through 2017-18
+```{r debt_over_time, fig.width=8, fig.height=4}
 # debt by school over time
 p1 = ggplot(df, aes(year, unpaid, group = school_no, col = school_no)) +
   geom_point() +
@@ -280,11 +360,58 @@ p2 = ggplot(df, aes(year, debt_per_student, group = school_no, col = school_no))
 plot_grid(p1, p2)
 ```
 
-There's a lot of fluctuation in debt-per-student and total debt by school over time. Let's try to see which schools have the most variation in debt-per-student, and highest average debt-per-student.
+There's a lot of fluctuation in total debt and debt-per-student across all schools, so I'll try to find the "most extreme" schools using a few measures. But first, let's take a look at the spread of our data.
 
-I also looked at the mean and variance of debt per student by school. This gives us a sense of \textit{how} much debt per student fluctuates within in each school. Schools with a high variance should be looked into---perhaps fluctuations in debt are tied to CEP status? Or someone bailing a school out of debt? Similarly, schools with a generally high mean debt per student are of interest. Why are these schools struggling more than others?
+```{r}
+
+```
+
+
+The first is simple: Let's see which schools, on average, have the highest debt.
+
+
+
+```{r, fig.width=5, fig.height=3, fig.align="center"}
+# calculate mean debt per student
+means = df %>%
+  group_by(school_no) %>%
+  summarise(mean_debt = mean(debt_per_student, na.rm = TRUE)) %>%
+  arrange(-mean_debt)
+
+# histogram
+hist(means$mean_debt, main = "Histogram of Mean Debt-per-Student", xlab = "Mean Debt-per-Student")
+```
+
+The data is not normally distributed. Let's try a log transformation.
+
+```{r, fig.width=5, fig.height=3, fig.align="center"}
+# Histogram of log transformation
+hist(log(means$mean_debt), main = "Histogram of log(Mean Debt-per-Student)", xlab = "log(Mean Debt-per-Student)")
+```
+
+A log transformation makes this data much more normalized. Let's use this to grab find outliers in the data based on Z-scores.
+
+
+After normalizing the data with a log transformation, there aren't any schools that seem to be outliers in terms of their mean debt-per-student, except for 353 (Middle College High School), which typically has \textit{less} debt than the rest of public schools. What's different about this school?
+
+```{r}
+df %>%
+  filter(school_no == 353) %>%
+  select(year, adm, unpaid, free, reduced, cep)
+```
+
+Hm. Seems like we're missing a lot of data. I'll get back to that later.
+
+
+
+
+
+
+
 
 ### Mean and variance of debt within schools
+
+I also looked at the mean and variance of debt per student by school. This gives us a sense of \textit{how} much debt per student fluctuates within in each school. Schools with a high variance should be looked into---perhaps fluctuations in debt are tied to CEP status? Or someone bailing a school out of debt? Similarly, schools with a generally high mean debt per student are of interest. Why are these schools struggling more than others?
 ```{r histograms, fig.width=8, fig.height=4}
 # calculate mean and variance of debt/student by school
 sums = df %>%
@@ -438,6 +565,7 @@ NOTES:
 
 FOR NEXT WEEK:
 - get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
+- fill missing adm/pct needy data (why missing?)
 - ask about when school lunch data pulled
 
 - external factors (paying off debt, CEP status)
