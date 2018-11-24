@@ -82,14 +82,21 @@ for(i in 1:length(dat)) {
 # merge
 df = do.call(plyr::rbind.fill, dat)
 
-# indicator for CEP data
-df$cep = ifelse(is.na(df$cep), 0, 1)
-
 # filter to durham county
 df = df[grepl("Durham", df$lea_name, ignore.case = TRUE),]
 
+# indicator for CEP data
+df$cep = ifelse(is.na(df$cep), 0, 1)
+
+# for reduced < 20, set to 20
+df$reduced[grepl("less than", df$reduced, ignore.case = TRUE)] = 20
+
+# recalculate percent needy
+df[,c(5:7)] = lapply(df[,c(5:7)],as.numeric)
+df$pct_free_reduced = (df$free + df$reduced)/df$adm
+
 # only keep percent needy to avoid conflicting adm
-df.trimmed = df %>% select(c("school_no","school_name","year","pct_needy","cep","grade"))
+df = df %>% select(c("school_no","school_name","year","pct_free_reduced","cep","grade"))
 
 # load lunch debt data
 debt = read.csv("./data/meal_debt.csv")
@@ -112,14 +119,11 @@ df$school_no = as.factor(df$school_no)
 debt$school_no = as.factor(debt$school_no)
 
 # join unpaid lunch with free/reduced lunch data
-df = left_join(debt, df.trimmed, by = c("year","school_no"))
+df = left_join(debt, df, by = c("year","school_no"))
 
 # dedupe school name cols
 df = df %>% select(-c("school_name.y"))
 colnames(df)[which(colnames(df)=="school_name.x")] = "school_name"
-
-# character to numeric
-df$pct_needy = as.numeric(df$pct_needy)
 
 # add demographic data
 dem = read.csv("./data/nces_demographics.csv")
@@ -198,6 +202,9 @@ dem$pct_multi = dem$two_or_more_races/dem$adm
 # only keep relevent cols for merging
 dem = dem[c(12:14,16:22)]
 
+# change col name
+colnames(dem)[which(colnames(df)=="state_school_id")] = "school_no"
+
 # download durham 16-17, 17-18 demographic data
 dem.new = list.files("./data") %>%
   grep("durham_dem", ., value = TRUE)
@@ -226,14 +233,15 @@ colnames(dem.new[[2]]) = dem.names
 dem.new[[1]]$year = "2016-17"
 dem.new[[2]]$year = "2017-18"
 
+# clean school num
+dem.new[[1]]$school_no = dem.new[[1]]$school_no %>% substr(., 4, 6)
+dem.new[[2]]$school_no = dem.new[[2]]$school_no %>% substr(., 4, 6)
+
 # merge
 dem = plyr::rbind.fill(dem, data.frame(dem.new[[1]]), data.frame(dem.new[[2]]))
 
 # merge with df
-df = left_join(df, dem, by=c("school_no"="state_school_id","year"))
-
-# remove empty col
-df = df %>% select(-c("school_no.y"))
+df = left_join(df, dem, by=c("school_no","year"))
 
 # see grades
 grades = unique(df$grade)
@@ -245,22 +253,17 @@ df$high = ifelse(df$grade %in% grades[c(3,4,5,7,8,12,14,16)],1,0)
 ```
 
 ### Missing years
-
 ```{r}
 # table of years where free/reduced lunch data is missing
 # schools with missing data
-missingYears = df$school_no[is.na(df$adm)] %>% unique()
+missingYears = df$school_no[is.na(df$pct_needy)] %>% unique()
 
 t = df %>%
   filter(school_no %in% missingYears) %>%
-  select(school_no, year, adm) %>%
+  select(school_no, year, pct_needy) %>%
   arrange(school_no, year) %>%
   reshape(idvar = "school_no", timevar = "year", direction = "wide")
 
-colnames(t) = colnames(t) %>% gsub("adm\\.", "", .)
-t[,2:9][is.na(t[,2:9])] = ""
-t[,2:9][t[,2:9] != ""] = "X"
-kable(t)
 ```
 
 There are some years where we don't have free/reduced lunch price data for schools, but they still seem to be operating. I've emailed KC about this.
