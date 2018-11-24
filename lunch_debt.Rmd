@@ -96,7 +96,7 @@ df[,c(5:7)] = lapply(df[,c(5:7)],as.numeric)
 df$pct_free_reduced = (df$free + df$reduced)/df$adm
 
 # only keep percent needy to avoid conflicting adm
-df = df %>% select(c("school_no","school_name","year","pct_free_reduced","cep","grade"))
+df = df %>% select(c("school_no","school_name","year","pct_free_reduced","adm","cep","grade"))
 
 # load lunch debt data
 debt = read.csv("./data/meal_debt.csv")
@@ -203,7 +203,7 @@ dem$pct_multi = dem$two_or_more_races/dem$adm
 dem = dem[c(12:14,16:22)]
 
 # change col name
-colnames(dem)[which(colnames(df)=="state_school_id")] = "school_no"
+colnames(dem)[which(colnames(dem)=="state_school_id")] = "school_no"
 
 # download durham 16-17, 17-18 demographic data
 dem.new = list.files("./data") %>%
@@ -256,17 +256,8 @@ df$high = ifelse(df$grade %in% grades[c(3,4,5,7,8,12,14,16)],1,0)
 ```{r}
 # table of years where free/reduced lunch data is missing
 # schools with missing data
-missingYears = df$school_no[is.na(df$pct_needy)] %>% unique()
-
-t = df %>%
-  filter(school_no %in% missingYears) %>%
-  select(school_no, year, pct_needy) %>%
-  arrange(school_no, year) %>%
-  reshape(idvar = "school_no", timevar = "year", direction = "wide")
-
+df$school_name[is.na(df$adm)] %>% unique()
 ```
-
-There are some years where we don't have free/reduced lunch price data for schools, but they still seem to be operating. I've emailed KC about this.
 
 ## Exploratory Data Analysis
 
@@ -277,51 +268,34 @@ df$debt_per_student = df$unpaid/df$adm
 
 hist(df$debt_per_student, main = "", xlab = "debt-per-student")
 ```
-Our data is pretty skewed. If we want to pick up on small differences, it may be worth trying a log transformation.
+Most schools have less than $5 of lunch debt per student, which is reasonable. Let's try dig into schools with extremely high debt, large fluctuations in debt, and the effects of CEP status.
 
-```{r, fig.width=5, fig.height=3, fig.align="center"}
-df$log_dps = log(df$debt_per_student+.01)
-
-hist(df$log_dps, main = "", xlab = "log(debt-per-student)")
-```
-Alright, much better! Still, our data is bimodal. Let's check if the first node, centered around roughly -4, are years where a school had no debt. These may be years where are school had CEP status.
-
-```{r}
-# check CEP status for schools with no debt
-df %>%
-  filter(unpaid == 0) %>%
-  select(school_no, year, cep) %>%
-  arrange(school_no, year)
-```
-For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
-
-Anyway, I'll stick to the log transformation and continue the EDA.
 
 ### Debt and Demographics
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
 # scatterplot of debt vs. pct needy
-ggplot(df, aes(pct_needy, debt_per_student)) +
+ggplot(df, aes(pct_free_reduced, debt_per_student)) +
   geom_point() +
-  xlab("Percent Needy") +
+  xlab("percent students with free and reduced lunch") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm")
 
 # scatterplot of debt vs. pct black
-g1 = ggplot(df, aes(black/adm, debt_per_student)) +
+g1 = ggplot(df, aes(pct_black, debt_per_student)) +
   geom_point() +
   xlab("Percent Black") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm")
 
 # scatterplot of debt vs. pct hispanic
-g2 = ggplot(df, aes(hispanic/adm, debt_per_student)) +
+g2 = ggplot(df, aes(pct_hispanic, debt_per_student)) +
   geom_point() +
   xlab("Percent Hispanic") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm")
 
 # scatterplot of debt vs. pct white
-g3 = ggplot(df, aes(white/adm, debt_per_student)) +
+g3 = ggplot(df, aes(pct_white, debt_per_student)) +
   geom_point() +
   xlab("Percent White") +
   ylab("debt-per-student") +
@@ -329,23 +303,23 @@ g3 = ggplot(df, aes(white/adm, debt_per_student)) +
 
 plot_grid(g1, g2, g3, ncol = 3)
 
-ggplot(df[], aes((hispanic+black)/adm, debt_per_student)) +
+ggplot(df[], aes(pct_black+pct_hispanic, debt_per_student)) +
   geom_point(aes(col = cep)) +
   xlab("Percent Minority")
 
-g1 = ggplot(df, aes(white/adm, black/adm)) +
+g1 = ggplot(df, aes(pct_white, pct_black)) +
   geom_point() +
   geom_smooth(method = "lm") +
   xlab("Percent White") +
   ylab("Percent Black")
 
-g2 = ggplot(df, aes(white/adm, hispanic/adm)) +
+g2 = ggplot(df, aes(pct_white, pct_hispanic)) +
   geom_point() +
   geom_smooth(method = "lm") +
   xlab("Percent White") +
   ylab("Percent Hispanic")
 
-g3 = ggplot(df, aes(black/adm, hispanic/adm)) +
+g3 = ggplot(df, aes(pct_black, pct_hispanic)) +
   geom_point() +
   geom_smooth(method = "lm") +
   xlab("Percent Black") +
@@ -359,7 +333,7 @@ Looks like as schools become more black, they also see more debt-per-student. Th
 ### Debt and Locale
 ```{r, fig.width=8,fig.height=4, fig.align="center"}
 # boxplot by urban centric local
-ggplot(df, aes(urban_centric_locale, log_dps)) +
+ggplot(df, aes(urban_centric_locale, debt_per_student)) +
   geom_boxplot()
 ```
 
@@ -626,9 +600,13 @@ NOTES:
 - CEP provisions began in 2014-15 in NC
 - data collected at different times so numbers won't match perfectly
 
+
+For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
+
+
 FOR NEXT WEEK:
-- get 2010-11, 2011-12, 2012-13, 2013-14 and 2017-18 CEP data
-- fill missing adm/pct needy data (why missing?)
+- fill missing adm/pct needy data
+- schools with CEP 2017-18 have over 100% needy?
 - follow up with James
 - add R2, other trend info
 - how do students get assigned to schools? any diversity initiatives?
