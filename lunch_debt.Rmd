@@ -243,28 +243,36 @@ dem = plyr::rbind.fill(dem, data.frame(dem.new[[1]]), data.frame(dem.new[[2]]))
 # merge with df
 df = left_join(df, dem, by=c("school_no","year"))
 
+# normalize debt by adm
+df$debt_per_student = df$unpaid/df$adm
+
 # standardize locales
 df$urban_centric_locale[grepl("City", df$urban_centric_locale)] = "City"
 df$urban_centric_locale[grepl("Suburb", df$urban_centric_locale)] = "Suburb"
 df$urban_centric_locale[grepl("Rural", df$urban_centric_locale)] = "Rural"
 
-# fill missing years
+# fill missing years for locale
 locales = df %>%
   filter(!is.na(urban_centric_locale)) %>%
   group_by(school_no, urban_centric_locale) %>%
   summarise(count = n()) %>%
   distinct()
 
-# normalize debt by adm
-df$debt_per_student = df$unpaid/df$adm
-
 # some schools have multiple classifications
 # choose the classification with more years
-to.rm = which(table(locales$school_no) > 1) # schools that have more than 1 local
-#for(sch in to.rm) {
-#  keep = 
-#  print(keep)
-#}
+mult.locales = which(table(locales$school_no) > 1) %>% names() # schools that have more than 1 locale in data
+for(i in 1:length(mult.locales)) {
+  ix = which(locales$school_no == mult.locales[i]) # indeces
+  m = min(locales$count[ix[1]], locales$count[ix[2]]) # minimums
+  locales = locales[-ix[m],] # remove
+}
+
+# locales as list
+locales.list = locales$urban_centric_locale
+names(locales.list) = locales$school_no
+
+# impute!
+df$urban_centric_locale = locales.list[df$school_no]
 
 # see grades
 grades = unique(df$grade)
