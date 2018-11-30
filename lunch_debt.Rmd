@@ -271,10 +271,28 @@ for(i in 1:length(mult.locales)) {
 locales.list = locales$urban_centric_locale
 names(locales.list) = locales$school_no
 
-# impute!
+# impute locales
 df$urban_centric_locale = locales.list[df$school_no]
 
-# see grades
+# many schools started offering Pre-K
+# ignore this for now since only interested in elementary, middle and high schools
+# replace Pre-K with K for consistency
+df$grade = df$grade %>%
+  trimws(.) %>% # trim trailing white space
+  gsub("Pre-K","K",.) %>% # replace Pre-K
+  gsub("[[:blank:]]+\\-[[:blank:]]+","\\-",.) %>% # remove space between dashes
+  gsub("[[:blank:]]+","-",.) %>% # add dash for consistency
+  gsub("0","",.) # remove 0 before single digit grades
+  
+# see schools with more than 1 grade entry
+g = df %>%
+  filter(!is.na(grade)) %>%
+  select(school_no, grade) %>%
+  distinct() %>%
+  group_by(school_no) %>%
+  mutate(occ = n()) %>%
+  filter(occ > 1)
+
 grades = unique(df$grade)
 
 # indicator for elementary school
@@ -484,7 +502,7 @@ Now, I'll try to predict total debt based on demographic factors and percent nee
 ### Predicting debt with demographics
 ```{r}
 # predict debt by demographics
-lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic, data = df[df$cep_long == 0,])
+lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic, data = df[df$cep == 0,])
 summary(lm.dem)
 
 # residuals
@@ -494,7 +512,7 @@ plot(lm.dem$residuals)
 ### Predicting debt with need
 ```{r}
 # predict debt by percent need
-lm.need = lm(debt_per_student ~ pct_free_reduced, data = df[df$cep_long == 0,])
+lm.need = lm(debt_per_student ~ pct_free_reduced, data = df[df$cep == 0,])
 summary(lm.need)
 
 # residuals
@@ -615,9 +633,8 @@ NOTES:
 - data collected at different times so numbers won't match perfectly
 - 353 is housed in Durham Tech, which complicates some of the data
 - For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
+- CEP schools for 2017-18 all have > 90% free/reduced, setting to 100% (doesn't affect analysis since excluded from regression)
 
-DATA QUESTIONS:
-- schools with CEP 2017-18 have over 100% needy?
 
 REPORTING QUESTIONS:
 - how do students get assigned to schools? any diversity initiatives?
