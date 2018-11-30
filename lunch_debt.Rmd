@@ -483,11 +483,8 @@ Now, I'll try to predict total debt based on demographic factors and percent nee
 
 ### Predicting debt with demographics
 ```{r}
-# add percent minority
-df$pct_minority = df$pct_black + df$pct_hispanic
-
 # predict debt by demographics
-lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic, data = df.non.cep)
+lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic, data = df[df$cep_long == 0,])
 summary(lm.dem)
 
 # residuals
@@ -497,7 +494,7 @@ plot(lm.dem$residuals)
 ### Predicting debt with need
 ```{r}
 # predict debt by percent need
-lm.need = lm(debt_per_student ~ pct_free_reduced, data = df.non.cep)
+lm.need = lm(debt_per_student ~ pct_free_reduced, data = df[df$cep_long == 0,])
 summary(lm.need)
 
 # residuals
