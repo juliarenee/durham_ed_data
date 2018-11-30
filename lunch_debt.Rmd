@@ -392,7 +392,8 @@ p1 = ggplot(df, aes(year, unpaid, group = school_no, col = cep_long)) +
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
-        plot.title = element_text(size = 12))
+        plot.title = element_text(size = 12)) +
+  facet_wrap(~ cep_long, nrow = 2)
 
 # debt/student over time
 p2 = ggplot(df, aes(year, debt_per_student, group = school_no, col = cep_long)) +
@@ -404,7 +405,8 @@ p2 = ggplot(df, aes(year, debt_per_student, group = school_no, col = cep_long)) 
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
-        plot.title = element_text(size = 12))
+        plot.title = element_text(size = 12)) +
+  facet_wrap(~ cep_long, nrow = 2)
 
 plot_grid(p1, p2)
 ```
@@ -440,13 +442,10 @@ We can also see that race is a proxy for need. The percentage of black and hispa
 
 Now, I'll try to predict total debt based on demographic factors and percent needy students. For this, I'll set schools with more than 100% free and reduced price lunch to just 100%, since those schools have completely free lunches.
 
+### Predicting debt with demographics
 ```{r}
 # add percent minority
 df$pct_minority = df$pct_black + df$pct_hispanic
-
-# filter to schools without cep status
-# includes schools that gained cep status for non-cep years
-df.non.cep = df[df$cep == 0,]
 
 # predict debt by demographics
 lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic, data = df.non.cep)
@@ -454,7 +453,10 @@ summary(lm.dem)
 
 # residuals
 plot(lm.dem$residuals)
+```
 
+### Predicting debt with need
+```{r}
 # predict debt by percent need
 lm.need = lm(debt_per_student ~ pct_free_reduced, data = df.non.cep)
 summary(lm.need)
@@ -580,75 +582,17 @@ plot_grid(ggdraw() + draw_label("Schools with Outlier Mean Debt-per-Student (Z >
           grid, ncol = 1, rel_heights=c(0.1, 1))
 ```
 
-### CEP Schools
-```{r cep_schools, fig.width=12, fig.height=4}
-# grab schools with CEP status at any point in time
-cep.schools = df %>%
-  group_by(school_no) %>%
-  filter(sum(cep, na.rm = TRUE) > 0) %>%
-  select(school_no)
-
-cep = df[df$school_no %in% unique(cep.schools$school_no),]
-
-# cep as factor
-cep$cep = as.factor(cep$cep)
-
-# debt/student over time
-p1 = ggplot(cep, aes(year, debt_per_student, group = school_no)) +
-  geom_point(aes(col = cep)) +
-  geom_line() +
-  ylab("Debt-per-Student") +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_fill_manual(labels = names) + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
-        axis.title.x = element_blank(),
-        plot.title = element_text(size = 12))
-
-# total debt over time
-p2 = ggplot(cep, aes(year, unpaid, group = school_no)) +
-  geom_point(aes(col = cep)) +
-  geom_line() +
-  ylab("Total Debt") +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_fill_manual(labels = names) + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
-        axis.title.x = element_blank(),
-        plot.title = element_text(size = 12))
-
-
-grid = plot_grid(p1 + theme(legend.position = "none"),
-          p2 + theme(legend.position = "none"),
-          legend = get_legend(p1),
-          ncol = 3)
-
-plot_grid(ggdraw() + draw_label("CEP Schools", size = 12),
-          grid, ncol = 1, rel_heights=c(0.1, 1))
-
-keep = c("2010-11", "2011-12", "2012-13", "2013-14")
-
-ggplot(cep[cep$year %in% keep,], aes((hispanic+black)/adm, debt_per_student)) +
-  geom_point(aes(col = cep)) +
-  xlab("Percent Minority")
-
-# plot this, but with non-cep schools
-# add indicator for longitudinal CEP status
-```
-
 NOTES:
 
 - CEP provisions began in 2014-15 in NC
 - data collected at different times so numbers won't match perfectly
-- 353 housed in Durham Tech
-
-For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
-
+- 353 is housed in Durham Tech, which complicates some of the data
+- For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
 
 FOR NEXT WEEK:
 - schools with CEP 2017-18 have over 100% needy?
-- follow up with James
-- add R2, other trend info
 - how do students get assigned to schools? any diversity initiatives?
 
 - external factors (paying off debt, CEP status)
-  - how to track people paying off debt/dates?
+- how to track people paying off debt/dates?
 - LONG TERM: can a student graduate with debt? are they barred from anything? what are consequences besides food?
