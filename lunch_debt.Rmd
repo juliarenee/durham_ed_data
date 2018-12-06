@@ -352,8 +352,8 @@ df$pct_free_reduced[df$pct_free_reduced > 1] = 1
 # remove data where no CEP/adm data
 df = df[!is.na(df$adm),]
 
-# add time series for regression
-df$ts = df$year %>% substr(., 0, 4) %>% as.Date(., format = "%Y")
+# add percent minority
+df$pct_minority = df$pct_black + df$pct_hispanic
 ```
 
 ## Exploratory Data Analysis
@@ -407,31 +407,37 @@ g3 = ggplot(df[df$cep == 0,], aes(pct_white, debt_per_student)) +
 
 plot_grid(g1, g2, g3, ncol = 3)
 
-ggplot(df[df$cep == 0,], aes(pct_black+pct_hispanic, debt_per_student)) +
+ggplot(df[df$cep == 0,], aes(pct_minority, debt_per_student)) +
   geom_point(aes(col = cep_long)) +
   xlab("Percent Minority") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm", se = FALSE)
 
-g1 = ggplot(df[df$cep == 0,], aes(pct_white, pct_black)) +
+g1 = ggplot(df, aes(pct_white, pct_black)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent White") +
   ylab("Percent Black")
 
-g2 = ggplot(df[df$cep == 0,], aes(pct_white, pct_hispanic)) +
+g2 = ggplot(df, aes(pct_white, pct_hispanic)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent White") +
   ylab("Percent Hispanic")
 
-g3 = ggplot(df[df$cep == 0,], aes(pct_black, pct_hispanic)) +
+g3 = ggplot(df, aes(pct_black, pct_hispanic)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent Black") +
   ylab("Percent Hispanic")
 
 plot_grid(g1, g2, g3, ncol = 3)
+
+ggplot(df, aes(pct_minority, pct_white)) +
+  geom_point(aes(col = cep_long)) +
+  geom_smooth(method = "lm", se = FALSE) +
+  xlab("Percent Minority") +
+  ylab("Percent White")
 ```
 
 There is a weak positive correlation between the percentage of students who have free and reduced price lunch and the debt-per-student at each school. It looks like schools with CEP status generally have a higher percentage of students on free/reduced lunch. As for demographics, there is also a weak positive correlation between the percentage of black students and debt-per-student. Conversely, there is a weak negative correlation between the percent of white students and debt-per-student. There doesn't appear to be a much of a relationship between the percentage of hispanic students and debt-per-student. That being said, if we look at the total percentage of minority students --- the percentage of black \textit{and} hispanic students --- there is a positive correlation with debt-per-student. Schools that CEP status are also starkly segregated, with very few white students and primarily black and hispanic students.
@@ -489,7 +495,13 @@ g3 = ggplot(df[df$cep == 0,], aes(pct_black, pct_free_reduced)) +
   xlab("Percent Black") +
   ylab("percent students with free and reduced lunch")
 
-plot_grid(g1, g2, g3, ncol = 3)
+g4 = ggplot(df[df$cep == 0,], aes(pct_minority, pct_free_reduced)) +
+  geom_point(aes(col = cep_long)) +
+  geom_smooth(method = "lm", se = FALSE) +
+  xlab("Percent Minority") +
+  ylab("percent students with free and reduced lunch")
+
+plot_grid(g1, g2, g3, g4, ncol = 4)
 ```
 
 We can also see that race is a proxy for need. The percentage of black and hispanic schools have a strong, positive correlation with the percentage of students on free and reduced price lunch. For white students, this relationship is strong and negative.
@@ -519,7 +531,11 @@ b3 = ggplot(df, aes(urban_centric_locale, pct_hispanic)) +
   geom_boxplot() +
   ylim(c(0,1))
 
-plot_grid(b1, b2, b3, ncol = 3)
+b4 = ggplot(df, aes(urban_centric_locale, pct_minority)) +
+  geom_boxplot() +
+  ylim(c(0,1))
+
+plot_grid(b1, b2, b3, b4, ncol = 4)
 ```
 On average, we also don't see any major differences in race by locale. However, there is a subset of rural schools that seem to primarily be white.
 
@@ -554,15 +570,17 @@ df %>%
 Most CEP schools are elementary schools. However, we're also seeing that the schools with the most debt are, on average, middle and high schools.
 
 ## Regression
+### Predicting debt per student
 
-I built four linear models to predict debt per student based on various combinations of the percentage of students on free/reduced price lunch, school level, locale and demographics.
+I built four linear models to predict debt per student based on various combinations of the percentage of students on free/reduced price lunch, school level, locale and demographics. For these models, I excluded years where CEP schools had CEP status, since their debt would be zero.
+
 ```{r}
 # predict debt by demographics
-lm.dem.locale = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic + grade_clean + urban_centric_locale, data = df[df$cep == 0,])
+lm.dem.locale = lm(debt_per_student ~ pct_minority + grade_clean + urban_centric_locale, data = df[df$cep == 0,])
 summary(lm.dem.locale)
 
 # predict debt by demographics, exclude locale
-lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic + grade_clean, data = df[df$cep == 0,])
+lm.dem = lm(debt_per_student ~ pct_minority + urban_centric_locale, data = df[df$cep == 0,])
 summary(lm.dem)
 
 # predict debt by percent need
@@ -577,13 +595,44 @@ anova(lm.dem.locale, lm.dem, lm.need.locale, lm.need)
 
 # last model with just need and grade is best
 # check residuals
-plot(lm.need$residuals)
+plot(lm.need.locale$residuals)
 
-# normal, but still a lot of noise
+# normally distributed around zero, but still a lot of noise
 ```
-None of my models for predicting debt per student explained a large amount of the variance in the data, but I was able to single out the best of my models. The percentage of students who receive free or reduced price lunch is a major predictor of debt per student. For every one percent increase in students who receive free/reduced price lunch, the average debt per student increases by \$0.10. Based on our EDA, we also know that schools with a high percentage of free/reduced lunch students tend to be mostly black and hispanic. Our model also found that high schools have \$1.84 more debt per student than elementary schools. For middle schools, that value is \$1.86. This is interesting, since most CEP schools are actually elementary schools.
+None of my models for predicting debt per student explained a large amount of the variance in the data, but I was able to single out the best of my models. The percentage of students who receive free or reduced price lunch is a major predictor of debt per student. For every one percent increase in students who receive free/reduced price lunch, the average debt per student increases by \$0.11. Based on our EDA, we also know that schools with a high percentage of free/reduced lunch students tend to be mostly black and hispanic. Our model also found that high schools have \$2.15 more debt per student than elementary schools. For middle schools, that value is \$1.33. This is interesting, since most CEP schools are actually elementary schools. It also appears that rural schools tend to have more debt per student than urban schools, and suburban schools have less debt per student.
 
-### Mean and variance of debt within schools
+### Predicting CEP schools
+
+In this section of my analysis, I try to predict whether a school has CEP status or not. I do this using a logistic regression. The idea here is simple: If I can build a logistic regression model and choose a threshold that accurately predicts the CEP schools, the false positives are, in essence, schools that should also have CEP status. This is an important question: Why do some schools have CEP status while others don't? Especially if there are schools with similar levels of need and debt per student? For my model, I am excluding years where schools had CEP status, and my outcome is `cep_long`, or the longitudinal indicator of whether a school has gained CEP status at any point in time.
+
+```{r}
+# train data before cep years
+df$ts = df$year %>% substr(., 0, 4) %>% as.numeric()
+train = df[df$ts < 2015,]
+
+# test data first year of cep status
+test = df[df$ts == 2015,]
+
+# debt per student, need, grade
+logit.1 = glm(cep_long ~ debt_per_student + pct_free_reduced + grade_clean, data = train, family="binomial")
+summary(logit.1)
+
+# debt per student, race, grade
+logit.2 = glm(cep_long ~ debt_per_student + pct_minority + grade_clean, data = train, family="binomial")
+summary(logit.2)
+
+# test for differences
+anova(logit.1, logit.2)
+```
+I'll stick with my second model, since they are both roughly good predictors of whether a school gains CEP status.
+
+```{r}
+exp(logit.2$coefficients) %>% signif(., 3)
+exp(logit.2$coefficients[3]/100) %>% signif(., 3)
+```
+For every additional dollar of debt per student, schools are 1.24 times more likely to receive CEP status. For every additional percentage point of minority students, schools are 1.56 times more likely to gain CEP status. We also see that high schools are 0.003 times less likely to be assigned CEP status. The intercept for middle schools is not significant.
+
+## Mean and variance of debt within schools
 I also looked at the mean and variance of debt per student by school. This gives us a sense of \textit{how} much debt per student fluctuates within in each school. Schools with a high variance should be looked into---perhaps fluctuations in debt are tied to CEP status? Or someone bailing a school out of debt? Similarly, schools with a generally high mean debt per student are of interest. Why are these schools struggling more than others?
 
 ```{r histograms, fig.width=8, fig.height=4}
