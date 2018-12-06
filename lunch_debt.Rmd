@@ -299,7 +299,7 @@ gradeBySchool = df %>%
 
 # list of unique grades
 grade.key = unique(df$grade) %>% sort(decreasing = TRUE)
-names(grade.key) = grades
+names(grade.key) = grade.key
 grade.key[1:2] = "Elementary"
 grade.key[c(3:4,8)] = "High"
 grade.key[c(5:6)] = "Middle"
@@ -326,11 +326,34 @@ df$grade_clean = grade_clean[df$school_no]
 df = df[-which(df$school_name=="DPS Hospital School"),]
 
 # remove 389, 700 since no longer active
-df = df[-which(df$school_no %in% c(389, 700)),]
+# remove 353, housed in Durham Tech
+df = df[-which(df$school_no %in% c(389, 700, 353)),]
 
-# 353 housed in Durham tech, to remove or not?
-missing = df$school_name[is.na(df$adm)] %>% unique()
-missing
+# grab schools with CEP status at any point in time
+cep.schools = df %>%
+  group_by(school_no) %>%
+  summarise(years_cep = sum(cep, na.rm = TRUE)) %>%
+  filter(years_cep > 0)
+
+# indicator for whether school has had CEP at any point in time
+# as of current, CEP var is on a yearly basis
+df$cep_long = 0
+df$cep_long[df$school_no %in% cep.schools$school_no] = 1
+
+# longitudinal as factor
+df$cep_long = as.factor(df$cep_long)
+
+# CEP status as factor
+df$cep = as.factor(df$cep)
+
+# free/reduced for CEP schools to 1 when > 1
+df$pct_free_reduced[df$pct_free_reduced > 1] = 1
+
+# remove data where no CEP/adm data
+df = df[!is.na(df$adm),]
+
+# add time series for regression
+df$ts = df$year %>% substr(., 0, 4) %>% as.Date(., format = "%Y")
 ```
 
 ## Exploratory Data Analysis
@@ -352,51 +375,31 @@ hist(df$debt_per_student, main = "", xlab = "debt-per-student")
 ```
 Most schools have less than \$5 of lunch debt per student. In Durham, a full-priced lunch costs \$2.90, and a reduced-price lunch cost \$0.40, according to the Durham Public Schools \href{https://www.dpsnc.net/site/handlers/filedownload.ashx?moduleinstanceid=196&dataid=173&FileName=2018-19%20FR%20Lunch%20App_Eng.pdf}{website}. That's about two unpaid full-priced lunches per student, or just over 12 unpaid reduced-price lunches per student. For the rest of my EDA, I'll delve into which schools have more debt and whether we can find systematic issues. I'll also be looking at schools that are part of the Community Eligibility Provision, which means all students receive free lunch.
 
-### CEP Status
-```{r cep_schools, fig.width=12, fig.height=4}
-# grab schools with CEP status at any point in time
-cep.schools = df %>%
-  group_by(school_no) %>%
-  summarise(years_cep = sum(cep, na.rm = TRUE)) %>%
-  filter(years_cep > 0)
-
-# indicator for whether school has had CEP at any point in time
-# as of current, CEP var is on a yearly basis
-df$cep_long = 0
-df$cep_long[df$school_no %in% cep.schools$school_no] = 1
-
-# longitudinal as factor
-df$cep_long = as.factor(df$cep_long)
-
-# CEP status as factor
-df$cep = as.factor(df$cep)
-```
-
 ### Debt and Demographics
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
 # scatterplot of debt vs. pct needy
-ggplot(df, aes(pct_free_reduced, debt_per_student)) +
+ggplot(df[df$cep == 0,], aes(pct_free_reduced, debt_per_student)) +
   geom_point(aes(col = cep_long)) +
   xlab("percent students with free and reduced lunch") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm", se = FALSE)
 
 # scatterplot of debt vs. pct black
-g1 = ggplot(df, aes(pct_black, debt_per_student)) +
+g1 = ggplot(df[df$cep == 0,], aes(pct_black, debt_per_student)) +
   geom_point(aes(col = cep_long)) +
   xlab("Percent Black") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm", se = FALSE)
 
 # scatterplot of debt vs. pct hispanic
-g2 = ggplot(df, aes(pct_hispanic, debt_per_student)) +
+g2 = ggplot(df[df$cep == 0,], aes(pct_hispanic, debt_per_student)) +
   geom_point(aes(col = cep_long)) +
   xlab("Percent Hispanic") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm", se = FALSE)
 
 # scatterplot of debt vs. pct white
-g3 = ggplot(df, aes(pct_white, debt_per_student)) +
+g3 = ggplot(df[df$cep == 0,], aes(pct_white, debt_per_student)) +
   geom_point(aes(col = cep_long)) +
   xlab("Percent White") +
   ylab("debt-per-student") +
@@ -404,25 +407,25 @@ g3 = ggplot(df, aes(pct_white, debt_per_student)) +
 
 plot_grid(g1, g2, g3, ncol = 3)
 
-ggplot(df, aes(pct_black+pct_hispanic, debt_per_student)) +
+ggplot(df[df$cep == 0,], aes(pct_black+pct_hispanic, debt_per_student)) +
   geom_point(aes(col = cep_long)) +
   xlab("Percent Minority") +
   ylab("debt-per-student") +
   geom_smooth(method = "lm", se = FALSE)
 
-g1 = ggplot(df, aes(pct_white, pct_black)) +
+g1 = ggplot(df[df$cep == 0,], aes(pct_white, pct_black)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent White") +
   ylab("Percent Black")
 
-g2 = ggplot(df, aes(pct_white, pct_hispanic)) +
+g2 = ggplot(df[df$cep == 0,], aes(pct_white, pct_hispanic)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent White") +
   ylab("Percent Hispanic")
 
-g3 = ggplot(df, aes(pct_black, pct_hispanic)) +
+g3 = ggplot(df[df$cep == 0,], aes(pct_black, pct_hispanic)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent Black") +
@@ -468,19 +471,19 @@ Schools with CEP status generally had a large amount of debt until the 2014-15 s
 
 ### Demographics and need
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
-g1 = ggplot(df, aes(pct_white, pct_free_reduced)) +
+g1 = ggplot(df[df$cep == 0,], aes(pct_white, pct_free_reduced)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent White") +
   ylab("percent students with free and reduced lunch")
 
-g2 = ggplot(df, aes(pct_hispanic, pct_free_reduced)) +
+g2 = ggplot(df[df$cep == 0,], aes(pct_hispanic, pct_free_reduced)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent Hispanic") +
   ylab("percent students with free and reduced lunch")
 
-g3 = ggplot(df, aes(pct_black, pct_free_reduced)) +
+g3 = ggplot(df[df$cep == 0,], aes(pct_black, pct_free_reduced)) +
   geom_point(aes(col = cep_long)) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("Percent Black") +
@@ -493,10 +496,10 @@ We can also see that race is a proxy for need. The percentage of black and hispa
 
 ### Locale and debt, race
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
-b1 = ggplot(df, aes(urban_centric_locale, unpaid)) +
+b1 = ggplot(df[df$cep == 0,], aes(urban_centric_locale, unpaid)) +
   geom_boxplot()
 
-b2 = ggplot(df, aes(urban_centric_locale, debt_per_student)) +
+b2 = ggplot(df[df$cep == 0,], aes(urban_centric_locale, debt_per_student)) +
   geom_boxplot()
 
 plot_grid(b1, b2, ncol = 2)
@@ -521,37 +524,68 @@ plot_grid(b1, b2, b3, ncol = 3)
 On average, we also don't see any major differences in race by locale. However, there is a subset of rural schools that seem to primarily be white.
 
 ### Debt and grade
+```{r}
+df %>%
+  filter(cep == 0) %>%
+  group_by(grade_clean) %>%
+  summarise(mean_debt = mean(unpaid),
+            mean_dps = mean(debt_per_student))
+```
+On average, high schools have the most total debt. However, middle schools, on average, have the most debt per student.
+
+```{r, fig.width=12, fig.height=4, fig.align="center"}
+b1 = ggplot(df[df$cep == 0,], aes(grade_clean, unpaid)) +
+  geom_boxplot()
+
+b2 = ggplot(df[df$cep == 0,], aes(grade_clean, debt_per_student)) +
+  geom_boxplot()
+
+plot_grid(b1, b2, ncol = 2)
+```
+
+### CEP Status and Grade Level
+```{r}
+df %>%
+  select(school_no, cep_long, grade_clean) %>%
+  distinct() %>%
+  group_by(grade_clean) %>%
+  summarise(cep_schools = sum(cep_long==1))
+```
+Most CEP schools are elementary schools. However, we're also seeing that the schools with the most debt are, on average, middle and high schools.
 
 ## Regression
 
-Now, I'll try to predict total debt based on demographic factors and percent needy students. For this, I'll set schools with more than 100% free and reduced price lunch to just 100%, since those schools have completely free lunches.
-
-### Predicting debt with demographics
+I built four linear models to predict debt per student based on various combinations of the percentage of students on free/reduced price lunch, school level, locale and demographics.
 ```{r}
 # predict debt by demographics
-lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic, data = df[df$cep == 0,])
+lm.dem.locale = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic + grade_clean + urban_centric_locale, data = df[df$cep == 0,])
+summary(lm.dem.locale)
+
+# predict debt by demographics, exclude locale
+lm.dem = lm(debt_per_student ~ pct_white + pct_black + pct_hispanic + grade_clean, data = df[df$cep == 0,])
 summary(lm.dem)
 
-# residuals
-plot(lm.dem$residuals)
-```
-
-### Predicting debt with need
-```{r}
 # predict debt by percent need
-lm.need = lm(debt_per_student ~ pct_free_reduced, data = df[df$cep == 0,])
+lm.need.locale = lm(debt_per_student ~ pct_free_reduced + grade_clean + urban_centric_locale, data = df[df$cep == 0,])
+summary(lm.need.locale)
+
+# predict debt by percent need, exclude locale
+lm.need = lm(debt_per_student ~ pct_free_reduced + grade_clean, data = df[df$cep == 0,])
 summary(lm.need)
 
-# residuals
+anova(lm.dem.locale, lm.dem, lm.need.locale, lm.need)
+
+# last model with just need and grade is best
+# check residuals
 plot(lm.need$residuals)
+
+# normal, but still a lot of noise
 ```
-
-
-There's a lot of fluctuation in total debt and debt-per-student across all schools, so I'll try to find the "most extreme" schools using a few measures. But first, let's take a look at the spread of our data.
+None of my models for predicting debt per student explained a large amount of the variance in the data, but I was able to single out the best of my models. The percentage of students who receive free or reduced price lunch is a major predictor of debt per student. For every one percent increase in students who receive free/reduced price lunch, the average debt per student increases by \$0.10. Based on our EDA, we also know that schools with a high percentage of free/reduced lunch students tend to be mostly black and hispanic. Our model also found that high schools have \$1.84 more debt per student than elementary schools. For middle schools, that value is \$1.86. This is interesting, since most CEP schools are actually elementary schools.
 
 ### Mean and variance of debt within schools
-
 I also looked at the mean and variance of debt per student by school. This gives us a sense of \textit{how} much debt per student fluctuates within in each school. Schools with a high variance should be looked into---perhaps fluctuations in debt are tied to CEP status? Or someone bailing a school out of debt? Similarly, schools with a generally high mean debt per student are of interest. Why are these schools struggling more than others?
+
 ```{r histograms, fig.width=8, fig.height=4}
 # calculate mean and variance of debt/student by school
 sums = df %>%
