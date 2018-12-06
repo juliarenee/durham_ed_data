@@ -283,6 +283,8 @@ df$grade = df$grade %>%
   gsub("[[:blank:]]+\\-[[:blank:]]+","\\-",.) %>% # remove space between dashes
   gsub("[[:blank:]]+","-",.) %>% # add dash for consistency
   gsub("0","",.) # remove 0 before single digit grades
+
+df$grade[df$grade=="K--6"] = "K-6"
   
 # see schools with more than 1 grade entry
 g = df %>%
@@ -291,21 +293,31 @@ g = df %>%
   distinct() %>%
   group_by(school_no) %>%
   mutate(occ = n()) %>%
-  filter(occ > 1)
+  arrange(school_no)
 
-grades = unique(df$grade)
+# only 342 poses a problem, since it seems that they have migrated from elementary to middle school (or vice versa) at some point in time... leave out of analysis for now
 
-# indicator for elementary school
-df$elementary = ifelse(df$grade %in% grades[c(1,5,9,11,13,14,15,16,18)], 1, 0)
-df$middle = ifelse(df$grade %in% grades[c(2,4,5,10,14,16,17)],1,0)
-df$high = ifelse(df$grade %in% grades[c(3,4,5,7,8,12,14,16)],1,0)
+# list of unique grades
+grades = unique(df$grade) %>% sort(decreasing = TRUE)
+names(grades) = grades
+grades[1:2] = "Elementary"
+grades[c(3:4,8)] = "High"
+grades[c(5:6)] = "Middle"
+grades[7] = "Middle and High"
 
-# table of years where free/reduced lunch data is missing
-# schools with missing data
-missing = df$school_name[is.na(df$adm)] %>% unique()
-missing
+# add schcool level based on clean grades
+g$grade_clean = grades[g$grade]
 
-# remove DPS hospital school 
+# ignore 342 for now
+g$grade_clean[g$school_no == "342"] = NA
+
+# only unique vals
+g = g %>% select(school_no, grade_clean) %>% unique()
+
+# merge with data
+df = left_join(df, g, by = "school_no")
+
+# remove DPS hospital school since non-standard school
 df = df[-which(df$school_name=="DPS Hospital School"),]
 
 # remove 389, 700 since no longer active
@@ -314,11 +326,19 @@ df = df[-which(df$school_no %in% c(389, 700)),]
 # 353 housed in Durham tech, to remove or not?
 missing = df$school_name[is.na(df$adm)] %>% unique()
 missing
-
-# and grades for missing years
 ```
 
 ## Exploratory Data Analysis
+```{r}
+# debt over time
+df %>%
+  group_by(year) %>%
+  summarise(total_debt = sum(unpaid, na.rm = TRUE),
+            mean_debt_per_student = mean(debt_per_student, na.rm = TRUE),
+            fullprice_lunches = total_debt/2.90)
+```
+At the end of the 2017-18 academic year, DPS had over \$209,000 in school lunch debt. That's over 72,000 unpaid lunches, with an average of \$5.10 of debt per student. It's also the most debt the school district has seen in the past eight years.
+
 ```{r, fig.width=5, fig.height=3, fig.align="center"}
 # histogram
 hist(df$debt_per_student, main = "", xlab = "debt-per-student")
