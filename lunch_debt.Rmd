@@ -287,7 +287,7 @@ df$grade = df$grade %>%
 df$grade[df$grade=="K--6"] = "K-6"
   
 # see schools with more than 1 grade entry
-g = df %>%
+gradeBySchool = df %>%
   filter(!is.na(grade)) %>%
   select(school_no, grade) %>%
   distinct() %>%
@@ -298,24 +298,28 @@ g = df %>%
 # only 342 poses a problem, since it seems that they have migrated from elementary to middle school (or vice versa) at some point in time... leave out of analysis for now
 
 # list of unique grades
-grades = unique(df$grade) %>% sort(decreasing = TRUE)
-names(grades) = grades
-grades[1:2] = "Elementary"
-grades[c(3:4,8)] = "High"
-grades[c(5:6)] = "Middle"
-grades[7] = "Middle and High"
+grade.key = unique(df$grade) %>% sort(decreasing = TRUE)
+names(grade.key) = grades
+grade.key[1:2] = "Elementary"
+grade.key[c(3:4,8)] = "High"
+grade.key[c(5:6)] = "Middle"
+grade.key[7] = "Middle and High"
 
 # add schcool level based on clean grades
-g$grade_clean = grades[g$grade]
+gradeBySchool$grade_clean = grade.key[gradeBySchool$grade]
 
 # ignore 342 for now
-g$grade_clean[g$school_no == "342"] = NA
+gradeBySchool$grade_clean[gradeBySchool$school_no == "342"] = NA
 
 # only unique vals
-g = g %>% select(school_no, grade_clean) %>% unique()
+gradeBySchool = gradeBySchool %>% select(school_no, grade_clean) %>% unique()
+
+# as list for easy replacement
+grade_clean = gradeBySchool$grade_clean
+names(grade_clean) = gradeBySchool$school_no
 
 # merge with data
-df = left_join(df, g, by = "school_no")
+df$grade_clean = grade_clean[df$school_no]
 
 # remove DPS hospital school since non-standard school
 df = df[-which(df$school_name=="DPS Hospital School"),]
@@ -330,12 +334,14 @@ missing
 
 ## Exploratory Data Analysis
 ```{r}
-# debt over time
+# debt over time, excluding non-standard and inactive schools
 df %>%
   group_by(year) %>%
   summarise(total_debt = sum(unpaid, na.rm = TRUE),
             mean_debt_per_student = mean(debt_per_student, na.rm = TRUE),
             fullprice_lunches = total_debt/2.90)
+
+# debt over time, all schools
 ```
 At the end of the 2017-18 academic year, DPS had over \$209,000 in school lunch debt. That's over 72,000 unpaid lunches, with an average of \$5.10 of debt per student. It's also the most debt the school district has seen in the past eight years.
 
