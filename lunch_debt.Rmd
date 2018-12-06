@@ -647,6 +647,24 @@ Based on my model (which isn't the best out there), there are 6 schools that wer
 ## K-means models
 In this section, I'll try to group the schools by high and low need through a k-means clustering algorithm.
 
+```{r}
+# remove non-numeric vars
+km.train = df %>%
+  filter(ts == 2014) %>%
+  select(-c(adm, grade, ts, predict, predict_ind)) %>%
+  select(unpaid, pct_free_reduced, pct_minority, debt_per_student) %>%
+  select_if(., is.numeric)
+
+# set seed for reproducibility
+set.seed(77) 
+
+# run k-means
+# 2 clusters, hopefully high and low need schools
+km.out = kmeans(km.train, centers = 2, nstart = 20)
+
+km.out$cluster
+km.out$betweenss
+```
 
 
 NOTES:
