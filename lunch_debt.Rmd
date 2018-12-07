@@ -451,7 +451,7 @@ There is a weak positive correlation between the percentage of students who have
 ```{r debt_over_time, fig.width=8, fig.height=4}
 # debt by school over time
 p1 = ggplot(df, aes(year, unpaid, group = school_no, col = cep_long)) +
-  geom_point() +
+  geom_point(aes(col=cep)) +
   geom_line() +
   ylab("total debt") +
   ggtitle("Total Debt by School") +
@@ -464,7 +464,7 @@ p1 = ggplot(df, aes(year, unpaid, group = school_no, col = cep_long)) +
 
 # debt/student over time
 p2 = ggplot(df, aes(year, debt_per_student, group = school_no, col = cep_long)) +
-  geom_point() +
+  geom_point(aes(col=cep)) +
   geom_line() +
   ylab("debt per student") +
   ggtitle("Debt per Student by School") +
@@ -596,7 +596,7 @@ colnames(elig) = colnames(elig) %>%
 elig = elig[elig$lea_id==320,]
 
 # select cols
-elig = elig[,c("school_id","eligible_to_participate","currently_participating")]
+elig = elig[,c("school_id","eligible_to_participate","currently_participating","near_eligible_to_participate")]
 
 # rename col
 colnames(elig)[1] = "school_no"
@@ -604,6 +604,7 @@ colnames(elig)[1] = "school_no"
 # indicators
 elig[,2] = ifelse(elig[,2]=="X",1,0)
 elig[,3] = ifelse(elig[,3]=="X",1,0)
+elig[,4] = ifelse(elig[,4]=="X",1,0)
 
 # filter to 2017-18 data
 # and arrange by school name
@@ -613,20 +614,36 @@ df17 = df %>%
 
 df17 = left_join(df17, elig, by = "school_no")
 
-# how many schools were eligible to participate
+# Eligibility and participation counts
 df17 %>%
-  group_by(grade_clean) %>%
   summarise(elig = sum(eligible_to_participate),
-            part = sum(currently_participating))
+            part = sum(currently_participating),
+            near = sum(near_eligible_to_participate))
+```
+
+### Eligible but non-participating CEP schools
+```{r}
+# total debt for eligible but not participating schools
+df17 %>%
+  group_by(eligible_to_participate, currently_participating) %>%
+  summarise(unpaid = sum(unpaid),
+            mean_dps = mean(debt_per_student),
+            avg_free_reduced = mean(pct_free_reduced),
+            avg_pct_minority = mean(pct_minority))
+
+# percentage of total 2017-18 debt
+79671.11/sum(df$unpaid[df$ts==2017])
 ```
 
 ### CEP Status and Grade Level
 ```{r}
-df %>%
-  select(school_no, cep_long, grade_clean) %>%
-  distinct() %>%
-  group_by(grade_clean) %>%
-  summarise(cep_schools = sum(cep_long==1))
+ggplot(df[df$cep_long==1,], aes(year, unpaid, group=school_name, col=school_name)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::dollar) +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
 ```
 Most CEP schools are elementary schools. However, we're also seeing that the schools with the most debt are, on average, middle and high schools.
 
@@ -640,6 +657,8 @@ CEP schools also have a higher concentration of minority students, on average.
 
 ### Debt before CEP status
 ```{r}
+# TODO: quantify debt among CEP schools the year before they enrolled in the program
+# this is a slightly inaccurate representation of total debt
 df %>%
   filter(ts < 2015) %>%
   group_by(cep_long) %>%
