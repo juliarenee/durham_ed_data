@@ -364,8 +364,6 @@ df %>%
   summarise(total_debt = sum(unpaid, na.rm = TRUE),
             mean_debt_per_student = mean(debt_per_student, na.rm = TRUE),
             fullprice_lunches = total_debt/2.90)
-
-# debt over time, all schools
 ```
 At the end of the 2017-18 academic year, DPS had over \$209,000 in school lunch debt. That's over 72,000 unpaid lunches, with an average of \$5.10 of debt per student. It's also the most debt the school district has seen in the past eight years.
 
@@ -546,6 +544,21 @@ df %>%
   group_by(grade_clean) %>%
   summarise(mean_debt = mean(unpaid),
             mean_dps = mean(debt_per_student))
+
+debtByGrade = df %>%
+  filter(cep == 0) %>%
+  group_by(year, grade_clean) %>%
+  summarise(mean_dps = mean(debt_per_student))
+
+ggplot(debtByGrade, aes(year, mean_dps, group=grade_clean, col=grade_clean)) +
+  geom_point() +
+  geom_line() +
+  ylab("Debt per Student") +
+  ggtitle("Debt per Student by Grade Level") +
+  scale_y_continuous(labels = scales::dollar) +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
 ```
 On average, high schools have the most total debt. However, middle schools, on average, have the most debt per student.
 
@@ -559,6 +572,9 @@ b2 = ggplot(df[df$cep == 0,], aes(grade_clean, debt_per_student)) +
 plot_grid(b1, b2, ncol = 2)
 ```
 
+## CEP Schools
+In this section, I explore the differences between schools that gained CEP status and schools that did not.
+
 ### CEP Status and Grade Level
 ```{r}
 df %>%
@@ -568,6 +584,22 @@ df %>%
   summarise(cep_schools = sum(cep_long==1))
 ```
 Most CEP schools are elementary schools. However, we're also seeing that the schools with the most debt are, on average, middle and high schools.
+
+```{r}
+df %>%
+  group_by(cep_long) %>%
+  summarise(mean_minority = mean(pct_minority))
+```
+CEP schools also have a higher concentration of minority students, on average.
+
+```{r}
+df %>%
+  filter(ts < 2015) %>%
+  group_by(cep_long) %>%
+  summarise(mean_dps = mean(debt_per_student),
+            mean_debt = mean(unpaid))
+```
+CEP schools also had, on average, higher debt and more debt per student than non-CEP schools prior to CEP assignments.
 
 ## Regression
 ### Predicting debt per student
@@ -664,8 +696,9 @@ km.out = kmeans(km.train, centers = 2, nstart = 20)
 
 km.out$cluster
 km.out$betweenss
-```
 
+#TODO: PCA reduces data to one dimension. Maybe that can be our measure of need?
+```
 
 NOTES:
 
