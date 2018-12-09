@@ -19,6 +19,8 @@ library(cowplot) # layout plots
 library(knitr) # nice tables
 
 df = read.csv("./data/lunchdebt.csv")
+df$cep = df$cep %>% as.factor()
+df$cep_long = df$cep_long %>% as.factor()
 ```
 
 ## Exploratory Data Analysis
@@ -262,6 +264,9 @@ elig = elig[,c("school_id","eligible_to_participate","currently_participating","
 # rename col
 colnames(elig)[1] = "school_no"
 
+# data type for merging
+elig$school_no = elig$school_no %>% as.numeric()
+
 # indicators
 elig[,2] = ifelse(elig[,2]=="X",1,0)
 elig[,3] = ifelse(elig[,3]=="X",1,0)
@@ -272,6 +277,7 @@ elig[,4] = ifelse(elig[,4]=="X",1,0)
 df17 = df %>%
   filter(ts == 2017) %>%
   arrange(school_name)
+
 
 df17 = left_join(df17, elig, by = "school_no")
 
@@ -327,17 +333,3 @@ df %>%
             mean_debt = mean(unpaid))
 ```
 CEP schools also had, on average, higher debt and more debt per student than non-CEP schools prior to CEP assignments.
-
-NOTES:
-
-- CEP provisions began in 2014-15 in NC
-- data collected at different times so numbers won't match perfectly
-- 353 is housed in Durham Tech, which complicates some of the data
-- For the most part, aside from missing data, it seems like schools with no debt are CEP schools. We can't get CEP status starting in 2010-11, since those were pilot years.
-- CEP schools for 2017-18 all have > 90% free/reduced, setting to 100% (doesn't affect analysis since excluded from regression)
-
-
-REPORTING QUESTIONS:
-- how do students get assigned to schools? any diversity initiatives?
-- does the district track when debt is payed off?
-- can a student graduate with debt? are they barred from anything? what are consequences besides food?
