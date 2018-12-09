@@ -29,7 +29,7 @@ Durham’s lunch debt crisis has been covered by WRAL News, CBS 17, and Indy Wee
 Food insecurity is a major barrier to student achievement. The effects CEP—and drawbacks keeping schools from participating—holds major consequences for families of public school students, particularly those who struggle to pay for their child’s lunch. This deep-dive not only provides the chance to examine how this relatively new policy is affecting Durham, but create a framework for investigating CEP schools and school lunch debt in districts across the country.
 
 ### Data Sources
-* End-of-Year unpaid meal data from James Keaten, director of child nutrition services at DPS.
+* End-of-Year unpaid meal data from James Keaten, director of child nutrition services at DPS
 * All free/reduced price lunch data was obtained from [ncpublicschools.org](http://www.ncpublicschools.org/fbs/resources/data/)
 * 2010-11 through 2015-16 demographic data was obtained from the [NCES ELSI table generator](https://nces.ed.gov/ccd/elsi/tableGenerator.aspx), code 91803
 * 2017-18 ADM data from ncpublicschools.org's [Average Daily Membership and Membership Last Day by School](http://www.ncpublicschools.org/fbs/accounting/data/)
