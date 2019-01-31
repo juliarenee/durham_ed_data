@@ -334,4 +334,36 @@ df$pct_minority = df$pct_black + df$pct_hispanic
 # year as numeric
 df$ts = df$year %>% substr(., 0, 4) %>% as.numeric()
 
-write.csv(df, "./data/lunchdebt.csv")
+# add 2017-18 school eligibility data
+elig = read.csv("./data/2018_cep_annual_notif.csv", stringsAsFactors = FALSE)
+
+# clean col names
+colnames(elig) = colnames(elig) %>%
+  tolower(.) %>%
+  gsub("\\.+","_",.)
+
+# filter to durham
+elig = elig[elig$lea_id==320,]
+
+# select cols
+elig = elig[,c("school_id","eligible_to_participate","near_eligible_to_participate")]
+
+# rename col
+colnames(elig) = c("school_no","elig","near_elig")
+
+# data type for merging
+elig$school_no = elig$school_no %>% as.numeric()
+
+# indicators
+elig[,2] = ifelse(elig[,2]=="X",1,0)
+elig[,3] = ifelse(elig[,3]=="X",1,0)
+elig[,4] = ifelse(elig[,4]=="X",1,0)
+
+# add year for merging
+elig$year = "2017-18"
+
+# merge eligibility data from 2017-18 with dataset
+df = left_join(df, elig, by = c("year", "school_no"))
+
+write.csv(df, "./data/lunchdebt.csv", row.names = FALSE)
+
