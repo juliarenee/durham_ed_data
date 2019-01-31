@@ -247,59 +247,29 @@ In this section, I explore the differences between schools that gained CEP statu
 
 ### Eligibility
 ```{r}
-# read CEP elibility data
-elig = read.csv("./data/2018_cep_annual_notif.csv", stringsAsFactors = FALSE)
-
-# clean col names
-colnames(elig) = colnames(elig) %>%
-  tolower(.) %>%
-  gsub("\\.+","_",.)
-
-# filter to durham
-elig = elig[elig$lea_id==320,]
-
-# select cols
-elig = elig[,c("school_id","eligible_to_participate","currently_participating","near_eligible_to_participate")]
-
-# rename col
-colnames(elig)[1] = "school_no"
-
-# data type for merging
-elig$school_no = elig$school_no %>% as.numeric()
-
-# indicators
-elig[,2] = ifelse(elig[,2]=="X",1,0)
-elig[,3] = ifelse(elig[,3]=="X",1,0)
-elig[,4] = ifelse(elig[,4]=="X",1,0)
-
-# filter to 2017-18 data
-# and arrange by school name
-df17 = df %>%
-  filter(ts == 2017) %>%
-  arrange(school_name)
-
-
-df17 = left_join(df17, elig, by = "school_no")
+# CEP as factor
+df$cep = df$cep %>% as.character() %>% as.numeric()
 
 # Eligibility and participation counts
-df17 %>%
-  summarise(elig = sum(eligible_to_participate),
-            part = sum(currently_participating),
-            near = sum(near_eligible_to_participate))
+df %>%
+  summarise(eligible = sum(elig, na.rm = TRUE),
+            participating = sum(participating, na.rm = TRUE),
+            near_eligible = sum(near_elig, na.rm = TRUE))
 ```
 
 ### Eligible but non-participating CEP schools
 ```{r}
 # total debt for eligible but not participating schools
-df17 %>%
-  group_by(eligible_to_participate, currently_participating) %>%
+df %>%
+  filter(ts==2017) %>%
+  group_by(elig, participating) %>%
   summarise(unpaid = sum(unpaid),
             mean_dps = mean(debt_per_student),
             avg_free_reduced = mean(pct_free_reduced),
             avg_pct_minority = mean(pct_minority))
 
 # percentage of total 2017-18 debt
-sum(df17$unpaid[(df17$eligible_to_participate==1) & (df17$cep==0)])/sum(df17$unpaid)
+sum(df$unpaid[(df$ts==2017) & (df$elig==1) & (df$cep==0)])/sum(df$unpaid[df$ts==2017])
 ```
 
 ### CEP Status and Grade Level

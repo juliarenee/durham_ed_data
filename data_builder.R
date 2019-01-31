@@ -346,13 +346,10 @@ colnames(elig) = colnames(elig) %>%
 elig = elig[elig$lea_id==320,]
 
 # select cols
-elig = elig[,c("school_id","eligible_to_participate","near_eligible_to_participate")]
+elig = elig[,c("school_id","eligible_to_participate","near_eligible_to_participate","currently_participating")]
 
 # rename col
-colnames(elig) = c("school_no","elig","near_elig")
-
-# data type for merging
-elig$school_no = elig$school_no %>% as.numeric()
+colnames(elig) = c("school_no","elig","near_elig","participating")
 
 # indicators
 elig[,2] = ifelse(elig[,2]=="X",1,0)
@@ -366,4 +363,3 @@ elig$year = "2017-18"
 df = left_join(df, elig, by = c("year", "school_no"))
 
 write.csv(df, "./data/lunchdebt.csv", row.names = FALSE)
-
