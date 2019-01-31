@@ -17,6 +17,7 @@ library(stringr) # string manipulation
 library(data.table) # working with tables
 library(cowplot) # layout plots
 library(knitr) # nice tables
+library(directlabels) # label plots
 
 df = read.csv("./data/lunchdebt.csv")
 df$cep = df$cep %>% as.factor()
@@ -263,26 +264,71 @@ df %>%
 df %>%
   filter(ts==2017) %>%
   group_by(elig, participating) %>%
-  summarise(unpaid = sum(unpaid),
-            mean_dps = mean(debt_per_student),
-            avg_free_reduced = mean(pct_free_reduced),
-            avg_pct_minority = mean(pct_minority))
+  summarise(n = n(),
+            unpaid = sum(unpaid),
+            mean_dps = round(mean(debt_per_student),2),
+            avg_free_reduced = round(mean(pct_free_reduced),2),
+            avg_pct_minority = round(mean(pct_minority),2))
 
-# percentage of total 2017-18 debt
-sum(df$unpaid[(df$ts==2017) & (df$elig==1) & (df$cep==0)])/sum(df$unpaid[df$ts==2017])
+# percentage of total 2017-18 debt from CEP eligible but not participating schools
+sum(df$unpaid[(df$ts==2017) & (df$elig==1) & (df$participating==0)])/sum(df$unpaid[df$ts==2017])
 ```
+Last year, debt was concentrated in schools that were not eligible to participate in the CEP program. However, eligible but non-participating CEP schools accounted for nearly 40 percent of all debt in Durham county.
 
 ### CEP Status and Grade Level
 ```{r}
-ggplot(df[df$cep_long==1,], aes(year, unpaid, group=school_name, col=school_name)) +
+df %>%
+  filter(ts==2017) %>%
+  group_by(grade_clean, elig, participating) %>%
+  summarise(n = n(),
+            unpaid = sum(unpaid),
+            mean_dps = round(mean(debt_per_student),2)) %>%
+  arrange(-mean_dps)
+
+df %>%
+  filter(ts==2017) %>%
+  group_by(grade_clean, elig, participating) %>%
+  summarise(n = n(),
+            unpaid = sum(unpaid),
+            mean_dps = round(mean(debt_per_student),2)) %>%
+  arrange(-unpaid)
+```
+Last year, all but one of the CEP schools were elementary schools. We also see that no middle schools participated in the CEP program, but the six that were eligible & non-participating had the most debt per student--nearly twice that of eligible but non-participating elementary schools. Eligible and non-participating high-schools, however, had relatively low debt per student at just $2.90 of unpaid meals per student. The overall debt for those schools was also fairly low.
+
+```{r}
+# indicator for whether school was eligible to participate in 2017-18
+el17 = df$school_no[(df$elig==1) & (df$ts==2017)]
+df$elig_long = 0
+df$elig_long[df$school_no %in% el17] = 1
+
+ggplot(df[df$elig_long==1,], aes(year,debt_per_student, group=school_name, col=cep_long)) +
   geom_point() +
   geom_line() +
+  ylab("debt per student") +
+  xlab("year") +
+  ggtitle("debt per student among schools that were cep eligible in 2017-18") +
+  geom_dl(aes(label=school_name), method = list("last.points")) +
   scale_y_continuous(labels = scales::dollar) +
+  scale_x_discrete(limits=c(levels(df$year),"")) + 
   theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
+
+ggplot(df[df$elig_long==1,], aes(year,unpaid, group=school_name, col=cep_long)) +
+  geom_point() +
+  geom_line() +
+  ylab("total debt") +
+  xlab("year") +
+  ggtitle("school lunch debt among schools that were cep eligible in 2017-18") +
+  geom_dl(aes(label=school_name), method = list("last.points")) +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_x_discrete(limits=c(levels(df$year),"")) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
+
 ```
-Most CEP schools are elementary schools. However, we're also seeing that the schools with the most debt are, on average, middle and high schools.
+
 
 ### Percent Minority
 ```{r}
