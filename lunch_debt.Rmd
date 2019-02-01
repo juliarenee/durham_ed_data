@@ -332,7 +332,7 @@ ggplot(df[df$elig_long==1,], aes(year,unpaid, group=school_name, col=cep_long)) 
         plot.title = element_text(size = 12))
 
 ggplot(df[df$cep_long==1,], aes(year,unpaid, group=school_name)) +
-  geom_point() +
+  geom_point(aes(col=cep)) +
   geom_line() +
   ylab("total debt") +
   xlab("year") +
@@ -347,7 +347,7 @@ ggplot(df[df$cep_long==1,], aes(year,unpaid, group=school_name)) +
         plot.title = element_text(size = 12))
 
 ggplot(df[df$cep_long==1,], aes(year,debt_per_student, group=school_name)) +
-  geom_point() +
+  geom_point(aes(col=cep)) +
   geom_line() +
   ylab("debt per student") +
   xlab("year") +
