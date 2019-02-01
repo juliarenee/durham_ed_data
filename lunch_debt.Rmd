@@ -310,6 +310,8 @@ ggplot(df[df$elig_long==1,], aes(year,debt_per_student, group=school_name, col=c
   geom_dl(aes(label=school_name), method = list("last.points")) +
   scale_y_continuous(labels = scales::dollar) +
   scale_x_discrete(limits=c(levels(df$year),"")) + 
+  annotate("rect", xmin = "2013-14", xmax = "2014-15", ymin = -Inf, ymax = Inf,
+             alpha = 0.2, fill = "pink") +  
   theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
@@ -323,6 +325,8 @@ ggplot(df[df$elig_long==1,], aes(year,unpaid, group=school_name, col=cep_long)) 
   geom_dl(aes(label=school_name), method = list("last.points")) +
   scale_y_continuous(labels = scales::dollar) +
   scale_x_discrete(limits=c(levels(df$year),"")) + 
+  annotate("rect", xmin = "2013-14", xmax = "2014-15", ymin = -Inf, ymax = Inf,
+             alpha = 0.2, fill = "pink") +  
   theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
@@ -335,7 +339,9 @@ ggplot(df[df$cep_long==1,], aes(year,unpaid, group=school_name)) +
   ggtitle("school lunch debt among schools that have participated in CEP") +
   geom_dl(aes(label=school_name), method = list("first.points")) +
   scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(limits=c("","",levels(df$year))) + 
+  scale_x_discrete(limits=c("","",levels(df$year))) +
+  annotate("rect", xmin = "2013-14", xmax = "2014-15", ymin = -Inf, ymax = Inf,
+             alpha = 0.2, fill = "pink") +  
   theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
@@ -349,11 +355,12 @@ ggplot(df[df$cep_long==1,], aes(year,debt_per_student, group=school_name)) +
   geom_dl(aes(label=school_name), method = list("first.points")) +
   scale_y_continuous(labels = scales::dollar) +
   scale_x_discrete(limits=c("","",levels(df$year))) + 
+  annotate("rect", xmin = "2013-14", xmax = "2014-15", ymin = -Inf, ymax = Inf,
+             alpha = 0.2, fill = "pink") +
   theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
 ```
-
 
 ### Percent Minority
 ```{r}
