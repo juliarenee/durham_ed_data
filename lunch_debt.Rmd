@@ -381,3 +381,12 @@ df %>%
             mean_debt = mean(unpaid))
 ```
 CEP schools also had, on average, higher debt and more debt per student than non-CEP schools prior to CEP assignments.
+
+## Individual school analysis
+### Neal Middle
+```{r}
+df %>%
+  filter(school_name == "Neal") %>%
+  select(year, unpaid, debt_per_student)
+```
+
