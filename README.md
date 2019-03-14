@@ -34,4 +34,4 @@ Food insecurity is a major barrier to student achievement. The effects CEP—and
 * 2010-11 through 2015-16 demographic data was obtained from the [NCES ELSI table generator](https://nces.ed.gov/ccd/elsi/tableGenerator.aspx), code 91803
 * 2017-18 ADM data from ncpublicschools.org's [Average Daily Membership and Membership Last Day by School](http://www.ncpublicschools.org/fbs/accounting/data/)
 * 2016-17, 2017-18 demographic data from [Durham Public Schools](https://www.dpsnc.net/site/Default.aspx?PageID=324)
-*Oct. 2018 CEP eligibility data from [ncpublicschools.gov](https://childnutrition.ncpublicschools.gov/information-resources/eligibility/community-eligibility-provision-cep/community-eligibility-provision?searchterm=CEP)
+* CEP eligibility data from [ncpublicschools.gov](https://childnutrition.ncpublicschools.gov/information-resources/eligibility/community-eligibility-provision-cep/community-eligibility-provision?searchterm=CEP)
