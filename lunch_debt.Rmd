@@ -19,7 +19,7 @@ library(cowplot) # layout plots
 library(knitr) # nice tables
 library(directlabels) # label plots
 
-df = read.csv("./data/lunchdebt.csv")
+df = read.csv("./data/master.csv")
 df$cep = df$cep %>% as.factor()
 df$cep_long = df$cep_long %>% as.factor()
 ```
