@@ -5,11 +5,11 @@ library(stringr) # string manipulation
 library(data.table) # working with tables
 
 # get all older files, .xls format
-old.dat = list.files("./data") %>%
+old.free_reduced = list.files("./data") %>%
   grep("freereduced.xls$", ., value = TRUE)
 
 # read files as table
-dat = lapply(paste("./data/",old.dat,sep=""), function(x) read_xls(x))
+dat = lapply(paste("./data/",old.free_reduced,sep=""), function(x) read_xls(x))
 
 # clean empty rows
 head(dat[[1]])
@@ -28,9 +28,9 @@ head(dat[[5]])
 colnames(dat[[5]]) = c("lea_no","lea_name","school_no","school_name","cep","adm","free","reduced","pct_needy","pct_needy_mlt")
 
 # get newer files, .xlsx format
-new.dat = list.files("./data") %>%
+new.free_reduced = list.files("./data") %>%
   grep("freereduced.xlsx$", ., value = TRUE)
-dat2 = lapply(paste("./data/",new.dat,sep=""), function(x) read_xlsx(x))
+dat2 = lapply(paste("./data/",new.free_reduced,sep=""), function(x) read_xlsx(x))
 
 # check for cleaning
 head(dat2[[1]])
@@ -50,7 +50,7 @@ dat = lapply(dat, function(x) data.frame(x))
 dat = lapply(dat, function(x) x[-nrow(x),])
 
 # add id for year
-yrs = c(old.dat, new.dat) %>% substr(., 0, 7) # get year to bind as column
+yrs = c(old.free_reduced, new.free_reduced) %>% substr(., 0, 7) # get year to bind as column
 for(i in 1:length(dat)) {
   dat[[i]]$year = yrs[i]
 }
@@ -334,22 +334,31 @@ df$pct_minority = df$pct_black + df$pct_hispanic
 # year as numeric
 df$ts = df$year %>% substr(., 0, 4) %>% as.numeric()
 
-# add 2017-18 school eligibility data
-elig = read.csv("./data/2018_cep_annual_notif.csv", stringsAsFactors = FALSE)
+# read CEP school eligibility data
+elig = list.files("./data") %>%
+  grep("cep_annual_notif.xlsx$", ., value = TRUE)
+elig = lapply(paste("./data/",elig,sep=""), function(x) read_xlsx(x))
 
-# clean col names
-colnames(elig) = colnames(elig) %>%
-  tolower(.) %>%
-  gsub("\\.+","_",.)
+# bind to one file
+elig = do.call(plyr::rbind.fill, elig)
+
+# fix up year
+elig$year = elig$year %>%
+  gsub("\\~\\$2015\\-", "2015-16", .)
+
+# read 2017-18 data (different format)
+cep1718 = read.csv("./data/2018_cep_annual_notif.csv")
+
+cep1718 = cep1718[,c(1,4,5,9)]
 
 # filter to durham
 elig = elig[elig$lea_id==320,]
 
 # select cols
-elig = elig[,c("school_id","eligible_to_participate","near_eligible_to_participate","currently_participating")]
+elig = elig[,c("school_id","year","pct_needy","cep")]
 
 # rename col
-colnames(elig) = c("school_no","elig","near_elig","participating")
+colnames(elig) = c("school_no","year","isp","participating")
 
 # indicators
 elig[,2] = ifelse(elig[,2]=="X",1,0)
