@@ -334,6 +334,8 @@ df$pct_minority = df$pct_black + df$pct_hispanic
 # year as numeric
 df$ts = df$year %>% substr(., 0, 4) %>% as.numeric()
 
+### WORK HERE
+
 # read CEP school eligibility data
 elig = list.files("./data") %>%
   grep("cep_annual_notif.xlsx$", ., value = TRUE)

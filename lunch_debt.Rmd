@@ -33,6 +33,15 @@ df %>%
             mean_debt_per_student = mean(debt_per_student, na.rm = TRUE),
             fullprice_lunches = total_debt/2.90)
 
+ggplot(df[df$year != '2010-11',], aes(year, unpaid)) + 
+  geom_bar(stat="sum") +
+  scale_y_continuous(labels = scales::dollar) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank(),
+        plot.title = element_text(size = 12))
+  
+
 # percent change since 2014-15, first CEP year
 mean(df$debt_per_student[df$ts==2017])/mean(df$debt_per_student[df$ts==2014])
 ```
