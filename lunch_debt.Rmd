@@ -262,9 +262,8 @@ df$cep = df$cep %>% as.character() %>% as.numeric()
 
 # Eligibility and participation counts
 df %>%
-  summarise(eligible = sum(elig, na.rm = TRUE),
-            participating = sum(participating, na.rm = TRUE),
-            near_eligible = sum(near_elig, na.rm = TRUE))
+  summarise(eligible = sum(eligible, na.rm = TRUE),
+            participating = sum(participating, na.rm = TRUE))
 ```
 
 ### Eligible but non-participating CEP schools
@@ -272,7 +271,7 @@ df %>%
 # total debt for eligible but not participating schools
 df %>%
   filter(ts==2017) %>%
-  group_by(elig, participating) %>%
+  group_by(eligible, participating) %>%
   summarise(n = n(),
             unpaid = sum(unpaid),
             mean_dps = round(mean(debt_per_student),2),
@@ -280,7 +279,7 @@ df %>%
             avg_pct_minority = round(mean(pct_minority),2))
 
 # percentage of total 2017-18 debt from CEP eligible but not participating schools
-sum(df$unpaid[(df$ts==2017) & (df$elig==1) & (df$participating==0)])/sum(df$unpaid[df$ts==2017])
+sum(df$unpaid[(df$ts==2017) & (df$eligible==1) & (df$participating==0)])/sum(df$unpaid[df$ts==2017])
 ```
 Last year, debt was concentrated in schools that were not eligible to participate in the CEP program. However, eligible but non-participating CEP schools accounted for nearly 40 percent of all debt in Durham county.
 
@@ -288,7 +287,7 @@ Last year, debt was concentrated in schools that were not eligible to participat
 ```{r}
 df %>%
   filter(ts==2017) %>%
-  group_by(grade_clean, elig, participating) %>%
+  group_by(grade_clean, eligible, participating) %>%
   summarise(n = n(),
             unpaid = sum(unpaid),
             mean_dps = round(mean(debt_per_student),2)) %>%
@@ -296,7 +295,7 @@ df %>%
 
 df %>%
   filter(ts==2017) %>%
-  group_by(grade_clean, elig, participating) %>%
+  group_by(grade_clean, eligible, participating) %>%
   summarise(n = n(),
             unpaid = sum(unpaid),
             mean_dps = round(mean(debt_per_student),2)) %>%
@@ -306,7 +305,7 @@ Last year, all but one of the CEP schools were elementary schools. We also see t
 
 ```{r}
 # indicator for whether school was eligible to participate in 2017-18
-el17 = df$school_no[(df$elig==1) & (df$ts==2017)]
+el17 = df$school_no[(df$eligible==1) & (df$ts==2017)]
 df$elig_long = 0
 df$elig_long[df$school_no %in% el17] = 1
 

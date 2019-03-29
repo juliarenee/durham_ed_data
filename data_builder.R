@@ -365,9 +365,10 @@ elig$school_no[elig$year=="2014-15"] = school_no_key$school_no[school_no_key$sch
 elig = elig %>% select(-c("enrollment","school_name"))
 
 # fix isp for 2017-18
+elig$isp[elig$year=="2014-15"] = elig$isp[elig$year=="2014-15"]/100
 elig$isp[elig$year=="2016-17"] = elig$isp[elig$year=="2016-17"]/100
 
 # merge cep data with master
 df = left_join(df, elig, by = c("year", "school_no"))
 
-write.csv(df, "./data/lunchdebt.csv", row.names = FALSE)
+write.csv(df, "./data/master.csv", row.names = FALSE)
