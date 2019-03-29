@@ -1,0 +1,2507 @@
+lea_no,lea_name,school_no,school_name,isp,eligible,participating
+10,Alamance-Burlington Schools,303,A.B. Middle College,20.35,, 
+10,Alamance-Burlington Schools,304,Alexander Wilson Elementary,33.96,, 
+10,Alamance-Burlington Schools,308,Altamahaw Ossipee Elem,32.25,, 
+10,Alamance-Burlington Schools,310,Broadview Middle,56.16,X,X
+10,Alamance-Burlington Schools,312,Highland Elementary School,25.44,, 
+10,Alamance-Burlington Schools,320,E M Yoder Elementary,29.57,, 
+10,Alamance-Burlington Schools,324,Eastern Alamance High,22.54,, 
+10,Alamance-Burlington Schools,326,Eastlawn Elementary,67.53,X,X
+10,Alamance-Burlington Schools,328,Edwin M Holt Elementary,24.06,, 
+10,Alamance-Burlington Schools,340,Elon Elementary,32.29,, 
+10,Alamance-Burlington Schools,346,B Everett Jordan Elem,38.57,, 
+10,Alamance-Burlington Schools,347,Garrett Elementary,39.83,, 
+10,Alamance-Burlington Schools,348,Graham High,42.52,X, 
+10,Alamance-Burlington Schools,350,Graham Middle,53.41,X, 
+10,Alamance-Burlington Schools,351,Grove Park Elementary,56.52,X,X
+10,Alamance-Burlington Schools,353,Hawfields Middle,32.4,, 
+10,Alamance-Burlington Schools,354,Harvey R Newlin Elementary,66.4,X,X
+10,Alamance-Burlington Schools,357,Haw River Elementary,60.65,X,X
+10,Alamance-Burlington Schools,358,Hillcrest Elementary,62.44,X,X
+10,Alamance-Burlington Schools,360,Hugh M Cummings High,49.06,X, 
+10,Alamance-Burlington Schools,362,Marvin B Smith Elementary,33.28,, 
+10,Alamance-Burlington Schools,364,North Graham Elementary,72.09,X,X
+10,Alamance-Burlington Schools,372,Pleasant Grove Elementary,50.39,X,X
+10,Alamance-Burlington Schools,374,R Homer Andrews Elementary,59.73,X,X
+10,Alamance-Burlington Schools,378,Ray Street Academy,48.28,X, 
+10,Alamance-Burlington Schools,380,South Graham Elementary,52.12,X,X
+10,Alamance-Burlington Schools,384,South Mebane Elementary,31.34,, 
+10,Alamance-Burlington Schools,388,Southern High,21.51,, 
+10,Alamance-Burlington Schools,390,Southern Middle,25.26,, 
+10,Alamance-Burlington Schools,392,Sylvan Elementary,42.19,X, 
+10,Alamance-Burlington Schools,394,Turrentine Middle,40.1,X, 
+10,Alamance-Burlington Schools,396,Walter M Williams High,33.02,, 
+10,Alamance-Burlington Schools,400,Western Alamance High,18.96,, 
+10,Alamance-Burlington Schools,403,Western Middle,20.23,, 
+10,Alamance-Burlington Schools,406,Woodlawn Middle,26.98,, 
+20,Alexander County Schools,302,Alexander Central High,24.95,, 
+20,Alexander County Schools,304,Bethlehem Elementary,28.63,, 
+20,Alexander County Schools,306,East Alexander Middle,35.49,, 
+20,Alexander County Schools,308,Ellendale Elementary,37.54,, 
+20,Alexander County Schools,316,Hiddenite Elementary,45.3,X, 
+20,Alexander County Schools,320,Stony Point Elementary,50.33,X, 
+20,Alexander County Schools,324,Sugar Loaf Elementary,27.98,, 
+20,Alexander County Schools,328,Taylorsville Elementary,0.6083,X,
+20,Alexander County Schools,330,West Alexander Middle,0.2709,, 
+20,Alexander County Schools,332,Wittenburg Elementary,0.3779,, 
+30,Alleghany County Schools,304,Alleghany High,0.3725,, 
+30,Alleghany County Schools,308,Glade Creek Elementary,0.4048,X,
+30,Alleghany County Schools,316,Piney Creek Elementary,0.2484,,
+30,Alleghany County Schools,320,Sparta Elementary,0.5465,X,
+40,Anson County Schools,304,Anson Co. Early College High,0.3023,,X
+40,Anson County Schools,305,Anson Challenge Academy,0.6796,X,X
+40,Anson County Schools,306,Anson High,0.5494,X,X
+40,Anson County Schools,308,Ansonville Elem,0.4233,X,X
+40,Anson County Schools,309,Anson Middle,0.5345,X,X
+40,Anson County Schools,311,Wadesboro Primary,0.7729,X,X
+40,Anson County Schools,316,Lilesville Elementary,0.5961,X,X
+40,Anson County Schools,324,Morven Elementary,0.8785,X,X
+40,Anson County Schools,328,Peachland-Polkton Elem,0.5441,X,X
+40,Anson County Schools,330,Wadesboro Elementary,0.768,X,X
+40,Anson County Schools,700,Anson New Technology School,0.4161,X,X
+50,Ashe County Schools,302,Ashe County High,0.3097,, 
+50,Ashe County Schools,305,Ashe County Middle,0.3992,, 
+50,Ashe County Schools,310,Blue Ridge Elementary,0.4359,X, 
+50,Ashe County Schools,330,Mountain View Elementary,0.4783,X, 
+50,Ashe County Schools,335,Westwood Elementary,0.4058,X, 
+60,Avery County Schools,302,Avery County High,0.2945,, 
+60,Avery County Schools,304,Banner Elk Elementary,0.3526,, 
+60,Avery County Schools,310,Cranberry Middle,0.3057,, 
+60,Avery County Schools,316,Crossnore Elementary,0.2955,, 
+60,Avery County Schools,318,Avery Middle,0.3554,, 
+60,Avery County Schools,322,Freedom Trail Elementary,0.4044,X, 
+60,Avery County Schools,328,Newland Elementary,0.4286,X, 
+60,Avery County Schools,332,Riverside Elementary,0.4016,X, 
+70,Beaufort County Schools,302,Eastern Elementary,0.6627,X,X
+70,Beaufort County Schools,308,Bath Elementary,0.2693,, 
+70,Beaufort County Schools,310,B C Ed Tech Center,0.6961,X,X
+70,Beaufort County Schools,311,Beaufort County Early College High School,0.3258,, 
+70,Beaufort County Schools,325,Chocowinity Middle,0.5013,X, 
+70,Beaufort County Schools,326,Chocowinity Primary,0.5714,X, 
+70,Beaufort County Schools,327,John C Tayloe Elementary,0.5926,X, 
+70,Beaufort County Schools,328,John Small Elementary,0.5597,X, 
+70,Beaufort County Schools,329,Northeast Elementary,0.5047,X, 
+70,Beaufort County Schools,330,Northside High,0.2725,, 
+70,Beaufort County Schools,338,P S Jones Middle,0.5087,X, 
+70,Beaufort County Schools,339,Southside High,0.4548,X, 
+70,Beaufort County Schools,340,S W Snowden Elementary,0.7238,X,X
+70,Beaufort County Schools,342,Washington High,0.4156,X, 
+80,Bertie County Schools,311,Bertie Early College,0.3392,,X
+80,Bertie County Schools,312,Bertie High,0.5987,X,X
+80,Bertie County Schools,314,Bertie Middle School,0.5982,X,X
+80,Bertie County Schools,348,Aulander Elementary,0.7516,X,X
+80,Bertie County Schools,356,West Bertie Elementary,0.7336,X,X
+80,Bertie County Schools,360,Colerain Elementary,0.659,X,X
+80,Bertie County Schools,362,Windsor Elementary,0.6634,X,X
+90,Bladen County Schools,304,B T Washington Primary,0.7991,X,X
+90,Bladen County Schools,315,Bladenboro Middle,0.5229,X,X
+90,Bladen County Schools,317,Bladenboro Primary,0.5981,X,X
+90,Bladen County Schools,318,Bladen Lakes Primary,0.6741,X,X
+90,Bladen County Schools,320,Clarkton Sch of Discovery,0.3652,,X
+90,Bladen County Schools,324,Dublin Primary,0.5688,X,X
+90,Bladen County Schools,328,East Arcadia Elementary,0.672,X,X
+90,Bladen County Schools,330,East Bladen High,0.4257,X,X
+90,Bladen County Schools,332,Elizabethtown Middle,0.5691,X,X
+90,Bladen County Schools,333,Elizabethtown Primary,0.6136,X,X
+90,Bladen County Schools,352,Plain View Primary,0.7105,X,X
+90,Bladen County Schools,365,Tar Heel Middle,0.5961,X,X
+90,Bladen County Schools,368,West Bladen High,0.4427,X,X
+100,Brunswick County Schools,302,Belville Elementary,0.3425,, 
+100,Brunswick County Schools,304,Bolivia Elementary,0.4623,X, 
+100,Brunswick County Schools,307,Brunswick Early College,0.2039,, 
+100,Brunswick County Schools,308,Brunswick County Academy,0.6087,X, 
+100,Brunswick County Schools,309,Cedar Grove Middle School,0.5906,X, 
+100,Brunswick County Schools,310,Jessie Mae Monroe Elementary,0.5359,X, 
+100,Brunswick County Schools,316,Leland Middle,0.3912,, 
+100,Brunswick County Schools,320,Lincoln Elementary,0.6352,X, 
+100,Brunswick County Schools,326,North Brunswick High,0.3191,, 
+100,Brunswick County Schools,332,Shallotte Middle,0.3829,, 
+100,Brunswick County Schools,334,South Brunswick High,0.286,, 
+100,Brunswick County Schools,335,South Brunswick Middle,0.349,, 
+100,Brunswick County Schools,336,Southport Elementary,0.356,, 
+100,Brunswick County Schools,338,Supply Elementary,0.625,X, 
+100,Brunswick County Schools,339,Town Creek Elementary School,0.4036,X, 
+100,Brunswick County Schools,340,Union Elementary,0.4083,X, 
+100,Brunswick County Schools,342,Virginia Williamson Elem,0.5374,X, 
+100,Brunswick County Schools,344,Waccamaw Elementary,0.4652,X, 
+100,Brunswick County Schools,348,West Brunswick High,0.3313,, 
+110,Buncombe County Schools,303,Community High School,0.695,X, 
+110,Buncombe County Schools,304,A C Reynolds High,0.2217,, 
+110,Buncombe County Schools,306,A C Reynolds Middle,0.3613,, 
+110,Buncombe County Schools,308,Barnardsville Elementary,0.5419,X, 
+110,Buncombe County Schools,318,Black Mountain Elementary,0.3944,, 
+110,Buncombe County Schools,320,Black Mountain Primary,0.3803,, 
+110,Buncombe County Schools,322,Buncombe County Early College,0.234,, 
+110,Buncombe County Schools,324,Candler Elementary,0.5101,X, 
+110,Buncombe County Schools,326,Cane Creek Middle,0.2337,, 
+110,Buncombe County Schools,332,Charles C Bell Elementary,0.3333,, 
+110,Buncombe County Schools,336,Charles D Owen High,0.3096,, 
+110,Buncombe County Schools,338,Charles D Owen Middle,0.3811,, 
+110,Buncombe County Schools,340,Clyde A Erwin High,0.3696,, 
+110,Buncombe County Schools,342,Clyde A Erwin Middle,0.4717,X, 
+110,Buncombe County Schools,348,Emma Elementary,0.5452,X,X
+110,Buncombe County Schools,352,Enka High,0.2916,, 
+110,Buncombe County Schools,356,Fairview Elementary,0.3136,, 
+110,Buncombe County Schools,366,Glen Arden Elementary,0.2387,, 
+110,Buncombe County Schools,368,Haw Creek Elementary,0.3031,, 
+110,Buncombe County Schools,370,Hominy Valley Elementary,0.34,, 
+110,Buncombe County Schools,372,Johnston Elementary,0.6113,X,X
+110,Buncombe County Schools,376,Leicester Elementary,0.5534,X, 
+110,Buncombe County Schools,379,North Buncombe Elementary,0.4156,X, 
+110,Buncombe County Schools,380,North Buncombe High,0.2484,, 
+110,Buncombe County Schools,381,North Buncombe Middle,0.2964,, 
+110,Buncombe County Schools,382,North Windy Ridge,0.3468,, 
+110,Buncombe County Schools,384,Oakley Elementary,0.5378,X, 
+110,Buncombe County Schools,388,Pisgah Elementary,0.5174,X, 
+110,Buncombe County Schools,401,Enka Middle,0.3973,, 
+110,Buncombe County Schools,408,Sand Hill-Venable Elem,0.511,X, 
+110,Buncombe County Schools,410,Avery's Creek Elementary,0.4522,X, 
+110,Buncombe County Schools,412,W D Williams Elementary,0.4954,X, 
+110,Buncombe County Schools,416,T C Roberson High,0.2265,, 
+110,Buncombe County Schools,420,Valley Springs Middle,0.3286,, 
+110,Buncombe County Schools,422,William W Estes Elementary,0.3866,, 
+110,Buncombe County Schools,428,Weaverville Elementary,0.2888,, 
+110,Buncombe County Schools,432,Weaverville Primary,0.3318,, 
+110,Buncombe County Schools,436,West Buncombe Elementary,0.4113,X, 
+110,Buncombe County Schools,444,Woodfin Elementary,0.5067,X,X
+110,Buncombe County Schools,450,Charles T. Koontz Intermediate,0.329,, 
+110,Buncombe County Schools,451,Joe P. Eblen Intermediate,0.4944,X, 
+110,Buncombe County Schools,500,Nesbitt Discovery Academy,0.1472,, 
+111,Asheville City Schools,302,Asheville High,0.2657,, 
+111,Asheville City Schools,304,Hall Fletcher Elementary,0.5155,X, 
+111,Asheville City Schools,306,Isaac Dickson Elementary,0.2909,, 
+111,Asheville City Schools,312,Claxton Elementary,0.3438,, 
+111,Asheville City Schools,332,Ira B Jones Elementary,0.3074,, 
+111,Asheville City Schools,356,Asheville Middle,0.3319,, 
+111,Asheville City Schools,360,Vance Elementary,0.3033,, 
+111,Asheville City Schools,700,School of Inquiry & Life Science,0.1589,, 
+120,Burke County Schools,304,Chesterfield Elementary,0.6068,X, 
+120,Burke County Schools,308,Hallyburton Academy,0.6471,X, 
+120,Burke County Schools,310,Burke Middle College,0.1641,, 
+120,Burke County Schools,312,Drexel Elementary,0.4797,X, 
+120,Burke County Schools,314,East Burke High,0.3068,, 
+120,Burke County Schools,315,East Burke Middle,0.37,, 
+120,Burke County Schools,316,Forest Hill Elementary,0.4286,X, 
+120,Burke County Schools,318,Freedom High,0.3126,, 
+120,Burke County Schools,320,George Hildebrand Elementary,0.4879,X, 
+120,Burke County Schools,324,Glen Alpine Elementary,0.5219,X, 
+120,Burke County Schools,334,Heritage Middle,0.3468,, 
+120,Burke County Schools,338,Hildebran Elementary,0.4633,X, 
+120,Burke County Schools,340,Mountain Crest,0.6,X, 
+120,Burke County Schools,344,Icard Elementary,0.4816,X, 
+120,Burke County Schools,346,Jimmy C. Draughn High School,0.2679,, 
+120,Burke County Schools,350,Liberty Middle,0.2643,, 
+120,Burke County Schools,352,North Liberty,0.3918,, 
+120,Burke County Schools,360,Mull Elementary,0.4572,X, 
+120,Burke County Schools,364,Oak Hill Elementary,0.4104,X, 
+120,Burke County Schools,368,Ray Childers Elementary,0.4895,X, 
+120,Burke County Schools,370,Robert L. Patton High School,0.2632,, 
+120,Burke County Schools,372,Rutherford College Elem,0.3686,, 
+120,Burke County Schools,374,Salem Elementary,0.3445,, 
+120,Burke County Schools,376,Table Rock Middle,0.3716,, 
+120,Burke County Schools,380,Valdese Elementary,0.3975,, 
+120,Burke County Schools,386,W A Young Elementary,0.4876,X, 
+120,Burke County Schools,390,Walter R Johnson Middle,0.3987,, 
+130,Cabarrus County Schools,114,Mary Frances Wall,0.2169,, 
+130,Cabarrus County Schools,115,The Lockhart Early Learning Center,0.9211,X, 
+130,Cabarrus County Schools,150,Long Pre-School,0.8851,X,X
+130,Cabarrus County Schools,304,A T Allen Elementary,0.4032,X, 
+130,Cabarrus County Schools,307,Cox Mill High School,0.0883,, 
+130,Cabarrus County Schools,308,Bethel Elementary,0.2828,, 
+130,Cabarrus County Schools,309,Beverly Hills Elementary,0.5115,X, 
+130,Cabarrus County Schools,310,Central Cabarrus High,0.2418,, 
+130,Cabarrus County Schools,311,Coltrane Webb Magnet Elementary,0.3683,, 
+130,Cabarrus County Schools,312,Harrisburg Elementary,0.078,, 
+130,Cabarrus County Schools,313,Concord Middle,0.5256,X, 
+130,Cabarrus County Schools,314,Concord High,0.3519,, 
+130,Cabarrus County Schools,315,JN Fries Magnet Middle,0.0932,, 
+130,Cabarrus County Schools,316,Jay M Robinson High,0.2734,, 
+130,Cabarrus County Schools,317,Opportunity School,0.4124,X, 
+130,Cabarrus County Schools,318,C C Griffin Middle,0.3436,, 
+130,Cabarrus County Schools,319,Cox Mill Elementary,0.0443,, 
+130,Cabarrus County Schools,320,Harris Road Middle,0.086,, 
+130,Cabarrus County Schools,321,Carl A Furr Elementary,0.2832,, 
+130,Cabarrus County Schools,322,Mount Pleasant Elementary,0.2795,, 
+130,Cabarrus County Schools,323,Mount Pleasant Middle,0.276,, 
+130,Cabarrus County Schools,324,Mount Pleasant High,0.2169,, 
+130,Cabarrus County Schools,325,Charles E. Boger Elementary,0.2229,, 
+130,Cabarrus County Schools,326,Northwest Cabarrus High,0.2537,, 
+130,Cabarrus County Schools,327,Northwest Cabarrus Middle,0.3126,, 
+130,Cabarrus County Schools,328,Royal Oaks Elementary,0.6667,X,X
+130,Cabarrus County Schools,329,Rocky River Elementary,0.4661,X, 
+130,Cabarrus County Schools,330,R B McAllister Elementary,0.4528,X, 
+130,Cabarrus County Schools,331,Pitts School Road Elementary,0.1892,, 
+130,Cabarrus County Schools,332,Hickory Ridge High School,0.0894,, 
+130,Cabarrus County Schools,333,Performance Learning Center,0.2966,, 
+130,Cabarrus County Schools,336,W R Odell Elementary,0.0866,, 
+130,Cabarrus County Schools,338,Weddington Hills Elementary,0.4112,X, 
+130,Cabarrus County Schools,340,Winecoff Elementary,0.5169,X, 
+130,Cabarrus County Schools,342,W M Irvin Elementary,0.5411,X, 
+130,Cabarrus County Schools,344,Wolf Meadow Elementary,0.588,X,X
+130,Cabarrus County Schools,345,Patriot's Elementary School,0.1883,, 
+130,Cabarrus County Schools,346,Hickory Ridge Middle School,0.1174,, 
+130,Cabarrus County Schools,350,Cabarrus-Kannapolis Early College High School,0.1733,, 
+130,Cabarrus County Schools,355,Winkler Middle School,0.337,, 
+132,Kannapolis City Schools,240,McKnight Head Start,1,X,X
+132,Kannapolis City Schools,304,A L Brown High,0.3937,,X
+132,Kannapolis City Schools,308,Forest Park Elementary,0.5227,X,X
+132,Kannapolis City Schools,312,Fred L Wilson Elementary,0.7984,X,X
+132,Kannapolis City Schools,328,Jackson Park Elementary,0.5869,X,X
+132,Kannapolis City Schools,329,Kannapolis Interm,0.5255,X,X
+132,Kannapolis City Schools,330,Kannapolis Middle,0.4811,X,X
+132,Kannapolis City Schools,332,Shady Brook Elementary,0.5797,X,X
+132,Kannapolis City Schools,336,Woodrow Wilson Elementary,0.8352,X,X
+140,Caldwell County Schools,304,Baton Elementary,0.4313,X, 
+140,Caldwell County Schools,305,Caldwell Co Career Ctr,0.205,, 
+140,Caldwell County Schools,306,Caldwell Co Gateway Sch,0.5366,X,X
+140,Caldwell County Schools,307,Horizons Elementary,0.614,X,X
+140,Caldwell County Schools,308,Collettsville School,0.4302,X, 
+140,Caldwell County Schools,309,Caldwell County Early College,0.1883,, 
+140,Caldwell County Schools,312,Davenport Elementary,0.5168,X, 
+140,Caldwell County Schools,316,Dudley Shoals Elementary,0.4111,X, 
+140,Caldwell County Schools,324,Gamewell Elementary,0.4814,X,X
+140,Caldwell County Schools,332,Gamewell Middle,0.5602,X, 
+140,Caldwell County Schools,336,Granite Falls Middle,0.3095,, 
+140,Caldwell County Schools,340,Granite Falls Elementary,0.3528,, 
+140,Caldwell County Schools,344,Happy Valley Elementary,0.4269,X, 
+140,Caldwell County Schools,348,Hibriten High,0.3699,, 
+140,Caldwell County Schools,352,Hudson Elementary,0.3953,, 
+140,Caldwell County Schools,356,Hudson Middle,0.3395,, 
+140,Caldwell County Schools,360,Kings Creek Elementary,0.3961,, 
+140,Caldwell County Schools,368,William Lenoir Middle,0.3809,, 
+140,Caldwell County Schools,372,Lower Creek Elementary,0.3397,, 
+140,Caldwell County Schools,376,Oak Hill Elementary,0.4058,X, 
+140,Caldwell County Schools,384,Sawmills Elementary,0.4796,X, 
+140,Caldwell County Schools,386,South Caldwell High,0.2672,, 
+140,Caldwell County Schools,388,Valmead Basic,0.6911,X,X
+140,Caldwell County Schools,390,West Caldwell High,0.4099,X, 
+140,Caldwell County Schools,392,West Lenoir Elementary,0.7663,X,X
+140,Caldwell County Schools,396,Whitnel Elementary,0.6108,X,X
+150,Camden County Schools,304,Camden County High,0.1351,, 
+150,Camden County Schools,308,Grandy Primary,0.227,, 
+150,Camden County Schools,310,Camden Intermediate School,0.1921,, 
+150,Camden County Schools,312,Camden Middle,0.1981,, 
+150,Camden County Schools,700,CamTech,0.1298,, 
+160,Carteret County Public Schools,169,Carteret PreSchool Center,0.7143,X, 
+160,Carteret County Public Schools,304,Atlantic Elementary,0.6049,X, 
+160,Carteret County Public Schools,306,Bogue Sound Elementary,0.5928,X, 
+160,Carteret County Public Schools,308,Beaufort Elementary,0.6738,X, 
+160,Carteret County Public Schools,309,Bridges Learning Center,0.8286,X, 
+160,Carteret County Public Schools,310,Beaufort Middle,0.5382,X, 
+160,Carteret County Public Schools,311,Broad Creek Middle,0.3003,, 
+160,Carteret County Public Schools,313,East Carteret High,0.4244,X, 
+160,Carteret County Public Schools,314,Croatan High,0.2757,, 
+160,Carteret County Public Schools,316,Harkers Island Elementary,0.5873,X, 
+160,Carteret County Public Schools,317,Morehead Elem at Camp Glenn,0.5072,X, 
+160,Carteret County Public Schools,318,Morehead City Middle,0.4303,X, 
+160,Carteret County Public Schools,322,Morehead City Primary,0.5516,X, 
+160,Carteret County Public Schools,324,Newport Elementary,0.6352,X, 
+160,Carteret County Public Schools,326,Newport Middle,0.5833,X, 
+160,Carteret County Public Schools,332,Smyrna Elementary,0.4846,X, 
+160,Carteret County Public Schools,344,West Carteret High,0.4053,X, 
+160,Carteret County Public Schools,352,White Oak Elementary,0.3309,, 
+170,Caswell County Schools,316,Bartlett Yancey High,0.4062,X, 
+170,Caswell County Schools,334,North Elementary,0.5487,X,X
+170,Caswell County Schools,338,N L Dillard Middle,0.4853,X, 
+170,Caswell County Schools,339,Oakwood Elementary,0.6179,X,X
+170,Caswell County Schools,342,South Elementary,0.4753,X,X
+170,Caswell County Schools,344,Stoney Creek Elementary,0.5876,X,X
+180,Catawba County Schools,302,Harry M Arndt Middle,0.3051,, 
+180,Catawba County Schools,304,Balls Creek Elementary,0.3188,, 
+180,Catawba County Schools,308,Bandys High,0.2,, 
+180,Catawba County Schools,312,Banoak Elementary,0.4021,X, 
+180,Catawba County Schools,316,Blackburn Elementary,0.3154,, 
+180,Catawba County Schools,320,Bunker Hill High,0.3246,, 
+180,Catawba County Schools,323,Catawba Rosenwald Education Center,0.4808,X, 
+180,Catawba County Schools,324,Catawba Elementary,0.4267,X, 
+180,Catawba County Schools,325,Catawba Valley Early College High School,0.1725,, 
+180,Catawba County Schools,326,Charles H Tuttle Elementary,0.2845,, 
+180,Catawba County Schools,332,Claremont Elementary,0.4472,X, 
+180,Catawba County Schools,336,Clyde Campbell Elementary,0.2909,, 
+180,Catawba County Schools,340,Fred T Foard High,0.2257,, 
+180,Catawba County Schools,342,Jacobs Fork Middle,0.2846,, 
+180,Catawba County Schools,343,Lyle Creek Elementary,0.3664,, 
+180,Catawba County Schools,344,Maiden Elementary,0.446,X, 
+180,Catawba County Schools,346,Maiden Middle,0.2541,, 
+180,Catawba County Schools,348,Maiden High,0.2406,, 
+180,Catawba County Schools,352,Mill Creek Middle,0.2229,, 
+180,Catawba County Schools,356,Mountain View Elementary,0.2621,, 
+180,Catawba County Schools,360,Oxford Elementary,0.4747,X, 
+180,Catawba County Schools,364,River Bend Middle,0.3622,, 
+180,Catawba County Schools,368,Sherrills Ford Elementary,0.1927,, 
+180,Catawba County Schools,372,Saint Stephens Elementary,0.5837,X, 
+180,Catawba County Schools,376,Saint Stephens High,0.2607,, 
+180,Catawba County Schools,379,Snow Creek Elementary,0.3032,, 
+180,Catawba County Schools,380,Startown Elementary,0.3523,, 
+180,Catawba County Schools,388,Webb A Murray Elementary,0.4471,X, 
+181,Hickory City Schools,312,Northview Middle,0.3455,, 
+181,Hickory City Schools,316,Grandview Middle,0.4866,X, 
+181,Hickory City Schools,318,Hickory Career and Arts Magnet,0.4908,X,X
+181,Hickory City Schools,322,Hickory High,0.3101,, 
+181,Hickory City Schools,326,W M Jenkins Elementary,0.3471,, 
+181,Hickory City Schools,332,Longview Elementary,0.7281,X,X
+181,Hickory City Schools,336,Oakwood Elementary,0.3965,, 
+181,Hickory City Schools,342,Southwest Elementary,0.4954,X,X
+181,Hickory City Schools,344,Viewmont Elementary,0.5317,X, 
+182,Newton Conover City Schools,304,Conover Special Education,0.3784,, 
+182,Newton Conover City Schools,316,Newton-Conover High,0.3329,, 
+182,Newton Conover City Schools,321,Newton-Conover Middle,0.3978,, 
+182,Newton Conover City Schools,322,Shuford Elementary,0.3911,, 
+182,Newton Conover City Schools,324,South Newton Elementary,0.584,X, 
+182,Newton Conover City Schools,328,North Newton E. S.,0.5245,X, 
+182,Newton Conover City Schools,700,The Discovery High School at Newton Conover,0.1992,, 
+190,Chatham County Schools,304,Bennett Elementary,0.2308,, 
+190,Chatham County Schools,308,Bonlee Elementary,0.2703,, 
+190,Chatham County Schools,310,SAGE Academy,0.4068,X, 
+190,Chatham County Schools,312,Chatham Middle,0.3712,, 
+190,Chatham County Schools,316,Chatham Central High,0.1794,, 
+190,Chatham County Schools,328,Horton Middle,0.184,, 
+190,Chatham County Schools,332,J S Waters Elementary,0.2717,, 
+190,Chatham County Schools,336,Jordan Matthews High,0.284,, 
+190,Chatham County Schools,339,Margaret B. Pollard Middle School,0.1331,, 
+190,Chatham County Schools,340,Moncure Elementary,0.2226,, 
+190,Chatham County Schools,341,North Chatham Elementary,0.1687,, 
+190,Chatham County Schools,342,Northwood High,0.1243,, 
+190,Chatham County Schools,346,Perry W Harrison Elementary,0.0948,, 
+190,Chatham County Schools,348,Pittsboro Elementary,0.1899,, 
+190,Chatham County Schools,350,Siler City Elementary,0.3608,, 
+190,Chatham County Schools,352,Silk Hope Elementary,0.2544,, 
+190,Chatham County Schools,370,Virginia Cross Elementary School,0.3853,, 
+200,Cherokee County Schools,304,Andrews Elementary School,0.5357,X,X
+200,Cherokee County Schools,308,Andrews High,0.3709,, 
+200,Cherokee County Schools,310,Andrews Middle,0.4309,X,X
+200,Cherokee County Schools,312,Hiwassee Dam Elementary/Middle,0.4545,X,X
+200,Cherokee County Schools,314,Hiwassee Dam High,0.2579,, 
+200,Cherokee County Schools,316,Marble Elementary,0.5455,X,X
+200,Cherokee County Schools,320,Martins Creek Elementary/Mid,0.5,X,X
+200,Cherokee County Schools,322,Mountain Youth School,0.6545,X,X
+200,Cherokee County Schools,324,Murphy Elementary School,0.5153,X,X
+200,Cherokee County Schools,328,Murphy High,0.3341,, 
+200,Cherokee County Schools,330,Murphy Middle,0.3778,,X
+200,Cherokee County Schools,332,Peachtree Elementary School,0.6,X,X
+200,Cherokee County Schools,336,Ranger Elementary/Middle,0.471,X,X
+200,Cherokee County Schools,350,Tri-County Early College High School,0.2609,, 
+210,Edenton/Chowan Schools,304,Chowan Middle,0.3791,, 
+210,Edenton/Chowan Schools,306,D F Walker Elementary,0.491,X, 
+210,Edenton/Chowan Schools,312,John A Holmes High,0.3356,, 
+210,Edenton/Chowan Schools,316,White Oak Elementary,0.5201,X, 
+220,Clay County Schools,308,Hayesville Elementary,0.4479,X, 
+220,Clay County Schools,310,Hayesville High,0.2894,, 
+220,Clay County Schools,312,Hayesville Middle,0.3702,, 
+230,Cleveland County Schools,304,Bethware Elementary,0.5926,X, 
+230,Cleveland County Schools,308,Boiling Springs Elementary,0.4617,X, 
+230,Cleveland County Schools,312,Burns High,0.3678,, 
+230,Cleveland County Schools,316,Burns Middle,0.4649,X, 
+230,Cleveland County Schools,320,Casar Elem School,0.5133,X, 
+230,Cleveland County Schools,322,Cleveland Early College High School,0.3433,, 
+230,Cleveland County Schools,324,Crest High School,0.3597,, 
+230,Cleveland County Schools,328,Crest Mid Sch of Technology,0.4417,X, 
+230,Cleveland County Schools,330,Turning Point Academy,0.7778,X, 
+230,Cleveland County Schools,334,East Elementary,0.6349,X, 
+230,Cleveland County Schools,336,Shelby Intermediate School,0.6004,X, 
+230,Cleveland County Schools,340,Fallston Elementary,0.548,X, 
+230,Cleveland County Schools,342,Graham Elementary,0.8754,X, 
+230,Cleveland County Schools,344,Grover Elementary,0.6495,X, 
+230,Cleveland County Schools,346,James Love Elementary,0.8085,X, 
+230,Cleveland County Schools,348,Jefferson Elementary,0.5903,X, 
+230,Cleveland County Schools,350,Kings Mountain High,0.3507,, 
+230,Cleveland County Schools,351,Kings Mountain Intermediate,0.4938,X, 
+230,Cleveland County Schools,352,Kings Mountain Middle,0.4521,X, 
+230,Cleveland County Schools,355,Marion Elementary School,0.6707,X, 
+230,Cleveland County Schools,357,North Elementary,0.6184,X, 
+230,Cleveland County Schools,359,North Shelby,0.5763,X, 
+230,Cleveland County Schools,361,Shelby High,0.4795,X, 
+230,Cleveland County Schools,362,Shelby Middle,0.5447,X, 
+230,Cleveland County Schools,364,Springmore Elementary,0.4375,X, 
+230,Cleveland County Schools,368,Township Three Elementary,0.691,X, 
+230,Cleveland County Schools,370,Union Elementary,0.5914,X, 
+230,Cleveland County Schools,376,Washington Math and Science,0.6723,X, 
+230,Cleveland County Schools,380,West Elementary,0.4006,X, 
+240,Columbus County Schools,304,Acme Delco Middle,0.4604,X,X
+240,Columbus County Schools,308,Acme Delco Elementary,0.4888,X,X
+240,Columbus County Schools,328,Cerro Gordo Elementary,0.5355,X,X
+240,Columbus County Schools,330,Chadbourn Middle,0.6797,X,X
+240,Columbus County Schools,332,Chadbourn Elementary,0.7377,X,X
+240,Columbus County Schools,334,East Columbus High,0.3694,,X
+240,Columbus County Schools,344,Evergreen Elementary,0.5912,X,X
+240,Columbus County Schools,352,Guideway Elementary,0.5232,X,X
+240,Columbus County Schools,354,Hallsboro-Artesia Elem,0.585,X,X
+240,Columbus County Schools,356,Hallsboro Middle,0.5024,X,X
+240,Columbus County Schools,368,Nakina Middle School,0.4428,X,X
+240,Columbus County Schools,370,Old Dock Elementary,0.4137,X,X
+240,Columbus County Schools,371,South Columbus High,0.3819,,X
+240,Columbus County Schools,372,Tabor City Elementary,0.6636,X,X
+240,Columbus County Schools,373,Columbus Career and College Academy,0.3639,,X
+240,Columbus County Schools,376,Tabor City Middle,0.5657,X,X
+240,Columbus County Schools,380,West Columbus High,0.4542,X,X
+240,Columbus County Schools,388,Williams Township Elementary,0.4221,X,X
+241,Whiteville City Schools,304,Central Middle,0.4777,X,X
+241,Whiteville City Schools,308,Edgewood Elementary,0.5113,X,X
+241,Whiteville City Schools,316,Whiteville High,0.3274,,X
+241,Whiteville City Schools,320,Whiteville Primary,0.6296,X,X
+250,Craven County Schools,304,Albert H Bangert Elementary,0.35,, 
+250,Craven County Schools,306,Ben D Quinn Elementary,0.3501,, 
+250,Craven County Schools,308,Bridgeton Elementary,0.4656,X, 
+250,Craven County Schools,312,Brinson Memorial Elementary,0.4221,X, 
+250,Craven County Schools,314,Craven Early College,0.2275,, 
+250,Craven County Schools,316,Creekside Elementary,0.1037,, 
+250,Craven County Schools,320,Vanceboro-Farm Life Elem,0.5426,X, 
+250,Craven County Schools,321,Early College EAST,0.1592,, 
+250,Craven County Schools,324,Grover C Fields Middle,0.3026,, 
+250,Craven County Schools,328,Graham A Barden Elementary,0.3988,, 
+250,Craven County Schools,332,H J MacDonald Middle,0.4387,X, 
+250,Craven County Schools,336,Havelock Elementary,0.4877,X, 
+250,Craven County Schools,340,Havelock High,0.235,, 
+250,Craven County Schools,344,Havelock Middle,0.4322,X, 
+250,Craven County Schools,348,J T Barber Elementary,0.7533,X, 
+250,Craven County Schools,350,James W Smith Elementary,0.5631,X, 
+250,Craven County Schools,356,New Bern High,0.3194,, 
+250,Craven County Schools,360,Oaks Road Elementary,0.6903,X, 
+250,Craven County Schools,362,Roger R Bell Elementary,0.4416,X, 
+250,Craven County Schools,364,Trent Park Elementary,0.5462,X, 
+250,Craven County Schools,368,Tucker Creek Middle,0.1589,, 
+250,Craven County Schools,372,West Craven High,0.3708,, 
+250,Craven County Schools,376,West Craven Middle,0.4555,X, 
+250,Craven County Schools,378,W Jesse Gurganus Elementary,0.2399,, 
+250,Craven County Schools,380,Arthur W Edwards Elementary,0.1085,, 
+260,Cumberland County Schools,302,Alma O Easom Elementary,0.3939,, 
+260,Cumberland County Schools,306,Armstrong Elementary,0.4617,X, 
+260,Cumberland County Schools,308,Ashley Elementary,0.5183,X, 
+260,Cumberland County Schools,310,Loyd E Auman Elementary,0.5126,X, 
+260,Cumberland County Schools,312,Beaver Dam Elementary,0.4124,X, 
+260,Cumberland County Schools,316,Lillian Black Elementary,0.729,X,X
+260,Cumberland County Schools,318,Jack Britt High School,0.1688,, 
+260,Cumberland County Schools,320,Brentwood Elementary,0.7228,X,X
+260,Cumberland County Schools,321,Douglas Byrd Middle,0.6705,X,X
+260,Cumberland County Schools,322,Douglas Byrd High,0.5904,X, 
+260,Cumberland County Schools,325,Cape Fear High,0.2882,, 
+260,Cumberland County Schools,326,Elizabeth M Cashwell Elem,0.6544,X,X
+260,Cumberland County Schools,332,Eastover Central Elementary,0.1938,, 
+260,Cumberland County Schools,336,Anne Chesnutt Middle,0.4568,X, 
+260,Cumberland County Schools,338,Cliffdale Elementary,0.6045,X,X
+260,Cumberland County Schools,340,College Lakes Elementary,0.5484,X, 
+260,Cumberland County Schools,342,C Wayne Collier Elementary,0.4847,X, 
+260,Cumberland County Schools,344,J W Coon Elementary,0.6298,X,X
+260,Cumberland County Schools,347,Cumberland International Early College High School,0.2934,, 
+260,Cumberland County Schools,348,Cumberland Mills Elem,0.5435,X,X
+260,Cumberland County Schools,352,Cumberland Road Elementary,0.6408,X,X
+260,Cumberland County Schools,354,Cross Creek Early College,0.3294,, 
+260,Cumberland County Schools,356,District No 7 Elementary,0.406,X, 
+260,Cumberland County Schools,357,Gray's Creek High School,0.2846,, 
+260,Cumberland County Schools,358,"Luther ""Nick"" Jeralds Middle",0.7398,X,X
+260,Cumberland County Schools,359,E E Smith High,0.5267,X, 
+260,Cumberland County Schools,361,Ferguson-Easley Elementary,0.8161,X,X
+260,Cumberland County Schools,362,Gray's Creek Middle,0.3275,, 
+260,Cumberland County Schools,363,Glendale Acres Elementary,0.5749,X, 
+260,Cumberland County Schools,364,Alderman Road Elementary,0.4917,X, 
+260,Cumberland County Schools,365,R Max Abbott Middle,0.4381,X, 
+260,Cumberland County Schools,366,Howard L Hall Elementary,0.2783,, 
+260,Cumberland County Schools,367,Bill Hefner Elementary,0.5094,X, 
+260,Cumberland County Schools,368,Hope Mills Middle,0.3717,, 
+260,Cumberland County Schools,369,John R Griffin Middle,0.19,, 
+260,Cumberland County Schools,370,Ed V Baldwin Elementary,0.4359,X, 
+260,Cumberland County Schools,371,Ireland Drive Middle,0.6589,X,X
+260,Cumberland County Schools,372,Lewis Chapel Middle,0.6186,X,X
+260,Cumberland County Schools,373,Gallberry Farm Elementary,0.3804,, 
+260,Cumberland County Schools,374,Alger B. Wilkins High School,0.7034,X, 
+260,Cumberland County Schools,375,Gray's Creek Elementary School,0.2738,, 
+260,Cumberland County Schools,380,Long Hill Elementary,0.2924,, 
+260,Cumberland County Schools,382,Lucile Souders Elementary,0.625,X,X
+260,Cumberland County Schools,383,Mac Williams Middle,0.3626,, 
+260,Cumberland County Schools,386,Margaret Willis Elementary,0.753,X,X
+260,Cumberland County Schools,388,Massey Hill Classical High,0.1325,, 
+260,Cumberland County Schools,396,Mary McArthur Elementary,0.6459,X,X
+260,Cumberland County Schools,397,E Melvin Honeycutt Elem,0.2697,, 
+260,Cumberland County Schools,398,E E Miller Elementary,0.4369,X, 
+260,Cumberland County Schools,400,Montclair Elementary,0.6283,X,X
+260,Cumberland County Schools,401,Morganton Road Elementary,0.556,X,X
+260,Cumberland County Schools,402,Manchester Elementary,0.6444,X,X
+260,Cumberland County Schools,403,New Century International Elementary,0.3598,, 
+260,Cumberland County Schools,404,William H Owen Elementary,0.6675,X,X
+260,Cumberland County Schools,405,Walker-Spivey Elementary,0.9005,X,X
+260,Cumberland County Schools,406,Pine Forest Middle,0.3006,, 
+260,Cumberland County Schools,407,Lake Rim Elementary,0.4164,X, 
+260,Cumberland County Schools,408,Pine Forest High,0.3652,, 
+260,Cumberland County Schools,410,Ponderosa Elementary,0.5929,X,X
+260,Cumberland County Schools,411,Reid Ross Classical,0.3705,, 
+260,Cumberland County Schools,412,Raleigh Road Elementary,0.3048,, 
+260,Cumberland County Schools,413,Pauline Jones Middle Alternative,0.791,X,X
+260,Cumberland County Schools,414,Benjamin J Martin Elem,0.5908,X,X
+260,Cumberland County Schools,415,Rockfish Elementary,0.3935,, 
+260,Cumberland County Schools,416,J W Seabrook Elementary,0.5551,X,X
+260,Cumberland County Schools,417,New Century Middle School,0.3168,, 
+260,Cumberland County Schools,418,Seventy-First Classical Mid,0.2383,, 
+260,Cumberland County Schools,424,Seventy-First High,0.4172,X, 
+260,Cumberland County Schools,425,South View Middle,0.5341,X, 
+260,Cumberland County Schools,426,Sherwood Park Elementary,0.5946,X,X
+260,Cumberland County Schools,427,South View High,0.3673,, 
+260,Cumberland County Schools,428,Spring Lake Middle,0.6696,X,X
+260,Cumberland County Schools,430,Stedman Elementary,0.3431,, 
+260,Cumberland County Schools,432,Stedman Primary,0.483,X, 
+260,Cumberland County Schools,434,Stoney Point Elementary,0.1647,, 
+260,Cumberland County Schools,440,Sunnyside Elementary,0.648,X,X
+260,Cumberland County Schools,444,Teresa C Berrien Elementary,0.9141,X,X
+260,Cumberland County Schools,446,Terry Sanford High,0.3729,, 
+260,Cumberland County Schools,448,Vanstory Hills Elementary,0.3654,, 
+260,Cumberland County Schools,449,Ramsey Street High Alternative,0.6913,X, 
+260,Cumberland County Schools,450,Warrenwood Elementary,0.6468,X,X
+260,Cumberland County Schools,452,Westarea Elementary,0.7784,X,X
+260,Cumberland County Schools,454,Westover Middle,0.571,X,X
+260,Cumberland County Schools,455,Westover High,0.5062,X, 
+260,Cumberland County Schools,459,William T Brown Elementary,0.5896,X,X
+260,Cumberland County Schools,700,Howard Life Sciences,0.2585,, 
+270,Currituck County Schools,304,Central Elementary,0.3762,, 
+270,Currituck County Schools,306,Currituck County High,0.1602,, 
+270,Currituck County Schools,308,Currituck County Middle,0.2889,, 
+270,Currituck County Schools,309,Jarvisburg Elementary School,0.3498,, 
+270,Currituck County Schools,310,Shawboro Elementary,0.2883,, 
+270,Currituck County Schools,311,Knapp Early College,0.0977,, 
+270,Currituck County Schools,312,Knotts Island Elementary,0.2405,, 
+270,Currituck County Schools,316,Moyock Elementary,0.1343,, 
+270,Currituck County Schools,318,Moyock Middle,0.1598,, 
+270,Currituck County Schools,320,W T Griggs Elementary,0.3909,, 
+280,Dare County Schools,302,Cape Hatteras Elementary,0.3947,, 
+280,Dare County Schools,304,Cape Hatteras Secondary,0.3636,, 
+280,Dare County Schools,306,Dare Co Alternative High,0.4063,X,X
+280,Dare County Schools,308,Kitty Hawk Elementary,0.1385,, 
+280,Dare County Schools,310,Nags Head Elementary,0.2317,, 
+280,Dare County Schools,312,Manteo Elementary,0.3022,, 
+280,Dare County Schools,316,Manteo High,0.2347,, 
+280,Dare County Schools,320,Manteo Middle,0.2362,, 
+280,Dare County Schools,324,First Flight Elementary,0.3085,, 
+280,Dare County Schools,328,First Flight Middle,0.1982,, 
+280,Dare County Schools,330,First Flight High School,0.137,, 
+290,Davidson County Schools,302,Brier Creek Elementary,0.4051,X, 
+290,Davidson County Schools,306,Northwest Elementary,0.2379,, 
+290,Davidson County Schools,307,Southmont Elementary,0.4709,X, 
+290,Davidson County Schools,308,Central Davidson High,0.2675,, 
+290,Davidson County Schools,309,Central Davidson Middle,0.3571,, 
+290,Davidson County Schools,310,Stoner Thomas,0.3711,, 
+290,Davidson County Schools,312,Churchland Elementary,0.436,X, 
+290,Davidson County Schools,314,Davidson County Extended Day,0.4853,X, 
+290,Davidson County Schools,315,Davidson Early College,0.1885,, 
+290,Davidson County Schools,316,D-T Elementary,0.3043,, 
+290,Davidson County Schools,320,Denton Elementary,0.4256,X, 
+290,Davidson County Schools,322,E Lawson Brown Middle,0.2964,, 
+290,Davidson County Schools,324,East Davidson High,0.2228,, 
+290,Davidson County Schools,328,Fair Grove Elementary,0.3672,, 
+290,Davidson County Schools,330,Friedberg Elementary,0.1707,, 
+290,Davidson County Schools,332,Hasty Elementary,0.3516,, 
+290,Davidson County Schools,333,Friendship Elementary,0.2475,, 
+290,Davidson County Schools,334,Ledford Middle,0.2312,, 
+290,Davidson County Schools,336,Ledford Senior High,0.1571,, 
+290,Davidson County Schools,344,Midway Elementary,0.2746,, 
+290,Davidson County Schools,348,North Davidson High,0.165,, 
+290,Davidson County Schools,350,North Davidson Middle,0.2215,, 
+290,Davidson County Schools,351,Oak Grove Middle School,0.2303,, 
+290,Davidson County Schools,352,Pilot Elementary,0.4208,X, 
+290,Davidson County Schools,356,Reeds Elementary,0.4021,X, 
+290,Davidson County Schools,364,Silver Valley Elementary,0.5351,X, 
+290,Davidson County Schools,365,South Davidson High,0.2918,, 
+290,Davidson County Schools,366,Southwood Elementary,0.5281,X, 
+290,Davidson County Schools,367,South Davidson Middle,0.4019,X, 
+290,Davidson County Schools,375,Tyro Elementary,0.4152,X, 
+290,Davidson County Schools,376,Tyro Middle,0.3322,, 
+290,Davidson County Schools,380,Wallburg Elementary,0.2423,, 
+290,Davidson County Schools,384,Welcome Elementary,0.3782,, 
+290,Davidson County Schools,388,West Davidson High,0.2291,, 
+290,Davidson County Schools,389,Yadkin Valley Regional Career Academy,0.1989,, 
+291,Lexington City Schools,308,Charles England Intermediate,0.7063,X,X
+291,Lexington City Schools,332,Lexington Middle,0.6138,X,X
+291,Lexington City Schools,336,Lexington Senior High,0.526,X,X
+291,Lexington City Schools,340,Pickett Elementary,0.6588,X,X
+291,Lexington City Schools,348,South Lexington Elementary,0.7382,X,X
+291,Lexington City Schools,350,South Lexington Developmental Center,0.4324,X,X
+291,Lexington City Schools,352,Southwest Elementary,0.6721,X,X
+292,Thomasville City Schools,316,Liberty Drive Elementary,0.6921,X,X
+292,Thomasville City Schools,318,Thomasville Primary,0.6608,X,X
+292,Thomasville City Schools,320,Thomasville Middle,0.586,X,X
+292,Thomasville City Schools,324,Thomasville High,0.5239,X,X
+298,Residential Schools,202,Eastern NC School for the Deaf,0.4032,X,X
+298,Residential Schools,203,Governor Morehead School for the Blind,0.3111,,X
+298,Residential Schools,204,NC School for the Deaf,0.3425,,X
+300,Davie County Schools,306,Central Davie Academy,0.434,X, 
+300,Davie County Schools,308,Cooleemee Elementary,0.5827,X, 
+300,Davie County Schools,310,Cornatzer Elementary,0.4053,X, 
+300,Davie County Schools,312,Davie County High,0.2561,, 
+300,Davie County Schools,314,Davie County Early College High School,0.2115,, 
+300,Davie County Schools,320,Mocksville Elementary,0.4652,X, 
+300,Davie County Schools,325,North Davie Middle,0.2907,, 
+300,Davie County Schools,326,Pinebrook Elementary,0.2914,, 
+300,Davie County Schools,328,Shady Grove Elementary,0.1401,, 
+300,Davie County Schools,330,South Davie Middle,0.452,X, 
+300,Davie County Schools,336,William R Davie Elementary,0.4663,X, 
+300,Davie County Schools,337,William Ellis Middle School,0.1824,, 
+310,Duplin County Schools,304,B F Grady Elementary,0.4473,X, 
+310,Duplin County Schools,308,Beulaville Elementary,0.4762,X, 
+310,Duplin County Schools,324,Charity Middle,0.4726,X, 
+310,Duplin County Schools,330,Chinquapin Elementary,0.3636,, 
+310,Duplin County Schools,336,Warsaw Elementary,0.6528,X, 
+310,Duplin County Schools,338,Duplin Early College High School,0.3815,, 
+310,Duplin County Schools,340,E E Smith Middle,0.5026,X, 
+310,Duplin County Schools,344,East Duplin High,0.3645,, 
+310,Duplin County Schools,352,James Kenan High,0.4245,X, 
+310,Duplin County Schools,356,Kenansville Elementary,0.4874,X, 
+310,Duplin County Schools,360,North Duplin Elementary,0.4354,X, 
+310,Duplin County Schools,364,North Duplin Jr Sr High,0.2942,, 
+310,Duplin County Schools,384,Rose Hill-Magnolia Elem,0.622,X, 
+310,Duplin County Schools,388,Wallace Elementary,0.5734,X, 
+310,Duplin County Schools,392,Wallace-Rose Hill High,0.3806,, 
+310,Duplin County Schools,396,Warsaw Middle,0.6021,X, 
+320,Durham Public Schools,304,Bethesda Elementary,0.5279,X,X
+320,Durham Public Schools,306,Brogden Middle,0.4897,X, 
+320,Durham Public Schools,308,Burton Elementary,0.6309,X, 
+320,Durham Public Schools,309,J D Clement Early College HS,0.2596,, 
+320,Durham Public Schools,310,Eastway Elementary,0.679,X,X
+320,Durham Public Schools,312,C E Jordan High,0.2593,, 
+320,Durham Public Schools,313,Easley Elementary,0.1837,, 
+320,Durham Public Schools,314,School for Creative Studies,0.2364,, 
+320,Durham Public Schools,315,Eno Valley Elementary,0.6117,X, 
+320,Durham Public Schools,316,George L Carrington Middle,0.4284,X, 
+320,Durham Public Schools,317,City of Medicine Academy,0.2682,, 
+320,Durham Public Schools,318,Club Boulevard Elementary,0.3557,, 
+320,Durham Public Schools,319,Creekside Elementary,0.3033,, 
+320,Durham Public Schools,320,Glenn Elementary,0.6093,X,X
+320,Durham Public Schools,322,Performance Learning Center,0.4494,X, 
+320,Durham Public Schools,323,Durham Sch of the Arts,0.2014,, 
+320,Durham Public Schools,324,Hillandale Elementary,0.417,X, 
+320,Durham Public Schools,325,Hillside High,0.4377,X, 
+320,Durham Public Schools,327,Hope Valley Elementary,0.4342,X, 
+320,Durham Public Schools,328,Holt Elementary,0.5081,X, 
+320,Durham Public Schools,332,Forest View Elementary,0.3465,, 
+320,Durham Public Schools,336,DPS Hospital School,0.0833,, 
+320,Durham Public Schools,338,James E Shepard Middle,0.4753,X, 
+320,Durham Public Schools,339,Lakewood Elementary,0.6387,X,X
+320,Durham Public Schools,340,Little River Elementary,0.2893,, 
+320,Durham Public Schools,341,Lakeview School,0.6707,X,X
+320,Durham Public Schools,342,Lakewood Montessori School,0.245,, 
+320,Durham Public Schools,343,Lucas Middle School,0.3974,, 
+320,Durham Public Schools,344,Fayetteville Street Elementary,0.6465,X,X
+320,Durham Public Schools,346,Lowe's Grove Middle,0.5533,X, 
+320,Durham Public Schools,347,George Watts Elementary,0.2938,, 
+320,Durham Public Schools,348,Mangum Elementary,0.1362,, 
+320,Durham Public Schools,352,Merrick-Moore Elementary,0.5729,X,X
+320,Durham Public Schools,354,Morehead Montessori,0.2296,, 
+320,Durham Public Schools,355,Neal Middle,0.5335,X, 
+320,Durham Public Schools,356,Northern High,0.3733,, 
+320,Durham Public Schools,360,Oak Grove Elementary,0.5022,X, 
+320,Durham Public Schools,362,Parkwood Elementary,0.4731,X, 
+320,Durham Public Schools,363,E K Powe Elementary,0.3936,, 
+320,Durham Public Schools,364,Pearsontown Elementary,0.1985,, 
+320,Durham Public Schools,365,Riverside High,0.3133,, 
+320,Durham Public Schools,366,Sherwood Githens Middle,0.4397,X, 
+320,Durham Public Schools,367,R N Harris Elementary,0.5583,X,X
+320,Durham Public Schools,368,Southern High,0.4487,X, 
+320,Durham Public Schools,369,Sandy Ridge Elementary,0.3682,, 
+320,Durham Public Schools,370,Rogers-Herr Middle,0.2448,, 
+320,Durham Public Schools,372,Southwest Elementary,0.393,, 
+320,Durham Public Schools,374,C C Spaulding Elementary,0.747,X,X
+320,Durham Public Schools,376,Spring Valley Elementary School,0.3508,, 
+320,Durham Public Schools,388,W G Pearson Elementary,0.6175,X, 
+320,Durham Public Schools,400,Y E Smith Elementary,0.6546,X,X
+320,Durham Public Schools,701,Hillside Tech High School,0.3288,, 
+330,Edgecombe County Schools,304,G W Bulluck Elementary,0.6444,X,X
+330,Edgecombe County Schools,308,G W Carver Elementary,0.5619,X,X
+330,Edgecombe County Schools,312,Coker-Wimberly Elementary,0.6737,X,X
+330,Edgecombe County Schools,326,Edgecombe Early College High,0.1688,, 
+330,Edgecombe County Schools,328,North Edgecombe High,0.6061,X,X
+330,Edgecombe County Schools,332,Phillips Middle,0.6547,X,X
+330,Edgecombe County Schools,334,Princeville Elementary School,0.7863,X,X
+330,Edgecombe County Schools,340,South Edgecombe Middle,0.4768,X,X
+330,Edgecombe County Schools,344,WA Pattillo Middle School,0.6806,X,X
+330,Edgecombe County Schools,348,West Edgecombe Middle,0.5385,X,X
+330,Edgecombe County Schools,350,SouthWest Edgecombe High,0.443,X,X
+330,Edgecombe County Schools,354,Stocks Elementary,0.7034,X,X
+330,Edgecombe County Schools,358,Tarboro High,0.4926,X,X
+330,Edgecombe County Schools,360,Martin Millennium Academy,0.5374,X,X
+340,Forsyth County Schools,308,Ashley Elementary,0.8204,X,X
+340,Forsyth County Schools,311,Atkins High,0.1583,, 
+340,Forsyth County Schools,314,Bolton Elementary,0.6101,X,X
+340,Forsyth County Schools,320,Brunson Elementary,0.4205,X,X
+340,Forsyth County Schools,326,Caleb's Creek Elementary,0.2617,, 
+340,Forsyth County Schools,330,Carver High,0.6921,X,X
+340,Forsyth County Schools,334,Cash Elementary,0.3132,, 
+340,Forsyth County Schools,336,Carter Vocational High,0.3473,, 
+340,Forsyth County Schools,344,Children's Center,0.3051,, 
+340,Forsyth County Schools,348,Clemmons Elementary,0.1275,, 
+340,Forsyth County Schools,350,Clemmons Middle,0.2905,, 
+340,Forsyth County Schools,351,Cook Elementary,0.8316,X,X
+340,Forsyth County Schools,354,The Downtown School,0.0905,, 
+340,Forsyth County Schools,364,East Forsyth High,0.2285,, 
+340,Forsyth County Schools,366,East Forsyth Middle,0.5326,X,X
+340,Forsyth County Schools,368,Easton Elementary,0.773,X,X
+340,Forsyth County Schools,372,Flat Rock Middle,0.5421,X,X
+340,Forsyth County Schools,376,Forest Park Elementary,0.7474,X,X
+340,Forsyth County Schools,380,Gibson Elementary,0.6747,X,X
+340,Forsyth County Schools,382,R B Glenn High,0.3282,, 
+340,Forsyth County Schools,384,Griffith Elementary,0.5855,X,X
+340,Forsyth County Schools,385,Main Street Academy,0.75,X,X
+340,Forsyth County Schools,390,Hall-Woodward Elementary,0.6984,X,X
+340,Forsyth County Schools,392,Hanes Middle,0.3174,, 
+340,Forsyth County Schools,400,Ibraham Elementary,0.6933,X,X
+340,Forsyth County Schools,403,Jefferson Elementary,0.186,, 
+340,Forsyth County Schools,406,Jefferson Middle,0.2003,, 
+340,Forsyth County Schools,416,Kernersville Elementary,0.5238,X,X
+340,Forsyth County Schools,420,Kernersville Middle,0.2486,, 
+340,Forsyth County Schools,424,Kimberley Park Elementary,0.8161,X,X
+340,Forsyth County Schools,426,Kimel Farm Elementary,0.372,, 
+340,Forsyth County Schools,427,Kingswood School,0.4861,X,X
+340,Forsyth County Schools,428,Konnoak Elementary,0.6827,X,X
+340,Forsyth County Schools,430,Diggs/Latham Elementary School,0.7039,X,X
+340,Forsyth County Schools,432,Lewisville Elementary,0.1798,, 
+340,Forsyth County Schools,436,Lowrance Middle,0.3784,, 
+340,Forsyth County Schools,440,Meadowlark Elementary,0.1259,, 
+340,Forsyth County Schools,442,Meadowlark Middle,0.1492,, 
+340,Forsyth County Schools,447,Middle Fork Elementary,0.6402,X,X
+340,Forsyth County Schools,448,Mineral Springs Elementary,0.695,X,X
+340,Forsyth County Schools,452,Mineral Springs Middle,0.6472,X,X
+340,Forsyth County Schools,453,Moore Elementary,0.4415,X, 
+340,Forsyth County Schools,454,Mount Tabor High,0.2807,, 
+340,Forsyth County Schools,457,Frank Morgan Elementary School,0.213,, 
+340,Forsyth County Schools,460,North Forsyth High,0.4528,X, 
+340,Forsyth County Schools,462,North Hills Elementary,0.7958,X,X
+340,Forsyth County Schools,464,Northwest Middle,0.4691,X,X
+340,Forsyth County Schools,472,Old Richmond Elementary,0.343,, 
+340,Forsyth County Schools,476,Old Town Elementary,0.6504,X,X
+340,Forsyth County Schools,480,Paisley Middle,0.3908,, 
+340,Forsyth County Schools,486,Parkland High,0.5119,X, 
+340,Forsyth County Schools,488,Kennedy Learning,0.5937,X, 
+340,Forsyth County Schools,490,Petree Elementary,0.8158,X,X
+340,Forsyth County Schools,492,Philo-Hill Magnet Academy,0.7658,X,X
+340,Forsyth County Schools,494,Piney Grove Elementary,0.2137,, 
+340,Forsyth County Schools,495,Reagan High,0.1064,, 
+340,Forsyth County Schools,496,Reynolds High,0.3028,, 
+340,Forsyth County Schools,504,Rural Hall Elementary,0.3936,, 
+340,Forsyth County Schools,508,Sedge Garden Elementary,0.3012,, 
+340,Forsyth County Schools,512,Sherwood Forest Elementary,0.1469,, 
+340,Forsyth County Schools,514,Smith Farm Elementary,0.4139,X, 
+340,Forsyth County Schools,516,Southeast Middle,0.2938,, 
+340,Forsyth County Schools,520,South Fork Elementary,0.6143,X,X
+340,Forsyth County Schools,528,Southwest Elementary,0.2351,, 
+340,Forsyth County Schools,530,Speas Elementary,0.618,X,X
+340,Forsyth County Schools,531,The Childrens Special School,0.4112,X, 
+340,Forsyth County Schools,532,Union Cross Elementary,0.365,, 
+340,Forsyth County Schools,536,Vienna Elementary,0.1247,, 
+340,Forsyth County Schools,540,Walkertown Elementary,0.4577,X,X
+340,Forsyth County Schools,542,Walkertown High School,0.3045,, 
+340,Forsyth County Schools,544,Walkertown Middle,0.4332,X, 
+340,Forsyth County Schools,548,Ward Elementary,0.4582,X, 
+340,Forsyth County Schools,556,West Forsyth High,0.133,, 
+340,Forsyth County Schools,560,Whitaker Elementary,0.1262,, 
+340,Forsyth County Schools,564,Wiley Middle,0.4686,X,X
+340,Forsyth County Schools,568,Winston-Salem Preparatory Acad,0.6559,X,X
+350,Franklin County Schools,304,Bunn Elementary,0.4304,X,X
+350,Franklin County Schools,308,Bunn High,0.3221,, 
+350,Franklin County Schools,310,Bunn Middle,0.3606,, 
+350,Franklin County Schools,312,Cedar Creek Middle,0.2359,, 
+350,Franklin County Schools,316,Edward Best Elementary,0.4721,X,X
+350,Franklin County Schools,317,Franklin County Early College High School,0.2948,, 
+350,Franklin County Schools,318,Franklinton Elementary,0.5565,X,X
+350,Franklin County Schools,321,Franklinton High,0.2916,, 
+350,Franklin County Schools,324,Franklinton Middle School,0.511,X,X
+350,Franklin County Schools,330,Laurel Mill Elementary,0.5563,X,X
+350,Franklin County Schools,331,Long Mill Elementary,0.3648,, 
+350,Franklin County Schools,332,Louisburg Elementary,0.5814,X,X
+350,Franklin County Schools,336,Louisburg High,0.386,, 
+350,Franklin County Schools,338,Terrell Lane Middle,0.4932,X,X
+350,Franklin County Schools,339,Royal Elementary,0.4695,X,X
+350,Franklin County Schools,340,Youngsville Elementary,0.317,, 
+360,Gaston County Schools,310,Ashbrook High,0.4204,X, 
+360,Gaston County Schools,320,Belmont Central Elementary,0.2225,, 
+360,Gaston County Schools,324,Belmont Middle,0.2527,, 
+360,Gaston County Schools,332,Bessemer City Central Elem,0.6704,X,X
+360,Gaston County Schools,336,Bessemer City High,0.4883,X, 
+360,Gaston County Schools,337,Gaston Early College,0.2371,, 
+360,Gaston County Schools,338,Bessemer City Primary,0.7466,X,X
+360,Gaston County Schools,339,William B Beam Intermediate,0.4688,X, 
+360,Gaston County Schools,340,Brookside Elementary,0.5271,X,X
+360,Gaston County Schools,344,Carr Elementary,0.542,X,X
+360,Gaston County Schools,348,Catawba Heights Elementary,0.4387,X, 
+360,Gaston County Schools,352,Chapel Grove Elementary,0.5915,X,X
+360,Gaston County Schools,360,Cherryville Senior High,0.3874,, 
+360,Gaston County Schools,364,Cherryville Elementary,0.4755,X, 
+360,Gaston County Schools,372,Warlick School,0.7317,X,X
+360,Gaston County Schools,376,Costner Elementary,0.392,, 
+360,Gaston County Schools,378,Stuart Cramer High School,0.2831,, 
+360,Gaston County Schools,380,Cramerton Middle,0.1898,, 
+360,Gaston County Schools,390,East Gaston High,0.2941,, 
+360,Gaston County Schools,392,"Edward D Sadler, Jr Elementary",0.751,X,X
+360,Gaston County Schools,394,Webb St Special Education,0.3988,, 
+360,Gaston County Schools,396,Forestview High,0.2558,, 
+360,Gaston County Schools,400,Gardner Park Elementary,0.5097,X,X
+360,Gaston County Schools,408,W P Grier Middle,0.569,X,X
+360,Gaston County Schools,416,Hawk's Nest Intermediate,0.3829,, 
+360,Gaston County Schools,418,Highland Sch of Technology,0.1526,, 
+360,Gaston County Schools,426,Holbrook Middle,0.4109,X, 
+360,Gaston County Schools,428,Hunter Huss High,0.5562,X, 
+360,Gaston County Schools,430,J B Page Elementary,0.2762,, 
+360,Gaston County Schools,431,John Chavis Middle,0.4133,X, 
+360,Gaston County Schools,432,Kiser Elementary,0.4231,X, 
+360,Gaston County Schools,436,Bessemer City Middle,0.5606,X,X
+360,Gaston County Schools,438,Lingerfeldt Elementary,0.7267,X,X
+360,Gaston County Schools,440,Lowell Elementary,0.4068,X, 
+360,Gaston County Schools,448,McAdenville Elementary,0.4555,X, 
+360,Gaston County Schools,456,Mount Holly Middle,0.3277,, 
+360,Gaston County Schools,460,Forest Heights Elementary,0.6816,X,X
+360,Gaston County Schools,464,New Hope Elementary,0.2066,, 
+360,Gaston County Schools,468,North Belmont Elementary,0.5394,X,X
+360,Gaston County Schools,470,North Gaston High,0.2039,, 
+360,Gaston County Schools,478,Pinewood Elementary,0.3724,, 
+360,Gaston County Schools,480,Pleasant Ridge Elementary,0.8028,X,X
+360,Gaston County Schools,482,Ida Rankin Elementary,0.4248,X, 
+360,Gaston County Schools,488,Robinson Elementary,0.4062,X, 
+360,Gaston County Schools,490,Sherwood Elementary,0.546,X, 
+360,Gaston County Schools,492,Hershal H Beam Elementary,0.6969,X,X
+360,Gaston County Schools,494,South Point High,0.1828,, 
+360,Gaston County Schools,498,Southwest Middle,0.5692,X,X
+360,Gaston County Schools,499,Springfield Primary,0.5047,X,X
+360,Gaston County Schools,500,Stanley Middle,0.3996,, 
+360,Gaston County Schools,504,Tryon Elementary,0.6038,X,X
+360,Gaston County Schools,510,W A Bess Elementary,0.2369,, 
+360,Gaston County Schools,514,William C Friday Middle,0.3927,, 
+360,Gaston County Schools,520,Woodhill Elementary,0.7549,X,X
+360,Gaston County Schools,526,York Chester Middle,0.7325,X,X
+370,Gates County Schools,304,Buckland Elementary,0.3886,, 
+370,Gates County Schools,308,Central Middle,0.3491,, 
+370,Gates County Schools,312,Gates County Senior High,0.2863,, 
+370,Gates County Schools,316,Gatesville Elementary,0.4033,X, 
+370,Gates County Schools,324,T S Cooper Elementary,0.4694,X, 
+380,Graham County Schools,306,Robbinsville Elementary,0.4877,X, 
+380,Graham County Schools,308,Robbinsville High,0.3134,, 
+380,Graham County Schools,310,Robbinsville Middle,0.3529,, 
+390,Granville County Schools,309,Butner-Stem Middle,0.3478,, 
+390,Granville County Schools,311,Butner-Stem Elementary,0.4704,X, 
+390,Granville County Schools,312,C G Credle Elementary,0.8188,X, 
+390,Granville County Schools,314,Center for Innovative Learning,0.8222,X, 
+390,Granville County Schools,316,Creedmoor Elementary,0.4083,X, 
+390,Granville County Schools,320,G C Hawley Middle,0.2416,, 
+390,Granville County Schools,322,Granville Central High School,0.3486,, 
+390,Granville County Schools,323,Granville Early College High School,0.1707,, 
+390,Granville County Schools,324,J F Webb High,0.4394,X, 
+390,Granville County Schools,328,Granville Magnet School,0.4305,X, 
+390,Granville County Schools,331,Mary Potter Middle,0.4563,X, 
+390,Granville County Schools,333,Mount Energy Elementary,0.3505,, 
+390,Granville County Schools,334,Northern Granville Middle,0.4075,X, 
+390,Granville County Schools,336,Joe Toler-Oak Hill Elem,0.4149,X, 
+390,Granville County Schools,360,Stovall-Shaw Elementary,0.4646,X, 
+390,Granville County Schools,362,Tar River Elementary,0.2636,, 
+390,Granville County Schools,364,West Oxford Elementary,0.5648,X, 
+390,Granville County Schools,368,Wilton Elementary,0.2577,, 
+390,Granville County Schools,700,JF Webb High School of Health,0.1661,, 
+390,Granville County Schools,704,S Granville High of Health Sci,0.2068,, 
+390,Granville County Schools,705,South Granville High School of Integrated Technology and Leaders,0.2372,, 
+400,Greene County Schools,308,Greene Central High,0.4983,X, 
+400,Greene County Schools,312,Greene County Middle,0.6015,X, 
+400,Greene County Schools,315,Greene Early College High,0.4106,X, 
+400,Greene County Schools,318,Greene County Intermediate Schools,0.6234,X, 
+400,Greene County Schools,321,Snow Hill Primary,0.6597,X, 
+400,Greene County Schools,332,West Greene Elementary,0.6514,X, 
+410,Guilford County Schools,304,Alamance Elementary,0.2718,, 
+410,Guilford County Schools,307,Edwin A Alderman Elementary,0.4977,X,X
+410,Guilford County Schools,310,Allen Jay Elementary,0.5365,X,X
+410,Guilford County Schools,311,Allen Jay Middle - A Preparatory Academy,0.4467,X,X
+410,Guilford County Schools,313,Southern Middle,0.4435,X,X
+410,Guilford County Schools,316,Allen Middle,0.5347,X,X
+410,Guilford County Schools,319,T Wingate Andrews High,0.5569,X,X
+410,Guilford County Schools,322,Archer Elementary,0.5318,X,X
+410,Guilford County Schools,325,Aycock Middle,0.5372,X,X
+410,Guilford County Schools,326,Middle College High at Bennett,0.3077,,X
+410,Guilford County Schools,328,Bessemer Elementary,0.7167,X,X
+410,Guilford County Schools,331,Bluford Elementary,0.6483,X,X
+410,Guilford County Schools,334,Brightwood Elementary,0.5386,X,X
+410,Guilford County Schools,337,Brooks Global,0.2469,, 
+410,Guilford County Schools,340,Monticello-Brown Summit Elem,0.4652,X, 
+410,Guilford County Schools,341,Brown Summit Middle,0.0462,, 
+410,Guilford County Schools,343,Claxton Elementary,0.2184,, 
+410,Guilford County Schools,346,Colfax Elementary,0.2308,, 
+410,Guilford County Schools,349,Ceasar Cone Elementary,0.7427,X,X
+410,Guilford County Schools,355,Dudley High,0.5667,X,X
+410,Guilford County Schools,358,Eastern Guilford High,0.3885,, 
+410,Guilford County Schools,361,Erwin Montessori,0.4119,X, 
+410,Guilford County Schools,364,Fairview Elementary,0.713,X,X
+410,Guilford County Schools,366,Waldo C Falkener Sr Elementary,0.7074,X,X
+410,Guilford County Schools,367,Ferndale Middle,0.5369,X,X
+410,Guilford County Schools,370,Florence Elementary,0.2063,, 
+410,Guilford County Schools,373,Julius I Foust Elementary,0.6233,X,X
+410,Guilford County Schools,376,Cyrus P Frazier Elementary,0.5517,X,X
+410,Guilford County Schools,379,Gateway Education Center,0.4178,X, 
+410,Guilford County Schools,382,Gibsonville Elementary,0.3519,, 
+410,Guilford County Schools,385,Gillespie Park Elementary,0.7575,X,X
+410,Guilford County Schools,388,General Greene Elementary,0.2262,, 
+410,Guilford County Schools,390,GC Middle College High,0.188,, 
+410,Guilford County Schools,391,Penn-Griffin Middle,0.4197,X, 
+410,Guilford County Schools,394,Grimsley High,0.2928,, 
+410,Guilford County Schools,395,Early College at Guilford,0.0459,, 
+410,Guilford County Schools,396,High School Ahead Academy,0.6458,X,X
+410,Guilford County Schools,397,Guilford Middle,0.4677,X, 
+410,Guilford County Schools,398,Newcomers School,0.6612,X,X
+410,Guilford County Schools,399,GTCC East Middle College High,0.2735,, 
+410,Guilford County Schools,400,Guilford Elementary,0.4508,X,X
+410,Guilford County Schools,401,GTCC Middle College High,0.2267,, 
+410,Guilford County Schools,402,Otis L Hairston Sr Middle,0.7169,X,X
+410,Guilford County Schools,403,W M Hampton Elementary,0.7224,X,X
+410,Guilford County Schools,406,High Point Central High,0.4597,X, 
+410,Guilford County Schools,407,The Academy at High Point Central,0.3857,,X
+410,Guilford County Schools,408,High Point GTCC Middle College,0.4237,X, 
+410,Guilford County Schools,409,Hunter Elementary,0.6214,X,X
+410,Guilford County Schools,412,Irving Park Elementary,0.467,X,X
+410,Guilford County Schools,415,Jackson Middle,0.689,X,X
+410,Guilford County Schools,418,Jamestown Elementary,0.4394,X,X
+410,Guilford County Schools,421,Jamestown Middle,0.3538,, 
+410,Guilford County Schools,423,Jefferson Elementary,0.3823,,X
+410,Guilford County Schools,424,Jesse Wharton Elem,0.2571,, 
+410,Guilford County Schools,427,Johnson Street Elementary,0.5068,X,X
+410,Guilford County Schools,430,David D Jones Elementary,0.3813,,X
+410,Guilford County Schools,436,James Y Joyner Elementary,0.5049,X,X
+410,Guilford County Schools,437,Kernodle Middle,0.1344,, 
+410,Guilford County Schools,439,Kirkman Park Elementary,0.7215,X,X
+410,Guilford County Schools,442,Kiser Middle,0.4599,X, 
+410,Guilford County Schools,448,Lincoln Academy,0.2764,, 
+410,Guilford County Schools,451,John Van Lindley Elementary,0.4493,X, 
+410,Guilford County Schools,454,Madison Elementary,0.4361,X, 
+410,Guilford County Schools,457,Herbin-Metz Education Center,0.4225,X, 
+410,Guilford County Schools,458,Greene Education Center @ Ragsdale,0.3165,,X
+410,Guilford County Schools,460,Eastern Middle,0.4151,X,X
+410,Guilford County Schools,461,McLeansville Elementary,0.3824,,X
+410,Guilford County Schools,462,Ronald E McNair Elementary,0.4788,X,X
+410,Guilford County Schools,463,Mendenhall Middle,0.3482,, 
+410,Guilford County Schools,464,Meredith Haynes-Inman School,0.3741,, 
+410,Guilford County Schools,466,Millis Road Elementary,0.2602,, 
+410,Guilford County Schools,469,Montlieu Avenue Elementary,0.5812,X,X
+410,Guilford County Schools,472,Morehead Elementary,0.476,X, 
+410,Guilford County Schools,478,Murphy Traditional Academy,0.6581,X,X
+410,Guilford County Schools,481,Nathanael Greene Elementary,0.3294,, 
+410,Guilford County Schools,483,Middle College High at NC A&T,0.3273,, 
+410,Guilford County Schools,484,Northeast Guilford High,0.4199,X, 
+410,Guilford County Schools,486,Northern Elementary,0.1146,, 
+410,Guilford County Schools,487,Northeast Guilford Middle,0.5007,X, 
+410,Guilford County Schools,488,Northern Middle,0.1386,, 
+410,Guilford County Schools,489,Northern High,0.1232,, 
+410,Guilford County Schools,490,Northwest Guilford High,0.0666,, 
+410,Guilford County Schools,491,Pearce Elementary,0.1298,, 
+410,Guilford County Schools,493,Northwest Guilford Middle,0.0743,, 
+410,Guilford County Schools,496,Northwood Elementary,0.6107,X,X
+410,Guilford County Schools,499,Oak Hill Elementary,0.6094,X,X
+410,Guilford County Schools,502,Oak Ridge Elementary,0.043,, 
+410,Guilford County Schools,505,Oak View Elementary,0.4818,X,X
+410,Guilford County Schools,508,Page High,0.3155,, 
+410,Guilford County Schools,511,Parkview Village Elementary,0.7452,X,X
+410,Guilford County Schools,514,Clara J Peck Elementary,0.7361,X,X
+410,Guilford County Schools,517,Peeler Open Elementary,0.5207,X,X
+410,Guilford County Schools,522,Pilot Elementary,0.3828,, 
+410,Guilford County Schools,523,Pleasant Garden Elementary,0.2971,, 
+410,Guilford County Schools,529,Lucy Ragsdale High,0.3101,, 
+410,Guilford County Schools,530,Reedy Fork Elementary,0.4805,X, 
+410,Guilford County Schools,532,Rankin Elementary,0.6055,X,X
+410,Guilford County Schools,533,Scale School,0.75,X,X
+410,Guilford County Schools,534,Scale in High Point,0.6522,X,X
+410,Guilford County Schools,535,Sedalia Elementary,0.369,, 
+410,Guilford County Schools,538,Sedgefield Elementary,0.6007,X,X
+410,Guilford County Schools,541,Shadybrook Elementary,0.32,, 
+410,Guilford County Schools,542,"George C. Simkins, Jr Elementary",0.4096,X, 
+410,Guilford County Schools,544,Ben L Smith High,0.5348,X,X
+410,Guilford County Schools,545,Smith Academy,0.281,, 
+410,Guilford County Schools,547,Southeast Guilford High,0.2073,, 
+410,Guilford County Schools,550,Southeast Guilford Middle,0.2595,, 
+410,Guilford County Schools,553,Southern Elementary,0.3975,, 
+410,Guilford County Schools,556,Southern Guilford High,0.3958,, 
+410,Guilford County Schools,559,Southwest Elementary,0.1026,, 
+410,Guilford County Schools,562,Southwest Guilford High,0.2434,, 
+410,Guilford County Schools,565,Southwest Guilford Middle,0.2847,, 
+410,Guilford County Schools,568,Sternberger Elementary,0.1234,, 
+410,Guilford County Schools,569,STEM Early College at NC A&T SU,0.1316,, 
+410,Guilford County Schools,571,Stokesdale Elementary,0.1571,, 
+410,Guilford County Schools,574,Summerfield Elementary,0.1301,, 
+410,Guilford County Schools,577,Sumner Elementary,0.5576,X,X
+410,Guilford County Schools,578,Triangle Lake Montessori Elem,0.4669,X, 
+410,Guilford County Schools,579,UNC-G Early/Middle College,0.201,, 
+410,Guilford County Schools,580,Union Hill Elementary,0.6264,X,X
+410,Guilford County Schools,583,Vandalia Elementary,0.5265,X,X
+410,Guilford County Schools,586,Washington Elementary,0.6412,X,X
+410,Guilford County Schools,589,Philip J Weaver Ed Center,0.0968,, 
+410,Guilford County Schools,592,Laurin Welborn Middle,0.6193,X,X
+410,Guilford County Schools,595,Western Guilford High,0.2812,, 
+410,Guilford County Schools,598,Wiley Acel/Enrichment,0.7918,X,X
+420,Halifax County Schools,304,Aurelian Springs Elementary,0.7101,X,X
+420,Halifax County Schools,316,Dawson Elementary,0.8025,X,X
+420,Halifax County Schools,324,Enfield Middle,0.7277,X,X
+420,Halifax County Schools,328,Everetts Elementary,0.7687,X,X
+420,Halifax County Schools,336,Hollister Elementary,0.6566,X,X
+420,Halifax County Schools,340,Inborden Elementary,0.7948,X,X
+420,Halifax County Schools,346,Northwest High,0.5942,X,X
+420,Halifax County Schools,348,Pittman Elementary,0.7576,X,X
+420,Halifax County Schools,358,Southeast Halifax High,0.6106,X,X
+420,Halifax County Schools,376,William R Davie Middle,0.6534,X,X
+421,Roanoke Rapids City Schools,304,Belmont Elementary,0.6378,X, 
+421,Roanoke Rapids City Schools,306,Chaloner Middle,0.456,X, 
+421,Roanoke Rapids City Schools,316,Roanoke Rapids High,0.3561,, 
+421,Roanoke Rapids City Schools,328,William L Manning Elementary,0.4921,X, 
+422,Weldon City Schools,310,Roanoke Valley Early College,0.3543,,X
+422,Weldon City Schools,314,Weldon Elementary,0.8127,X,X
+422,Weldon City Schools,315,Weldon High School,0.6595,X,X
+422,Weldon City Schools,318,Weldon Middle,0.7536,X,X
+430,Harnett County Schools,304,Anderson Creek Primary,0.4036,X, 
+430,Harnett County Schools,308,Angier Elementary,0.4314,X, 
+430,Harnett County Schools,312,Benhaven Elementary,0.4088,X, 
+430,Harnett County Schools,316,Boone Trail Elementary,0.3302,, 
+430,Harnett County Schools,320,Buies Creek Elementary,0.3587,, 
+430,Harnett County Schools,328,Coats Elementary,0.4425,X, 
+430,Harnett County Schools,330,Coats-Erwin Middle,0.427,X, 
+430,Harnett County Schools,332,Dunn Middle,0.5377,X, 
+430,Harnett County Schools,336,Erwin Elementary,0.4596,X, 
+430,Harnett County Schools,340,Gentry Primary,0.5527,X, 
+430,Harnett County Schools,344,Harnett Primary,0.6484,X, 
+430,Harnett County Schools,345,STAR Academy,0.7959,X, 
+430,Harnett County Schools,346,Harnett Central High,0.2854,, 
+430,Harnett County Schools,347,Harnett Central Middle,0.3403,, 
+430,Harnett County Schools,348,Johnsonville Elementary,0.5467,X, 
+430,Harnett County Schools,349,Highland Elementary,0.276,, 
+430,Harnett County Schools,351,Highland Middle School,0.3616,, 
+430,Harnett County Schools,352,LaFayette Elementary,0.2448,, 
+430,Harnett County Schools,358,Lillington-Shawtown Elementary,0.4661,X, 
+430,Harnett County Schools,368,North Harnett Primary,0.5056,X, 
+430,Harnett County Schools,369,Overhills Elementary School,0.2689,, 
+430,Harnett County Schools,370,Overhills Middle,0.3036,, 
+430,Harnett County Schools,371,Overhills High School,0.2133,, 
+430,Harnett County Schools,376,South Harnett Elementary,0.3919,, 
+430,Harnett County Schools,378,Triton High,0.3505,, 
+430,Harnett County Schools,380,Wayne Avenue Elem,0.5622,X, 
+430,Harnett County Schools,384,Western Harnett High,0.2976,, 
+430,Harnett County Schools,386,Western Harnett Middle,0.3249,, 
+440,Haywood County Schools,314,Bethel Elementary,0.4158,X, 
+440,Haywood County Schools,318,Bethel Middle,0.3143,, 
+440,Haywood County Schools,320,Canton Middle,0.4084,X, 
+440,Haywood County Schools,324,Central Elementary,0.311,,X
+440,Haywood County Schools,326,Central Haywood High,0.4872,X,X
+440,Haywood County Schools,328,Clyde Elementary,0.5477,X, 
+440,Haywood County Schools,332,Riverbend Elementary,0.4093,X, 
+440,Haywood County Schools,346,Haywood Early College,0.3813,, 
+440,Haywood County Schools,348,Hazelwood Elementary,0.3908,, 
+440,Haywood County Schools,349,Jonathan Valley Elementary,0.4338,X, 
+440,Haywood County Schools,350,Junaluska Elementary,0.3555,, 
+440,Haywood County Schools,364,Meadowbrook Elementary,0.4351,X, 
+440,Haywood County Schools,368,North Canton Elementary,0.5191,X, 
+440,Haywood County Schools,378,Pisgah High,0.289,, 
+440,Haywood County Schools,390,Tuscola High,0.2819,, 
+440,Haywood County Schools,396,Waynesville Middle,0.3878,, 
+450,Henderson County Schools,301,Apple Valley Middle,0.3789,, 
+450,Henderson County Schools,302,Atkinson Elementary,0.2438,, 
+450,Henderson County Schools,306,Bruce Drysdale Elementary,0.5468,X, 
+450,Henderson County Schools,307,Clear Creek Elementary,0.2321,, 
+450,Henderson County Schools,308,Dana Elementary,0.4075,X, 
+450,Henderson County Schools,316,East Henderson High,0.2474,, 
+450,Henderson County Schools,322,Edneyville Elementary,0.4859,X, 
+450,Henderson County Schools,324,Etowah Elementary,0.3584,, 
+450,Henderson County Schools,328,Flat Rock Middle,0.3774,, 
+450,Henderson County Schools,332,Fletcher Elementary,0.2444,, 
+450,Henderson County Schools,333,Hendersonville Elementary,0.1822,, 
+450,Henderson County Schools,334,Hendersonville High,0.2284,, 
+450,Henderson County Schools,335,Hendersonville Middle,0.3024,, 
+450,Henderson County Schools,336,Hillandale Elementary,0.4717,X, 
+450,Henderson County Schools,339,Glenn C Marlow Elementary,0.1993,, 
+450,Henderson County Schools,340,Mills River Elementary,0.2482,, 
+450,Henderson County Schools,341,North Henderson High,0.2519,, 
+450,Henderson County Schools,342,Rugby Middle,0.2146,, 
+450,Henderson County Schools,343,Balfour Education Center,0.3941,,X
+450,Henderson County Schools,344,Sugarloaf Elementary,0.4902,X,X
+450,Henderson County Schools,346,Upward Elementary,0.4662,X, 
+450,Henderson County Schools,352,West Henderson High,0.1722,, 
+450,Henderson County Schools,354,Henderson County Early College,0.3936,, 
+460,Hertford County Schools,308,Ahoskie Elementary,0.624,X,X
+460,Hertford County Schools,312,Bearfield Primary,0.7013,X,X
+460,Hertford County Schools,318,Hertford County Middle,0.5734,X,X
+460,Hertford County Schools,320,Hertford County High,0.5631,X,X
+460,Hertford County Schools,322,Hertford County Early College,0.2797,,X
+460,Hertford County Schools,332,Riverview Elementary,0.6847,X,X
+460,Hertford County Schools,340,CSB Student Development Center,0.4038,X,X
+470,Hoke County Schools,310,Don Steed Elementary,0.3382,, 
+470,Hoke County Schools,312,Hoke County High,0.3767,, 
+470,Hoke County Schools,316,J W McLauchlin Elementary,0.619,X,X
+470,Hoke County Schools,320,West Hoke Middle,0.5433,X,X
+470,Hoke County Schools,328,Scurlock Elementary,0.4742,X,X
+470,Hoke County Schools,330,Hawk Eye Elementary,0.6561,X,X
+470,Hoke County Schools,332,East Hoke Middle,0.3662,, 
+470,Hoke County Schools,336,West Hoke Elementary,0.4989,X,X
+470,Hoke County Schools,340,Rockfish Hoke Elementary,0.1486,, 
+470,Hoke County Schools,342,J W Turlington,0.5524,X,X
+470,Hoke County Schools,346,Upchurch Elementary,0.4643,X,X
+470,Hoke County Schools,441,Sandy Grove Elementary,0.4935,X, 
+470,Hoke County Schools,442,Sandy Grove Middle School,0.3733,, 
+470,Hoke County Schools,443,SandHoke Early College,0.2979,, 
+480,Hyde County Schools,306,Mattamuskeet Elementary,0.5822,X,X
+480,Hyde County Schools,318,Mattamuskeet Early College High School,0.4571,X,X
+490,Iredell-Statesville Schools,308,Brawley Middle,0.0515,, 
+490,Iredell-Statesville Schools,312,Celeste Henkel Elementary,0.4157,X, 
+490,Iredell-Statesville Schools,316,Central Elementary,0.2237,, 
+490,Iredell-Statesville Schools,318,Coddle Creek,0.1308,, 
+490,Iredell-Statesville Schools,319,Cloverleaf,0.4548,X, 
+490,Iredell-Statesville Schools,320,Collaborative College of Techn,0.1706,, 
+490,Iredell-Statesville Schools,324,Cool Spring Elementary,0.2519,, 
+490,Iredell-Statesville Schools,326,East Iredell Elementary,0.3859,, 
+490,Iredell-Statesville Schools,327,East Middle,0.3946,, 
+490,Iredell-Statesville Schools,332,Harmony Elementary,0.3014,, 
+490,Iredell-Statesville Schools,335,Lake Norman High,0.045,, 
+490,Iredell-Statesville Schools,336,Lake Norman Elementary,0.0835,, 
+490,Iredell-Statesville Schools,337,Lakeshore Elementary,0.1151,, 
+490,Iredell-Statesville Schools,338,Lakeshore Middle,0.1515,, 
+490,Iredell-Statesville Schools,342,Monticello School,0.3655,, 
+490,Iredell-Statesville Schools,344,Mount Mourne School,0.0128,, 
+490,Iredell-Statesville Schools,345,N B Mills Elementary,0.5647,X, 
+490,Iredell-Statesville Schools,346,North Iredell High,0.1817,, 
+490,Iredell-Statesville Schools,347,Northview School,0.0604,, 
+490,Iredell-Statesville Schools,348,Scotts Elementary,0.3995,, 
+490,Iredell-Statesville Schools,349,North Iredell Middle,0.2727,, 
+490,Iredell-Statesville Schools,350,Pressly School,0.7818,X, 
+490,Iredell-Statesville Schools,352,Statesville Middle,0.4804,X, 
+490,Iredell-Statesville Schools,354,Statesville High,0.3333,, 
+490,Iredell-Statesville Schools,355,Visual and Performing Arts,0.1808,, 
+490,Iredell-Statesville Schools,356,Sharon Elementary,0.2977,, 
+490,Iredell-Statesville Schools,360,Shepherd Elementary,0.2309,, 
+490,Iredell-Statesville Schools,362,South Iredell High,0.121,, 
+490,Iredell-Statesville Schools,363,Third Creek Elementary,0.4517,X, 
+490,Iredell-Statesville Schools,364,Troutman Elementary,0.2748,, 
+490,Iredell-Statesville Schools,366,Troutman Middle,0.2778,, 
+490,Iredell-Statesville Schools,368,Union Grove Elementary,0.2727,, 
+490,Iredell-Statesville Schools,380,West Iredell High,0.2697,, 
+490,Iredell-Statesville Schools,384,West Iredell Middle,0.3279,, 
+490,Iredell-Statesville Schools,390,Woodland Heights Elementary,0.0365,, 
+491,Mooresville Graded School District,303,East Mooresville Intermediate,0.2309,, 
+491,Mooresville Graded School District,306,Mooresville Intermediate,0.2047,, 
+491,Mooresville Graded School District,308,Mooresville Middle,0.1766,, 
+491,Mooresville Graded School District,312,Mooresville Senior High,0.1443,, 
+491,Mooresville Graded School District,316,Park View Elementary,0.3623,, 
+491,Mooresville Graded School District,318,Rocky River Elementary,0.1188,, 
+491,Mooresville Graded School District,320,South Elementary,0.3177,, 
+500,Jackson County Schools,302,Blue Ridge Early College,0.2778,,X
+500,Jackson County Schools,304,Cullowhee Valley School,0.4175,X, 
+500,Jackson County Schools,314,Fairview Elementary,0.4036,X, 
+500,Jackson County Schools,316,Blue Ridge School,0.4464,X,X
+500,Jackson County Schools,323,Jackson County Early College,0.1793,, 
+500,Jackson County Schools,324,Jackson Co Sch of Alt,0.537,X,X
+500,Jackson County Schools,332,Scotts Creek Elementary,0.4204,X, 
+500,Jackson County Schools,337,Smokey Mountain Elementary,0.5556,X,X
+500,Jackson County Schools,340,Smoky Mountain High,0.2711,, 
+510,Johnston County Schools,308,Benson Elementary,0.489,X, 
+510,Johnston County Schools,310,Benson Middle,0.3678,, 
+510,Johnston County Schools,324,Clayton High,0.1616,, 
+510,Johnston County Schools,326,West Clayton Elementary,0.2727,, 
+510,Johnston County Schools,327,Cleveland High School,0.1298,, 
+510,Johnston County Schools,328,Cleveland Elementary,0.1514,, 
+510,Johnston County Schools,329,Cleveland Middle,0.1489,, 
+510,Johnston County Schools,330,Cooper Elementary,0.367,, 
+510,Johnston County Schools,332,Corinth Holders,0.3402,, 
+510,Johnston County Schools,333,Corinth Holders High School,0.1063,, 
+510,Johnston County Schools,334,Dixon Road Elementary,0.1855,, 
+510,Johnston County Schools,336,East Clayton Elementary,0.1424,, 
+510,Johnston County Schools,340,Four Oaks Elementary,0.4187,X, 
+510,Johnston County Schools,342,Four Oaks Middle,0.3233,, 
+510,Johnston County Schools,344,North Johnston Middle,0.3856,, 
+510,Johnston County Schools,356,Glendale-Kenly Elementary,0.3911,, 
+510,Johnston County Schools,357,Johnston Co Middle College,0.0932,, 
+510,Johnston County Schools,358,McGee's Crossroads Elem,0.2718,, 
+510,Johnston County Schools,359,McGee's Crossroads Middle,0.2079,, 
+510,Johnston County Schools,360,Meadow Elementary,0.3906,, 
+510,Johnston County Schools,364,Archer Lodge Middle School,0.1989,, 
+510,Johnston County Schools,367,Early College,0.1653,, 
+510,Johnston County Schools,368,North Johnston High,0.2509,, 
+510,Johnston County Schools,372,Micro-Pine Level Elementary,0.4763,X, 
+510,Johnston County Schools,373,Powhatan Elementary,0.0802,, 
+510,Johnston County Schools,374,Princeton Elementary,0.3439,, 
+510,Johnston County Schools,376,Princeton High,0.2821,, 
+510,Johnston County Schools,377,River Dell Elementary,0.123,, 
+510,Johnston County Schools,378,Riverwood Elementary,0.12,, 
+510,Johnston County Schools,379,Riverwood Middle,0.1299,, 
+510,Johnston County Schools,380,South Campus Community High,0.2273,, 
+510,Johnston County Schools,381,South Campus Community Middle,0.7188,X, 
+510,Johnston County Schools,388,Selma Elementary,0.5804,X, 
+510,Johnston County Schools,390,Selma Middle School,0.5573,X, 
+510,Johnston County Schools,396,West Smithfield Elementary,0.6281,X, 
+510,Johnston County Schools,397,Smithfield Middle,0.4324,X, 
+510,Johnston County Schools,399,Smithfield-Selma High,0.3785,, 
+510,Johnston County Schools,402,South Johnston High,0.3055,, 
+510,Johnston County Schools,404,South Smithfield Elementary,0.533,X, 
+510,Johnston County Schools,406,West Johnston High,0.1571,, 
+510,Johnston County Schools,408,Wilson's Mills Elementary,0.4272,X, 
+510,Johnston County Schools,410,Polenta Elementary,0.2454,, 
+510,Johnston County Schools,412,Clayton Middle,0.1935,, 
+510,Johnston County Schools,414,West View Elementary,0.1567,, 
+520,Jones County Schools,304,Pollocksville Elementary,0.5275,X,X
+520,Jones County Schools,308,Comfort Elementary,0.5305,X,X
+520,Jones County Schools,320,Jones Senior High,0.4542,X,X
+520,Jones County Schools,324,Jones Middle,0.4416,X,X
+520,Jones County Schools,328,Maysville Elementary,0.5635,X,X
+520,Jones County Schools,336,Trenton Elementary,0.5204,X,X
+530,Lee County Schools,302,Benjamin T Bullock Elem,0.5369,X, 
+530,Lee County Schools,306,Bragg Street Academy,0.4364,X, 
+530,Lee County Schools,308,Broadway Elementary,0.5689,X, 
+530,Lee County Schools,312,Deep River Elementary,0.5901,X, 
+530,Lee County Schools,314,East Lee Middle,0.4525,X, 
+530,Lee County Schools,316,Floyd L Knight Children Ctr,0.6638,X, 
+530,Lee County Schools,320,Greenwood Elementary,0.553,X, 
+530,Lee County Schools,335,Lee Early College,0.2841,, 
+530,Lee County Schools,336,Lee County High,0.3338,, 
+530,Lee County Schools,340,J Glenn Edwards Elementary,0.5292,X, 
+530,Lee County Schools,341,SanLee Middle School,0.4258,X, 
+530,Lee County Schools,343,Southern Lee High School,0.3267,, 
+530,Lee County Schools,346,Tramway Elementary,0.2398,, 
+530,Lee County Schools,354,J R Ingram Jr Elementary,0.4698,X, 
+530,Lee County Schools,356,West Lee Middle,0.3927,, 
+530,Lee County Schools,358,Warren Williams Elementary Alternative School,0.5734,X, 
+540,Lenoir County Public Schools,304,Banks Elementary,0.4522,X,X
+540,Lenoir County Public Schools,308,Contentnea-Savannah K-8,0.6211,X,X
+540,Lenoir County Public Schools,312,E B Frink Middle,0.4923,X,X
+540,Lenoir County Public Schools,315,Kinston High,0.6209,X,X
+540,Lenoir County Public Schools,316,LaGrange Elementary,0.7148,X,X
+540,Lenoir County Public Schools,317,Lenoir County Early College High School,0.3366,,X
+540,Lenoir County Public Schools,318,Lenoir County Learning Academy,0.6494,X,X
+540,Lenoir County Public Schools,320,Moss Hill Elementary,0.5583,X,X
+540,Lenoir County Public Schools,324,North Lenoir High,0.3922,,X
+540,Lenoir County Public Schools,325,Northeast Elementary School,0.8645,X,X
+540,Lenoir County Public Schools,326,Northwest Elementary,0.6496,X,X
+540,Lenoir County Public Schools,328,Pink Hill Elementary,0.5349,X,X
+540,Lenoir County Public Schools,330,Rochelle Middle,0.8086,X,X
+540,Lenoir County Public Schools,336,South Lenoir High,0.4031,X,X
+540,Lenoir County Public Schools,338,Southeast Elementary,0.97,X,X
+540,Lenoir County Public Schools,340,Southwood Elementary,0.5246,X,X
+540,Lenoir County Public Schools,344,Woodington Middle,0.4623,X,X
+540,Lenoir County Public Schools,400,Teachers Memorial Elem,0.6042,X,X
+550,Lincoln County Schools,308,Asbury School,0.5735,X, 
+550,Lincoln County Schools,312,Battleground Elementary,0.6655,X,X
+550,Lincoln County Schools,314,Catawba Springs Elementary,0.182,, 
+550,Lincoln County Schools,316,G E Massey Elementary,0.5488,X, 
+550,Lincoln County Schools,320,East Lincoln High,0.1719,, 
+550,Lincoln County Schools,322,East Lincoln Middle,0.1988,, 
+550,Lincoln County Schools,324,Kiser Intermediate,0.526,X, 
+550,Lincoln County Schools,328,Iron Station Elementary,0.3634,, 
+550,Lincoln County Schools,332,Lincolnton High,0.3653,, 
+550,Lincoln County Schools,334,Lincolnton Middle,0.4618,X, 
+550,Lincoln County Schools,336,Love Memorial Elementary,0.4537,X, 
+550,Lincoln County Schools,340,Childers Elementary,0.4496,X, 
+550,Lincoln County Schools,342,North Brook Elementary,0.4672,X, 
+550,Lincoln County Schools,344,North Lincoln High School,0.1558,, 
+550,Lincoln County Schools,348,Pumpkin Center Primary,0.2841,, 
+550,Lincoln County Schools,349,Pumpkin Center Intermediate,0.2857,, 
+550,Lincoln County Schools,350,North Lincoln Middle,0.1849,, 
+550,Lincoln County Schools,356,Rock Springs Elementary,0.1374,, 
+550,Lincoln County Schools,360,S Ray Lowder Elementary,0.513,X,X
+550,Lincoln County Schools,362,St James Elementary School,0.1975,, 
+550,Lincoln County Schools,364,Union Elementary,0.3516,, 
+550,Lincoln County Schools,368,West Lincoln High,0.3223,, 
+550,Lincoln County Schools,372,West Lincoln Middle,0.3775,, 
+560,Macon County Schools,304,Cartoogechaye Elementary,0.3892,, 
+560,Macon County Schools,316,East Franklin Elementary,0.5027,X,X
+560,Macon County Schools,320,Franklin High,0.3005,, 
+560,Macon County Schools,324,Highlands School,0.1845,, 
+560,Macon County Schools,328,Iotla Elementary,0.442,X, 
+560,Macon County Schools,329,Early College,0.297,, 
+560,Macon County Schools,330,Macon Middle,0.4103,X, 
+560,Macon County Schools,331,Mountain View Intermediate,0.4011,X, 
+560,Macon County Schools,332,Nantahala School,0.3187,, 
+560,Macon County Schools,338,South Macon Elementary,0.4374,X, 
+560,Macon County Schools,350,Union Academy,0.5781,X,X
+570,Madison County Schools,306,Brush Creek Elementary,0.3612,, 
+570,Madison County Schools,312,Hot Springs Elementary,0.5037,X, 
+570,Madison County Schools,317,Madison Early College,0.2105,, 
+570,Madison County Schools,318,Madison High,0.2897,, 
+570,Madison County Schools,319,Madison Middle,0.3445,, 
+570,Madison County Schools,320,Mars Hill Elementary,0.3374,, 
+580,Martin County Schools,308,Williamston Primary,0.6354,X,X
+580,Martin County Schools,312,E J Hayes Elementary,0.5644,X,X
+580,Martin County Schools,316,East End Elementary,0.5974,X,X
+580,Martin County Schools,320,Edna Andrews Elementary,0.5646,X,X
+580,Martin County Schools,324,Jamesville Elementary,0.4231,X,X
+580,Martin County Schools,344,South Creek High,0.3923,,X
+580,Martin County Schools,350,South Creek Middle,0.5171,X,X
+580,Martin County Schools,356,Rodgers Elementary,0.3977,,X
+580,Martin County Schools,368,Riverside High,0.3155,,X
+580,Martin County Schools,372,Riverside Middle,0.4725,X,X
+580,Martin County Schools,94Z,Northeast Regional School of Biotechnology & Agriscience,0.1759,, 
+590,McDowell County Schools,306,Eastfield  Global Magnet School,0.5743,X,X
+590,McDowell County Schools,310,East McDowell Middle,0.4729,X,X
+590,McDowell County Schools,316,Glenwood Elementary,0.4211,X,X
+590,McDowell County Schools,320,Marion Elementary,0.491,X,X
+590,McDowell County Schools,328,McDowell Early College,0.1903,, 
+590,McDowell County Schools,330,McDowell High,0.3892,, 
+590,McDowell County Schools,332,Nebo Elementary,0.5251,X,X
+590,McDowell County Schools,336,North Cove Elementary,0.428,X,X
+590,McDowell County Schools,340,Old Fort Elementary,0.4586,X,X
+590,McDowell County Schools,344,Pleasant Gardens Elementary,0.3647,,X
+590,McDowell County Schools,352,West Marion Elementary,0.5459,X,X
+590,McDowell County Schools,356,West McDowell Junior High,0.3692,,X
+590,McDowell County Schools,393,McDowell AEC,0.396,,X
+600,Charlotte-Mecklenburg Schools,300,Albemarle Road Elementary,0.6107,X,X
+600,Charlotte-Mecklenburg Schools,301,Albemarle Road Middle,0.5441,X,X
+600,Charlotte-Mecklenburg Schools,302,Ardrey Kell High School,0.0485,, 
+600,Charlotte-Mecklenburg Schools,305,John M Alexander Middle,0.2697,, 
+600,Charlotte-Mecklenburg Schools,308,Allenbrook Elementary,0.7818,X,X
+600,Charlotte-Mecklenburg Schools,311,Ashley Park Elementary,0.8452,X,X
+600,Charlotte-Mecklenburg Schools,312,William Hough High School,0.0949,, 
+600,Charlotte-Mecklenburg Schools,313,Bailey Road Middle School,0.1193,, 
+600,Charlotte-Mecklenburg Schools,314,Bain Elementary,0.1203,, 
+600,Charlotte-Mecklenburg Schools,316,Barringer Academic Center,0.4385,X,X
+600,Charlotte-Mecklenburg Schools,317,Whitewater Middle,0.6159,X,X
+600,Charlotte-Mecklenburg Schools,318,Whitewater Academy,0.5704,X,X
+600,Charlotte-Mecklenburg Schools,319,Berryhill Elementary,0.5742,X,X
+600,Charlotte-Mecklenburg Schools,322,Beverly Woods Elementary,0.1299,, 
+600,Charlotte-Mecklenburg Schools,328,Barnette Elementary,0.1615,, 
+600,Charlotte-Mecklenburg Schools,329,Briarwood Elementary,0.6806,X,X
+600,Charlotte-Mecklenburg Schools,333,Carmel Middle,0.2481,, 
+600,Charlotte-Mecklenburg Schools,334,Cato Middle College,0.1755,, 
+600,Charlotte-Mecklenburg Schools,335,Billingsville Elem,0.8427,X,X
+600,Charlotte-Mecklenburg Schools,336,Chantilly Montessori,0.1034,, 
+600,Charlotte-Mecklenburg Schools,338,Clear Creek Elementary,0.3064,, 
+600,Charlotte-Mecklenburg Schools,341,Cochrane Middle,0.6049,X,X
+600,Charlotte-Mecklenburg Schools,344,Collinswood Language Acdmy,0.2589,, 
+600,Charlotte-Mecklenburg Schools,345,Community House Middle,0.079,, 
+600,Charlotte-Mecklenburg Schools,346,Cornelius Elementary,0.1633,, 
+600,Charlotte-Mecklenburg Schools,349,Cotswold Elementary,0.2898,, 
+600,Charlotte-Mecklenburg Schools,351,Coulwood Middle,0.4925,X,X
+600,Charlotte-Mecklenburg Schools,352,Crown Point Elementary,0.3458,, 
+600,Charlotte-Mecklenburg Schools,353,Crestdale Middle,0.1459,, 
+600,Charlotte-Mecklenburg Schools,357,Davidson Elementary,0.1003,, 
+600,Charlotte-Mecklenburg Schools,361,David W Butler High,0.2221,, 
+600,Charlotte-Mecklenburg Schools,362,David Cox Road Elementary,0.4608,X,X
+600,Charlotte-Mecklenburg Schools,364,Marie G. Davis Military and Global Academy,0.465,X,X
+600,Charlotte-Mecklenburg Schools,365,Devonshire Elementary,0.7021,X,X
+600,Charlotte-Mecklenburg Schools,367,Dilworth Elementary,0.1477,, 
+600,Charlotte-Mecklenburg Schools,368,First Ward Elementary,0.5507,X,X
+600,Charlotte-Mecklenburg Schools,369,Berewick Elementary,0.2645,, 
+600,Charlotte-Mecklenburg Schools,374,Druid Hills Elementary,0.8395,X,X
+600,Charlotte-Mecklenburg Schools,377,East Mecklenburg High,0.3758,, 
+600,Charlotte-Mecklenburg Schools,379,Eastover Elementary,0.2058,, 
+600,Charlotte-Mecklenburg Schools,381,Eastway Middle,0.6172,X,X
+600,Charlotte-Mecklenburg Schools,382,Elizabeth Lane Elementary,0.0431,, 
+600,Charlotte-Mecklenburg Schools,383,Elon Park Elementary,0.0248,, 
+600,Charlotte-Mecklenburg Schools,384,Elizabeth Trad/Classical,0.3465,, 
+600,Charlotte-Mecklenburg Schools,385,Endhaven Elementary,0.1963,, 
+600,Charlotte-Mecklenburg Schools,386,Hawthorne High/TAPS,0.3543,,X
+600,Charlotte-Mecklenburg Schools,392,Polo Ridge Elementary,0.025,, 
+600,Charlotte-Mecklenburg Schools,394,Francis Bradley Middle,0.1983,, 
+600,Charlotte-Mecklenburg Schools,397,Garinger High,0.5473,X,X
+600,Charlotte-Mecklenburg Schools,398,Greenway Park Elementary,0.5346,X,X
+600,Charlotte-Mecklenburg Schools,399,Alexander Graham Middle,0.2452,, 
+600,Charlotte-Mecklenburg Schools,405,Harding University High,0.5717,X,X
+600,Charlotte-Mecklenburg Schools,406,Hawk Ridge Elementary,0.0622,, 
+600,Charlotte-Mecklenburg Schools,408,Lawrence Orr Elementary,0.4838,X,X
+600,Charlotte-Mecklenburg Schools,409,Parkside Elementary,0.1947,, 
+600,Charlotte-Mecklenburg Schools,410,Hickory Grove Elementary,0.6526,X,X
+600,Charlotte-Mecklenburg Schools,411,Highland Creek Elementary,0.1501,, 
+600,Charlotte-Mecklenburg Schools,412,Hidden Valley Elementary,0.7157,X,X
+600,Charlotte-Mecklenburg Schools,413,Highland Mill Montessori,0.1398,, 
+600,Charlotte-Mecklenburg Schools,414,Highland Renaissance Academy,0.6724,X,X
+600,Charlotte-Mecklenburg Schools,415,Hopewell High,0.2563,, 
+600,Charlotte-Mecklenburg Schools,416,Hornets Nest Elementary,0.5035,X,X
+600,Charlotte-Mecklenburg Schools,418,Croft Community School,0.2772,, 
+600,Charlotte-Mecklenburg Schools,420,Huntersville Elementary,0.1885,, 
+600,Charlotte-Mecklenburg Schools,422,Huntingtowne Farms Elementary,0.5155,X,X
+600,Charlotte-Mecklenburg Schools,424,Idlewild Elementary,0.5603,X,X
+600,Charlotte-Mecklenburg Schools,426,Independence High,0.3247,, 
+600,Charlotte-Mecklenburg Schools,428,James Martin Middle,0.4911,X,X
+600,Charlotte-Mecklenburg Schools,429,Morehead STEM Academy,0.2666,,X
+600,Charlotte-Mecklenburg Schools,431,Jay M Robinson Middle,0.0474,, 
+600,Charlotte-Mecklenburg Schools,432,Joseph W Grier Academy,0.5054,X,X
+600,Charlotte-Mecklenburg Schools,433,JV Washam Elementary,0.125,, 
+600,Charlotte-Mecklenburg Schools,434,Robert F Kennedy Middle,0.3204,, 
+600,Charlotte-Mecklenburg Schools,435,Trillium Springs,0.137,, 
+600,Charlotte-Mecklenburg Schools,436,Lake Wylie Elementary,0.3672,,X
+600,Charlotte-Mecklenburg Schools,437,Ballantyne Elementary,0.0844,, 
+600,Charlotte-Mecklenburg Schools,438,Lansdowne Elementary,0.2583,, 
+600,Charlotte-Mecklenburg Schools,439,Turning Point Academy,0.7023,X,X
+600,Charlotte-Mecklenburg Schools,440,Lebanon Road Elementary,0.5075,X,X
+600,Charlotte-Mecklenburg Schools,442,Legette Blythe Elementary,0.2744,, 
+600,Charlotte-Mecklenburg Schools,443,Levine Middle College High,0.1243,, 
+600,Charlotte-Mecklenburg Schools,444,Long Creek Elementary,0.3172,, 
+600,Charlotte-Mecklenburg Schools,445,Mallard Creek High,0.2498,, 
+600,Charlotte-Mecklenburg Schools,446,Mallard Creek,0.3069,, 
+600,Charlotte-Mecklenburg Schools,447,Matthews Elementary,0.2262,, 
+600,Charlotte-Mecklenburg Schools,448,"Martin Luther King, Jr Middle",0.6155,X,X
+600,Charlotte-Mecklenburg Schools,449,McAlpine Elementary,0.1299,, 
+600,Charlotte-Mecklenburg Schools,450,McClintock Middle,0.5098,X,X
+600,Charlotte-Mecklenburg Schools,451,McKee Road Elementary,0.1,, 
+600,Charlotte-Mecklenburg Schools,453,Merry Oaks Elementary,0.7131,X,X
+600,Charlotte-Mecklenburg Schools,454,Metro,0.397,,X
+600,Charlotte-Mecklenburg Schools,455,Mint Hill Middle School,0.2344,, 
+600,Charlotte-Mecklenburg Schools,457,Rocky River High School,0.3613,, 
+600,Charlotte-Mecklenburg Schools,459,Montclaire Elementary,0.5845,X,X
+600,Charlotte-Mecklenburg Schools,461,Lincoln Heights Academy,0.5648,X,X
+600,Charlotte-Mecklenburg Schools,462,Mountain Island Elementary,0.389,, 
+600,Charlotte-Mecklenburg Schools,463,River Oaks Elementary,0.4444,X,X
+600,Charlotte-Mecklenburg Schools,464,Myers Park Trad Elementary,0.2816,, 
+600,Charlotte-Mecklenburg Schools,466,Myers Park High,0.2312,, 
+600,Charlotte-Mecklenburg Schools,468,Nathaniel Alexander Elem,0.5687,X,X
+600,Charlotte-Mecklenburg Schools,471,Nations Ford Elementary,0.6452,X,X
+600,Charlotte-Mecklenburg Schools,474,Newell Elementary,0.5906,X,X
+600,Charlotte-Mecklenburg Schools,478,J H Gunn Elementary,0.5612,X,X
+600,Charlotte-Mecklenburg Schools,479,Northeast Middle,0.4091,X,X
+600,Charlotte-Mecklenburg Schools,480,North Mecklenburg High,0.3099,, 
+600,Charlotte-Mecklenburg Schools,481,Northridge Middle,0.4506,X,X
+600,Charlotte-Mecklenburg Schools,482,Northwest School of the Arts,0.247,, 
+600,Charlotte-Mecklenburg Schools,484,Oakhurst STEM,0.4782,X,X
+600,Charlotte-Mecklenburg Schools,485,Oakdale Elementary,0.5424,X,X
+600,Charlotte-Mecklenburg Schools,488,Oaklawn Language Academy,0.3906,,X
+600,Charlotte-Mecklenburg Schools,489,Bruns Avenue Elementary,0.8374,X,X
+600,Charlotte-Mecklenburg Schools,491,Olde Providence Elementary,0.116,, 
+600,Charlotte-Mecklenburg Schools,492,Park Road Montessori,0.079,, 
+600,Charlotte-Mecklenburg Schools,493,Palisades Elementary,0.1927,, 
+600,Charlotte-Mecklenburg Schools,494,Paw Creek Elementary,0.5436,X,X
+600,Charlotte-Mecklenburg Schools,496,Phillip O Berry Academy of Tec,0.3489,, 
+600,Charlotte-Mecklenburg Schools,497,Piedmont Open Middle,0.1817,, 
+600,Charlotte-Mecklenburg Schools,498,Performance Learning Center,0.3513,, 
+600,Charlotte-Mecklenburg Schools,500,Pineville Elementary,0.3747,, 
+600,Charlotte-Mecklenburg Schools,501,Pinewood Elementary,0.5728,X,X
+600,Charlotte-Mecklenburg Schools,503,Piney Grove Elementary,0.5053,X,X
+600,Charlotte-Mecklenburg Schools,507,Providence Spring Elementary,0.0277,, 
+600,Charlotte-Mecklenburg Schools,508,Providence High,0.0497,, 
+600,Charlotte-Mecklenburg Schools,509,Quail Hollow Middle,0.403,X,X
+600,Charlotte-Mecklenburg Schools,512,Rama Road Elementary,0.629,X,X
+600,Charlotte-Mecklenburg Schools,513,Randolph Middle,0.2025,, 
+600,Charlotte-Mecklenburg Schools,514,Ranson Middle,0.5587,X,X
+600,Charlotte-Mecklenburg Schools,516,Reedy Creek Elementary,0.4054,X, 
+600,Charlotte-Mecklenburg Schools,517,Reid Park Elementry,0.8162,X,X
+600,Charlotte-Mecklenburg Schools,518,Ridge Road Middle,0.2948,, 
+600,Charlotte-Mecklenburg Schools,519,Sedgefield Elementary,0.7946,X,X
+600,Charlotte-Mecklenburg Schools,520,Sedgefield Middle,0.562,X,X
+600,Charlotte-Mecklenburg Schools,521,Stoney Creek Elementary,0.4034,X,X
+600,Charlotte-Mecklenburg Schools,522,Selwyn Elementary,0.1226,, 
+600,Charlotte-Mecklenburg Schools,527,Shamrock Gardens Elementary,0.5245,X,X
+600,Charlotte-Mecklenburg Schools,530,Sharon Elementary,0.0978,, 
+600,Charlotte-Mecklenburg Schools,532,EE Waddell Language Academy,0.1535,, 
+600,Charlotte-Mecklenburg Schools,534,Smithfield Elementary,0.3239,, 
+600,Charlotte-Mecklenburg Schools,535,South Mecklenburg High,0.2428,, 
+600,Charlotte-Mecklenburg Schools,537,South Charlotte Middle,0.0794,, 
+600,Charlotte-Mecklenburg Schools,538,Southwest Middle School,0.3004,, 
+600,Charlotte-Mecklenburg Schools,545,Starmount Academy,0.462,X,X
+600,Charlotte-Mecklenburg Schools,546,Statesville Road Elementary,0.6537,X,X
+600,Charlotte-Mecklenburg Schools,549,Steele Creek Elementary,0.363,,X
+600,Charlotte-Mecklenburg Schools,550,Sterling Elementary,0.6142,X,X
+600,Charlotte-Mecklenburg Schools,553,Thomasboro Elementary,0.7576,X,X
+600,Charlotte-Mecklenburg Schools,557,Torrence Creek Elementary,0.1118,, 
+600,Charlotte-Mecklenburg Schools,558,Grand Oak Elementary,0.0873,, 
+600,Charlotte-Mecklenburg Schools,562,Tuckaseegee Elementary,0.5469,X,X
+600,Charlotte-Mecklenburg Schools,565,University Park Creative Arts,0.6053,X,X
+600,Charlotte-Mecklenburg Schools,566,University Meadows Elem,0.4487,X,X
+600,Charlotte-Mecklenburg Schools,567,UNCC-EPIC,0.3118,, 
+600,Charlotte-Mecklenburg Schools,571,Irwin Academic Center,0.1363,, 
+600,Charlotte-Mecklenburg Schools,574,Walter G Byers Elementary,0.8149,X,X
+600,Charlotte-Mecklenburg Schools,576,West Charlotte High,0.6254,X,X
+600,Charlotte-Mecklenburg Schools,577,Westerly Hills Elementary,0.7799,X,X
+600,Charlotte-Mecklenburg Schools,579,West Mecklenburg High,0.4656,X,X
+600,Charlotte-Mecklenburg Schools,586,Winding Springs Elementary,0.5657,X,X
+600,Charlotte-Mecklenburg Schools,587,Windsor Park Elementary,0.5629,X,X
+600,Charlotte-Mecklenburg Schools,588,Winget Park Elementary,0.1988,, 
+600,Charlotte-Mecklenburg Schools,589,Winterfield Elementary,0.6728,X,X
+600,Charlotte-Mecklenburg Schools,590,River Gate Elementary,0.2201,, 
+600,Charlotte-Mecklenburg Schools,592,Zebulon B Vance High,0.4555,X,X
+600,Charlotte-Mecklenburg Schools,693,Renaissance at Olympic,0.2085,, 
+600,Charlotte-Mecklenburg Schools,694,Math Science and Technology at Olympic,0.122,, 
+600,Charlotte-Mecklenburg Schools,695,International Studies at Olympic,0.2294,, 
+600,Charlotte-Mecklenburg Schools,696,International Business and Communications at Olympic,0.2867,, 
+600,Charlotte-Mecklenburg Schools,697,"Biotechnology, Health and Public Services at Olympic",0.2414,, 
+610,Mitchell County Schools,302,Bowman Middle,0.2658,, 
+610,Mitchell County Schools,310,Deyton Elementary,0.4213,X, 
+610,Mitchell County Schools,320,Gouge Elementary,0.4549,X, 
+610,Mitchell County Schools,322,Greenlee Primary,0.468,X, 
+610,Mitchell County Schools,326,Harris Middle,0.3447,, 
+610,Mitchell County Schools,332,Mayland Early College High School,0.3654,, 
+610,Mitchell County Schools,334,Mitchell High,0.2677,, 
+620,Montgomery County Schools,310,Montgomery Learning Academy,0.66,X, 
+620,Montgomery County Schools,312,Candor Elementary,0.5598,X, 
+620,Montgomery County Schools,314,East Middle,0.4094,X, 
+620,Montgomery County Schools,316,East Montgomery High,0.3508,, 
+620,Montgomery County Schools,318,Greenridge Elementary,0.5168,X, 
+620,Montgomery County Schools,324,Mount Gilead Elementary,0.57,X, 
+620,Montgomery County Schools,330,Page Street Elementary,0.386,, 
+620,Montgomery County Schools,334,Star-Biscoe Elementary,0.3792,, 
+620,Montgomery County Schools,336,Troy Elementary,0.5338,X, 
+620,Montgomery County Schools,339,West Middle,0.4086,X, 
+620,Montgomery County Schools,340,West Montgomery High,0.3502,, 
+630,Moore County Schools,304,Aberdeen Primary,0.5735,X, 
+630,Moore County Schools,308,Aberdeen Elementary,0.5495,X, 
+630,Moore County Schools,312,Cameron Elementary,0.3861,, 
+630,Moore County Schools,316,Carthage Elementary,0.4351,X, 
+630,Moore County Schools,317,Crain's Creek Middle School,0.3479,, 
+630,Moore County Schools,320,Elise Middle,0.5,X, 
+630,Moore County Schools,324,Sandhills-Farm Life,0.1393,, 
+630,Moore County Schools,328,Highfalls Elementary,0.2481,, 
+630,Moore County Schools,330,Pinckney Academy,0.72,X, 
+630,Moore County Schools,331,New Century Middle,0.2013,, 
+630,Moore County Schools,332,North Moore High,0.2897,, 
+630,Moore County Schools,336,Pinecrest High,0.1972,, 
+630,Moore County Schools,342,Pinehurst Elementary,0.1218,, 
+630,Moore County Schools,348,Robbins Elementary,0.5607,X, 
+630,Moore County Schools,350,Southern Middle,0.424,X, 
+630,Moore County Schools,352,Southern Pines Primary,0.403,X, 
+630,Moore County Schools,356,Southern Pines Elementary,0.4016,X, 
+630,Moore County Schools,360,Union Pines High,0.2012,, 
+630,Moore County Schools,364,Vass-Lakeview Elementary,0.349,, 
+630,Moore County Schools,368,West End Elementary,0.226,, 
+630,Moore County Schools,373,West Pine Elementary School,0.2513,, 
+630,Moore County Schools,374,West Pine Middle,0.1624,, 
+630,Moore County Schools,376,Westmoore Elementary,0.3323,, 
+640,Nash-Rocky Mount Schools,302,Fairview Early Childhood Center,0.7544,X,X
+640,Nash-Rocky Mount Schools,304,Bailey Elementary,0.4107,X, 
+640,Nash-Rocky Mount Schools,306,Baskerville Elementary,0.7979,X,X
+640,Nash-Rocky Mount Schools,308,Benvenue Elementary,0.4755,X,X
+640,Nash-Rocky Mount Schools,316,Cedar Grove Elementary,0.5755,X,X
+640,Nash-Rocky Mount Schools,320,Nash Central Middle,0.359,, 
+640,Nash-Rocky Mount Schools,324,Coopers Elementary,0.356,, 
+640,Nash-Rocky Mount Schools,326,D S Johnson Elementary,0.8054,X,X
+640,Nash-Rocky Mount Schools,328,Englewood Elementary,0.4513,X,X
+640,Nash-Rocky Mount Schools,329,G R Edwards Middle,0.4799,X, 
+640,Nash-Rocky Mount Schools,332,M B Hubbard Elem,0.5307,X,X
+640,Nash-Rocky Mount Schools,334,J W Parker Middle,0.748,X,X
+640,Nash-Rocky Mount Schools,335,Rocky Mount Middle,0.6312,X,X
+640,Nash-Rocky Mount Schools,336,Middlesex Elementary,0.4799,X,X
+640,Nash-Rocky Mount Schools,340,Tar River Academy,0.6385,X,X
+640,Nash-Rocky Mount Schools,346,Nash Central High,0.4148,X, 
+640,Nash-Rocky Mount Schools,347,N-RMS Middle College High,0,, 
+640,Nash-Rocky Mount Schools,348,Nashville Elementary,0.4075,X, 
+640,Nash-Rocky Mount Schools,350,Northern Nash High,0.2883,, 
+640,Nash-Rocky Mount Schools,358,Red Oak Middle,0.3447,, 
+640,Nash-Rocky Mount Schools,360,Red Oak Elementary,0.4111,X, 
+640,Nash-Rocky Mount Schools,361,Rocky Mount High,0.4541,X, 
+640,Nash-Rocky Mount Schools,362,Southern Nash Middle,0.3979,, 
+640,Nash-Rocky Mount Schools,364,Southern Nash High,0.2929,, 
+640,Nash-Rocky Mount Schools,376,Spring Hope Elementary,0.507,X,X
+640,Nash-Rocky Mount Schools,384,Swift Creek Elementary,0.3273,, 
+640,Nash-Rocky Mount Schools,396,Williford Elementary,0.7411,X,X
+640,Nash-Rocky Mount Schools,400,Winstead Avenue Elementary,0.5076,X,X
+650,New Hanover County Schools,304,Bradley Creek Elementary,0.4263,X,X
+650,New Hanover County Schools,308,Carolina Beach Elementary,0.2495,, 
+650,New Hanover County Schools,309,Castle Hayne Elementary,0.464,X,X
+650,New Hanover County Schools,310,Charles P Murray Middle,0.2705,, 
+650,New Hanover County Schools,312,Rachel Freeman School of Engineering,0.9344,X,X
+650,New Hanover County Schools,316,College Park Elementary,0.6084,X,X
+650,New Hanover County Schools,323,Edwin A. Anderson Elementary,0.2711,, 
+650,New Hanover County Schools,324,Edwin A Alderman Elementary,0.6769,X,X
+650,New Hanover County Schools,325,Emma B Trask Middle,0.3081,, 
+650,New Hanover County Schools,326,Emsley A Laney High,0.3157,, 
+650,New Hanover County Schools,327,Eugene Ashley High,0.2952,, 
+650,New Hanover County Schools,328,Forest Hills Elementary,0.5545,X,X
+650,New Hanover County Schools,332,"Gregory School of Science, Mathematics, & Technology",0.7865,X,X
+650,New Hanover County Schools,338,Heyward C Bellamy Elem,0.2902,, 
+650,New Hanover County Schools,339,Holly Tree Elementary,0.202,, 
+650,New Hanover County Schools,340,Isaac M Bear High School,0.2237,, 
+650,New Hanover County Schools,341,John J Blair Elementary,0.279,, 
+650,New Hanover County Schools,342,John T Hoggard High,0.2062,, 
+650,New Hanover County Schools,343,Holly Shelter Middle School,0.3958,, 
+650,New Hanover County Schools,345,Lake Forest Academy,0.8519,X,X
+650,New Hanover County Schools,346,Mary C Williams Elementary,0.6923,X,X
+650,New Hanover County Schools,348,Murrayville Elementary,0.3015,, 
+650,New Hanover County Schools,350,M C S Noble Middle,0.2448,, 
+650,New Hanover County Schools,351,Myrtle Grove Middle,0.3444,, 
+650,New Hanover County Schools,352,New Hanover High,0.4358,X, 
+650,New Hanover County Schools,353,Dr Hubert Eaton Sr Elem,0.1167,, 
+650,New Hanover County Schools,354,Lakeside,0.85,X,X
+650,New Hanover County Schools,355,Mary Sidberry Mosley,0.7627,X,X
+650,New Hanover County Schools,356,Ogden Elementary,0.1218,, 
+650,New Hanover County Schools,362,Pine Valley Elementary,0.3556,, 
+650,New Hanover County Schools,364,Roland-Grise Middle,0.2111,, 
+650,New Hanover County Schools,366,Dr John Codington Elem,0.1464,, 
+650,New Hanover County Schools,368,Sunset Park Elementary,0.7855,X,X
+650,New Hanover County Schools,380,Walter L Parsley Elementary,0.1328,, 
+650,New Hanover County Schools,384,Snipes Academy of Arts and Design,0.9375,X,X
+650,New Hanover County Schools,392,Williston Middle,0.6837,X,X
+650,New Hanover County Schools,394,Wilmington Early College High,0.2741,, 
+650,New Hanover County Schools,400,Winter Park Model Elem,0.5958,X,X
+650,New Hanover County Schools,404,Wrightsboro Elementary,0.6397,X,X
+650,New Hanover County Schools,408,Wrightsville Beach Elem,0.118,, 
+650,New Hanover County Schools,409,D. C. Virgo Preparatory Academy,0.8254,X,X
+650,New Hanover County Schools,420,College Road Early Childhood Center,0.3488,,X
+650,New Hanover County Schools,840,Mary Washington Howe PreK Center,0.685,X,X
+650,New Hanover County Schools,843,Dorothy B Johnson Pre-K,0.9355,X,X
+660,Northampton County Schools,306,Central Elementary School,0.7557,X,X
+660,Northampton County Schools,308,Conway Middle,0.5947,X,X
+660,Northampton County Schools,320,Gaston Elementary,0.7836,X,X
+660,Northampton County Schools,325,GASTON MIDDLE SCHOOL,0.6566,X,X
+660,Northampton County Schools,336,Northampton High-East,0.5485,X,X
+660,Northampton County Schools,360,Willis Hare Elementary,0.6636,X,X
+670,Onslow County Schools,298,Thompson Early Childhood Center,0.5812,X, 
+670,Onslow County Schools,304,Bell Fork Elementary,0.338,, 
+670,Onslow County Schools,308,Blue Creek Elementary,0.25,, 
+670,Onslow County Schools,310,Carolina Forest Elementary,0.1043,, 
+670,Onslow County Schools,312,Clyde Erwin Elementary,0.3824,, 
+670,Onslow County Schools,314,Dixon Elementary,0.1785,, 
+670,Onslow County Schools,318,Dixon Middle,0.2018,, 
+670,Onslow County Schools,320,Dixon High,0.149,, 
+670,Onslow County Schools,321,Hunters Creek Elementary,0.284,, 
+670,Onslow County Schools,322,Hunters Creek Middle,0.2196,, 
+670,Onslow County Schools,323,Jacksonville Commons Elem,0.3205,, 
+670,Onslow County Schools,324,Jacksonville High,0.2272,, 
+670,Onslow County Schools,325,Jacksonville Commons Middle,0.2872,, 
+670,Onslow County Schools,329,Meadow View Elementary,0.2542,, 
+670,Onslow County Schools,330,Morton Elementary,0.2389,, 
+670,Onslow County Schools,331,New Bridge Middle,0.163,, 
+670,Onslow County Schools,332,Northwoods Elementary,0.3531,, 
+670,Onslow County Schools,333,Northside High,0.1988,, 
+670,Onslow County Schools,335,Queens Creek Elementary,0.2539,, 
+670,Onslow County Schools,336,Northwoods Park Middle,0.2534,, 
+670,Onslow County Schools,337,Richlands Primary,0.1859,, 
+670,Onslow County Schools,338,Parkwood Elementary,0.2086,, 
+670,Onslow County Schools,339,Richlands Elementary,0.204,, 
+670,Onslow County Schools,340,Richlands High,0.1578,, 
+670,Onslow County Schools,341,Sand Ridge Elementary,0.27,, 
+670,Onslow County Schools,342,Silverdale Elementary,0.1861,, 
+670,Onslow County Schools,343,Southwest Elementary,0.2817,, 
+670,Onslow County Schools,344,Southwest High,0.2101,, 
+670,Onslow County Schools,345,Southwest Middle,0.3017,, 
+670,Onslow County Schools,346,Summersill Elementary,0.3329,, 
+670,Onslow County Schools,347,Stateside Elementary,0.1267,, 
+670,Onslow County Schools,350,Swansboro Elementary,0.1467,, 
+670,Onslow County Schools,351,Swansboro Middle,0.201,, 
+670,Onslow County Schools,352,Swansboro High,0.1551,, 
+670,Onslow County Schools,356,Trexler Middle,0.2288,, 
+670,Onslow County Schools,364,White Oak High,0.1699,, 
+680,Orange County Schools,304,A L Stanback Middle,0.2844,, 
+680,Orange County Schools,308,Cameron Park Elementary,0.2536,, 
+680,Orange County Schools,310,Cedar Ridge High,0.1716,, 
+680,Orange County Schools,312,Central Elementary,0.5196,X, 
+680,Orange County Schools,316,Charles W Stanford Middle,0.2278,, 
+680,Orange County Schools,324,Efland Cheeks Elementary,0.4158,X, 
+680,Orange County Schools,327,Gravelly Hill Middle,0.2918,, 
+680,Orange County Schools,328,Grady Brown Elementary,0.2655,, 
+680,Orange County Schools,329,Hillsborough Elementary,0.0674,, 
+680,Orange County Schools,330,New Hope Elementary,0.339,, 
+680,Orange County Schools,332,Orange High,0.2075,, 
+680,Orange County Schools,335,Partnership Academy Alternativ,0.5161,X, 
+680,Orange County Schools,336,Pathways Elementary,0.3136,, 
+681,Chapel Hill-Carrboro Schools,300,Northside Elementary,0.3249,, 
+681,Chapel Hill-Carrboro Schools,304,Carrboro Elementary,0.2298,, 
+681,Chapel Hill-Carrboro Schools,305,Carrboro High School,0.1298,, 
+681,Chapel Hill-Carrboro Schools,308,Chapel Hill High,0.1309,, 
+681,Chapel Hill-Carrboro Schools,309,C and L McDougle Mid,0.1739,, 
+681,Chapel Hill-Carrboro Schools,310,Elizabeth Seawell Elem,0.201,, 
+681,Chapel Hill-Carrboro Schools,311,Ephesus Road Elementary,0.2168,, 
+681,Chapel Hill-Carrboro Schools,312,Estes Hills Elementary,0.2161,, 
+681,Chapel Hill-Carrboro Schools,314,East Chapel Hill High,0.1177,, 
+681,Chapel Hill-Carrboro Schools,316,Frank P Graham Elementary,0.2979,, 
+681,Chapel Hill-Carrboro Schools,320,Glenwood Elementary,0.1316,, 
+681,Chapel Hill-Carrboro Schools,322,Grey Culbreth Middle,0.1456,, 
+681,Chapel Hill-Carrboro Schools,324,Guy Phillips Middle,0.1335,, 
+681,Chapel Hill-Carrboro Schools,326,C and L McDougle Elem,0.2704,, 
+681,Chapel Hill-Carrboro Schools,330,Mary Scroggs Elementary,0.1941,, 
+681,Chapel Hill-Carrboro Schools,332,Morris Grove Elementary,0.1567,, 
+681,Chapel Hill-Carrboro Schools,334,Mel and Zora Rashkis Elem,0.1751,, 
+681,Chapel Hill-Carrboro Schools,336,R D and Euzelle Smith Middle,0.1255,, 
+681,Chapel Hill-Carrboro Schools,338,Phoenix Academy,0.5581,X, 
+690,Pamlico County Schools,312,Fred A Anderson Elementary,0.4843,X,X
+690,Pamlico County Schools,316,Pamlico County Middle,0.4261,X,X
+690,Pamlico County Schools,320,Pamlico County High,0.3429,, 
+690,Pamlico County Schools,324,Pamlico County Primary,0.5118,X,X
+700,Pasquotank County Schools,306,Central Elementary,0.3837,, 
+700,Pasquotank County Schools,308,Elizabeth City Middle,0.4637,X, 
+700,Pasquotank County Schools,310,H L Trigg Community,0.7821,X, 
+700,Pasquotank County Schools,314,Northside Elementary,0.3675,, 
+700,Pasquotank County Schools,316,J C Sawyer Elementary,0.5637,X, 
+700,Pasquotank County Schools,317,Northeastern High,0.3292,, 
+700,Pasquotank County Schools,318,Pasquotank Elementary,0.5106,X, 
+700,Pasquotank County Schools,319,Pasquotank County High,0.3523,, 
+700,Pasquotank County Schools,320,P W Moore Elementary,0.7587,X, 
+700,Pasquotank County Schools,322,River Road Middle,0.4377,X, 
+700,Pasquotank County Schools,324,Sheep-Harney Elementary,0.6213,X, 
+700,Pasquotank County Schools,328,Weeksville Elementary,0.3758,, 
+710,Pender County Schools,312,Burgaw Elementary,0.7158,X, 
+710,Pender County Schools,316,Burgaw Middle,0.5582,X, 
+710,Pender County Schools,318,Cape Fear Elementary,0.4807,X, 
+710,Pender County Schools,320,Cape Fear Middle,0.4706,X, 
+710,Pender County Schools,321,Heide Trask High,0.4061,X, 
+710,Pender County Schools,323,North Topsail Elementary,0.2326,, 
+710,Pender County Schools,324,Malpass Corner Elementary,0.6913,X, 
+710,Pender County Schools,326,Pender High,0.4908,X, 
+710,Pender County Schools,327,Pender Early College High School,0.21,, 
+710,Pender County Schools,328,Penderlea Elementary,0.4449,X, 
+710,Pender County Schools,332,Rocky Point Primary,0.6288,X, 
+710,Pender County Schools,342,Topsail High,0.1338,, 
+710,Pender County Schools,344,Topsail Elementary School,0.1906,, 
+710,Pender County Schools,346,Topsail Middle,0.1849,, 
+710,Pender County Schools,347,South Topsail Elementary,0.1597,, 
+710,Pender County Schools,348,West Pender Middle,0.5747,X, 
+720,Perquimans County Schools,304,Perquimans Central,0.4696,X, 
+720,Perquimans County Schools,312,Hertford Grammar,0.489,X, 
+720,Perquimans County Schools,316,Perquimans County High,0.3608,, 
+720,Perquimans County Schools,320,Perquimans County Middle,0.433,X, 
+730,Person County Schools,324,Earl Bradsher Pre-K Center,0.859,X,X
+730,Person County Schools,332,Helena Elementary,0.3344,,X
+730,Person County Schools,334,North Elementary,0.8305,X,X
+730,Person County Schools,340,North End Elementary,0.5659,X,X
+730,Person County Schools,344,Northern Middle,0.5041,X, 
+730,Person County Schools,348,Oak Lane Elementary,0.2924,,X
+730,Person County Schools,352,Person High,0.3927,, 
+730,Person County Schools,354,Stories Creek Elementary,0.5438,X,X
+730,Person County Schools,356,South Elementary,0.74,X,X
+730,Person County Schools,360,Southern Middle,0.387,, 
+730,Person County Schools,368,Woodland Elementary,0.3462,,X
+740,Pitt County Schools,302,A G Cox Middle,0.3206,, 
+740,Pitt County Schools,304,Ayden Elementary,0.5271,X, 
+740,Pitt County Schools,308,Ayden Middle,0.4058,X, 
+740,Pitt County Schools,309,Ayden-Grifton High,0.4498,X, 
+740,Pitt County Schools,310,Belvoir Elementary,0.7162,X,X
+740,Pitt County Schools,320,Bethel Elementary,0.5179,X, 
+740,Pitt County Schools,324,C M Eppes Middle,0.6187,X, 
+740,Pitt County Schools,330,Creekside Elementary School,0.4604,X, 
+740,Pitt County Schools,332,Chicod Elementary,0.2877,, 
+740,Pitt County Schools,333,D H Conley High,0.2435,, 
+740,Pitt County Schools,334,Falkland Elementary,0.7092,X,X
+740,Pitt County Schools,336,Eastern Elementary,0.5111,X, 
+740,Pitt County Schools,337,E B Aycock Middle,0.5163,X, 
+740,Pitt County Schools,338,Elmhurst Elementary,0.6701,X, 
+740,Pitt County Schools,340,Farmville Middle,0.4945,X, 
+740,Pitt County Schools,344,Farmville Central High,0.4646,X, 
+740,Pitt County Schools,352,Grifton Elementary,0.5907,X, 
+740,Pitt County Schools,358,G R Whitfield Elementary,0.4911,X, 
+740,Pitt County Schools,360,H B Sugg Elementary,0.6288,X, 
+740,Pitt County Schools,362,Hope Middle,0.2134,, 
+740,Pitt County Schools,366,Junius H Rose High,0.419,X, 
+740,Pitt County Schools,368,Lakeforest Elementary,0.7138,X,X
+740,Pitt County Schools,374,North Pitt High,0.4939,X,X
+740,Pitt County Schools,375,Northwest Elementary,0.6754,X,X
+740,Pitt County Schools,376,Pactolus Elementary,0.6263,X,X
+740,Pitt County Schools,378,Sadie Saulter Educational Center,0.5275,X,X
+740,Pitt County Schools,379,Ridgewood Elementary Schoo,0.3544,, 
+740,Pitt County Schools,380,W H Robinson Elementary,0.3955,, 
+740,Pitt County Schools,386,Sam D Bundy Elementary,0.5508,X, 
+740,Pitt County Schools,388,South Central High,0.3608,, 
+740,Pitt County Schools,390,South Greenville Elementary,0.834,X,X
+740,Pitt County Schools,396,Stokes Elementary,0.4415,X, 
+740,Pitt County Schools,400,Wahl Coates Elementary,0.6333,X, 
+740,Pitt County Schools,402,Wellcome Middle,0.6783,X,X
+740,Pitt County Schools,404,Wintergreen Intermediate,0.274,, 
+740,Pitt County Schools,406,Wintergreen Primary,0.3555,, 
+740,Pitt County Schools,500,Early College,0.5135,X, 
+750,Polk County Schools,304,Tryon Elementary,0.4521,X,X
+750,Polk County Schools,314,Polk Central,0.5082,X,X
+750,Polk County Schools,318,Polk County High,0.3109,, 
+750,Polk County Schools,319,Polk County Middle,0.3313,,X
+750,Polk County Schools,320,Saluda Elementary,0.3722,,X
+750,Polk County Schools,328,Sunny View Elementary,0.5286,X,X
+760,Randolph County Schools,304,Archdale Elementary,0.3952,, 
+760,Randolph County Schools,308,Braxton Craven Middle,0.3125,, 
+760,Randolph County Schools,316,Coleridge Elementary,0.454,X, 
+760,Randolph County Schools,318,Eastern Randolph High,0.3448,, 
+760,Randolph County Schools,320,Farmer Elementary,0.32,, 
+760,Randolph County Schools,324,Franklinville Elementary,0.45,X, 
+760,Randolph County Schools,328,Grays Chapel Elementary,0.403,X, 
+760,Randolph County Schools,329,Hopewell Elementary,0.3038,, 
+760,Randolph County Schools,330,John R Lawrence Elementary,0.2896,, 
+760,Randolph County Schools,331,Level Cross Elementary,0.3623,, 
+760,Randolph County Schools,332,Liberty Elem,0.482,X, 
+760,Randolph County Schools,336,New Market Elementary,0.439,X, 
+760,Randolph County Schools,338,Northeastern Randolph Middle,0.3382,, 
+760,Randolph County Schools,339,Providence Grove High School,0.2753,, 
+760,Randolph County Schools,340,Ramseur Elementary,0.6544,X, 
+760,Randolph County Schools,344,Randleman Elementary,0.4627,X, 
+760,Randolph County Schools,348,Randleman High,0.3147,, 
+760,Randolph County Schools,352,Randleman Middle,0.4137,X, 
+760,Randolph County Schools,354,Randolph Early College High School,0.2073,, 
+760,Randolph County Schools,356,Seagrove Elementary,0.438,X, 
+760,Randolph County Schools,357,Southeastern Randolph Mid,0.4561,X, 
+760,Randolph County Schools,358,Southwestern Randolph High,0.2802,, 
+760,Randolph County Schools,359,Southmont Elementary,0.4415,X, 
+760,Randolph County Schools,360,Southwestern Randolph Mid,0.3757,, 
+760,Randolph County Schools,364,Tabernacle Elementary,0.4404,X, 
+760,Randolph County Schools,368,Trindale Elementary,0.346,, 
+760,Randolph County Schools,376,Trinity Elementary,0.4382,X, 
+760,Randolph County Schools,378,Archdale-Trinity Middle,0.2559,, 
+760,Randolph County Schools,380,Trinity High,0.2571,, 
+760,Randolph County Schools,382,Uwharrie Middle,0.3641,, 
+760,Randolph County Schools,388,Wheatmore High School,0.1749,, 
+761,Asheboro City Schools,304,Asheboro High,0.3685,, 
+761,Asheboro City Schools,308,South Asheboro Middle,0.4093,X, 
+761,Asheboro City Schools,312,Balfour Elementary,0.6593,X, 
+761,Asheboro City Schools,320,Charles W McCrary Elementary,0.608,X, 
+761,Asheboro City Schools,321,Donna L Loflin Elementary,0.5519,X, 
+761,Asheboro City Schools,328,Guy B Teachey Elementary,0.4101,X, 
+761,Asheboro City Schools,332,Lindley Park Elementary,0.4663,X, 
+761,Asheboro City Schools,336,North Asheboro Middle,0.526,X, 
+770,Richmond County Schools,310,East Rockingham Elementary,0.6684,X,X
+770,Richmond County Schools,312,Cordova Elementary,0.5766,X,X
+770,Richmond County Schools,316,Ellerbe Middle School,0.5696,X,X
+770,Richmond County Schools,318,Fairview Heights Elementary,0.6104,X,X
+770,Richmond County Schools,328,Hamlet Middle School,0.551,X,X
+770,Richmond County Schools,340,L J Bell Elementary,0.5827,X,X
+770,Richmond County Schools,342,Leak Street High School,0.7174,X,X
+770,Richmond County Schools,344,Mineral Springs Elementary,0.6123,X,X
+770,Richmond County Schools,346,Monroe Avenue Elementary,0.7697,X,X
+770,Richmond County Schools,348,Richmond Senior High,0.4345,X, 
+770,Richmond County Schools,349,Richmond Early College,0.4606,X, 
+770,Richmond County Schools,351,Richmond 9th Grade Academy,0.4667,X, 
+770,Richmond County Schools,360,Rockingham Middle School,0.4516,X,X
+770,Richmond County Schools,364,Rohanen Middle School,0.5902,X,X
+770,Richmond County Schools,368,West Rockingham Elementary,0.6705,X,X
+770,Richmond County Schools,370,Washington Street,0.6326,X,X
+780,Robeson County Schools,320,Deep Branch Elementary,0.7214,X,X
+780,Robeson County Schools,322,East Robeson Primary,0.6457,X,X
+780,Robeson County Schools,324,Fairgrove Middle,0.573,X,X
+780,Robeson County Schools,325,Fairmont High,0.5115,X,X
+780,Robeson County Schools,326,Fairmont Middle,0.7151,X,X
+780,Robeson County Schools,328,Green Grove Elementary,0.6696,X,X
+780,Robeson County Schools,329,Janie C Hargrave Elem,0.7529,X,X
+780,Robeson County Schools,330,L Gilbert Carroll Middle,0.5841,X,X
+780,Robeson County Schools,336,Littlefield Middle,0.486,X,X
+780,Robeson County Schools,340,Long Branch Elementary,0.682,X,X
+780,Robeson County Schools,341,Lumberton Junior High,0.5449,X,X
+780,Robeson County Schools,342,Lumberton Senior High,0.4424,X,X
+780,Robeson County Schools,344,Magnolia Elementary,0.6159,X,X
+780,Robeson County Schools,352,Orrum Middle,0.5941,X,X
+780,Robeson County Schools,356,Oxendine Elementary,0.7493,X,X
+780,Robeson County Schools,360,Parkton Elementary,0.7013,X,X
+780,Robeson County Schools,364,Pembroke Elementary,0.6763,X,X
+780,Robeson County Schools,368,Pembroke Middle,0.5533,X,X
+780,Robeson County Schools,374,Peterson Elementary,0.7325,X,X
+780,Robeson County Schools,376,Piney Grove Elementary,0.6797,X,X
+780,Robeson County Schools,384,Prospect Elementary,0.4806,X,X
+780,Robeson County Schools,385,PSRC Early College at RCC,0.3518,, 
+780,Robeson County Schools,390,R B Dean Elementary,0.843,X,X
+780,Robeson County Schools,391,Red Springs High,0.5113,X,X
+780,Robeson County Schools,392,Rex-Rennert Elementary,0.7058,X,X
+780,Robeson County Schools,393,Red Springs Middle,0.6017,X,X
+780,Robeson County Schools,394,Rosenwald Elementary,0.7987,X,X
+780,Robeson County Schools,396,Rowland Middle,0.5779,X,X
+780,Robeson County Schools,398,Rowland Norment Elementary,0.7094,X,X
+780,Robeson County Schools,400,Saint Pauls Elementary,0.6269,X,X
+780,Robeson County Schools,401,Saint Pauls High,0.4224,X,X
+780,Robeson County Schools,402,South Robeson High,0.4926,X,X
+780,Robeson County Schools,403,Saint Pauls Middle,0.5521,X,X
+780,Robeson County Schools,407,Tanglewood Elementary,0.3348,,X
+780,Robeson County Schools,408,Southside/Ashpole Elem,0.8405,X,X
+780,Robeson County Schools,410,Townsend Middle,0.6425,X,X
+780,Robeson County Schools,412,Union Chapel Elementary,0.6076,X,X
+780,Robeson County Schools,416,Union Elementary,0.592,X,X
+780,Robeson County Schools,417,W H Knuckles,0.8958,X,X
+780,Robeson County Schools,418,West Lumberton Elementary,0.9375,X,X
+780,Robeson County Schools,420,Purnell Swett High,0.4448,X,X
+790,Rockingham County Schools,302,Bethany Elementary,0.2483,, 
+790,Rockingham County Schools,310,Central Elementary,0.5,X, 
+790,Rockingham County Schools,314,Dalton McMichael High,0.2699,, 
+790,Rockingham County Schools,318,Douglass Elementary,0.4487,X, 
+790,Rockingham County Schools,322,Draper Elementary,0.6709,X,X
+790,Rockingham County Schools,327,Huntsville Elementary,0.4133,X, 
+790,Rockingham County Schools,330,J E Holmes Middle,0.4948,X, 
+790,Rockingham County Schools,334,John W Dillard Elementary,0.6044,X,X
+790,Rockingham County Schools,344,Leaksville-Spray Elementary,0.5577,X,X
+790,Rockingham County Schools,347,Lincoln Elementary,0.4354,X,X
+790,Rockingham County Schools,350,Monroeton Elementary,0.4806,X, 
+790,Rockingham County Schools,354,John M Morehead High,0.4183,X, 
+790,Rockingham County Schools,358,Moss Street Elementary,0.7611,X,X
+790,Rockingham County Schools,362,New Vision Sch.of Math/Sci/Tec,0.2809,, 
+790,Rockingham County Schools,366,Reidsville High,0.4044,X, 
+790,Rockingham County Schools,374,Reidsville Middle,0.532,X,X
+790,Rockingham County Schools,378,Rockingham County High,0.2335,, 
+790,Rockingham County Schools,379,Rockingham County Early College,0.243,, 
+790,Rockingham County Schools,380,Rockingham County Middle,0.279,, 
+790,Rockingham County Schools,386,South End Elementary,0.5436,X,X
+790,Rockingham County Schools,390,Stoneville Elementary,0.472,X, 
+790,Rockingham County Schools,392,The SCORE Center,0.6349,X,X
+790,Rockingham County Schools,394,Western Rockingham Middle,0.3765,, 
+790,Rockingham County Schools,398,Wentworth Elementary,0.3346,, 
+790,Rockingham County Schools,402,Williamsburg Elementary,0.5018,X,X
+800,Rowan-Salisbury Schools,308,Henderson Independent High,0.6768,X,X
+800,Rowan-Salisbury Schools,312,Bostian Elementary,0.3188,, 
+800,Rowan-Salisbury Schools,314,Charles C Erwin Middle,0.3363,, 
+800,Rowan-Salisbury Schools,315,Carroll T Overton Elementary,0.6124,X,X
+800,Rowan-Salisbury Schools,316,China Grove Elementary,0.4642,X,X
+800,Rowan-Salisbury Schools,320,China Grove Middle,0.349,, 
+800,Rowan-Salisbury Schools,324,Cleveland Elementary,0.3844,, 
+800,Rowan-Salisbury Schools,328,Corriher Lipe Middle,0.4262,X, 
+800,Rowan-Salisbury Schools,340,East Rowan High,0.2945,, 
+800,Rowan-Salisbury Schools,346,Elizabeth Koontz Elementary,0.7019,X,X
+800,Rowan-Salisbury Schools,347,Shive Elementary,0.4295,X, 
+800,Rowan-Salisbury Schools,348,Enochville Elementary,0.4005,X, 
+800,Rowan-Salisbury Schools,352,Faith Elementary,0.3516,, 
+800,Rowan-Salisbury Schools,356,Granite Quarry Elementary,0.4355,X, 
+800,Rowan-Salisbury Schools,358,H D Isenberg Elementary,0.6,X,X
+800,Rowan-Salisbury Schools,359,E Hanford Dole Elementary,0.6423,X,X
+800,Rowan-Salisbury Schools,360,Hurley Elementary,0.4832,X,X
+800,Rowan-Salisbury Schools,361,Jesse C Carson High,0.2371,, 
+800,Rowan-Salisbury Schools,362,Knollwood Elementary,0.4758,X,X
+800,Rowan-Salisbury Schools,363,Knox Middle,0.5709,X,X
+800,Rowan-Salisbury Schools,364,Landis Elementary,0.5505,X,X
+800,Rowan-Salisbury Schools,366,Millbridge Elementary,0.3815,, 
+800,Rowan-Salisbury Schools,368,Morgan Elementary,0.4408,X, 
+800,Rowan-Salisbury Schools,372,Mount Ulla Elementary,0.362,, 
+800,Rowan-Salisbury Schools,373,North Rowan Elementary,0.6181,X,X
+800,Rowan-Salisbury Schools,376,North Rowan High,0.424,X, 
+800,Rowan-Salisbury Schools,377,North Rowan Middle,0.5356,X,X
+800,Rowan-Salisbury Schools,392,Rockwell Elementary,0.3582,, 
+800,Rowan-Salisbury Schools,394,Rowan County Early College,0.2844,, 
+800,Rowan-Salisbury Schools,396,Salisbury High,0.4138,X, 
+800,Rowan-Salisbury Schools,398,Southeast Middle,0.3126,, 
+800,Rowan-Salisbury Schools,400,South Rowan High,0.3167,, 
+800,Rowan-Salisbury Schools,408,West Rowan High,0.2927,, 
+800,Rowan-Salisbury Schools,410,West Rowan Middle,0.3452,, 
+800,Rowan-Salisbury Schools,412,Woodleaf Elementary,0.4611,X, 
+810,Rutherford County Schools,216,Carver Center,1,X,X
+810,Rutherford County Schools,324,Chase High,0.3538,,X
+810,Rutherford County Schools,326,Chase Middle,0.4594,X,X
+810,Rutherford County Schools,328,Cliffside Elementary,0.6562,X,X
+810,Rutherford County Schools,336,Forest City Dunbar Elementary,0.8087,X,X
+810,Rutherford County Schools,340,East Rutherford High,0.3914,,X
+810,Rutherford County Schools,342,East Rutherford Middle,0.4741,X,X
+810,Rutherford County Schools,344,Ellenboro Elementary,0.5402,X,X
+810,Rutherford County Schools,350,Forrest W Hunt Elementary,0.6259,X,X
+810,Rutherford County Schools,360,Harris Elementary,0.5453,X,X
+810,Rutherford County Schools,364,Mt Vernon-Ruth Elementary,0.5659,X,X
+810,Rutherford County Schools,370,Pinnacle Elementary,0.5268,X,X
+810,Rutherford County Schools,378,R S Middle,0.4615,X,X
+810,Rutherford County Schools,384,R S Central,0.3532,,X
+810,Rutherford County Schools,385,Rutherford Co Early College Hi,0.2798,,X
+810,Rutherford County Schools,386,Rutherford Opportunity Center,0.5887,X,X
+810,Rutherford County Schools,388,Rutherfordton Elementary,0.5052,X,X
+810,Rutherford County Schools,396,Spindale Elementary,0.7089,X,X
+810,Rutherford County Schools,400,Sunshine Elementary,0.5278,X,X
+820,Sampson County Schools,312,Roseboro Elementary School,0.6519,X, 
+820,Sampson County Schools,320,Clement Elementary,0.4675,X, 
+820,Sampson County Schools,324,Sampson Early College High School,0.3187,, 
+820,Sampson County Schools,340,Hargrove Elementary,0.56,X, 
+820,Sampson County Schools,346,Hobbton Elementary,0.521,X, 
+820,Sampson County Schools,347,Hobbton Middle,0.5011,X, 
+820,Sampson County Schools,348,Hobbton High,0.3764,, 
+820,Sampson County Schools,349,Lakewood High,0.4545,X, 
+820,Sampson County Schools,350,Midway Elementary,0.4519,X, 
+820,Sampson County Schools,352,Midway High,0.2857,, 
+820,Sampson County Schools,354,Midway Middle,0.3671,, 
+820,Sampson County Schools,364,Plain View Elementary,0.3895,, 
+820,Sampson County Schools,370,Union Middle,0.5407,X, 
+820,Sampson County Schools,372,Roseboro-Salemburg Middle,0.5162,X, 
+820,Sampson County Schools,376,Salemburg Elementary,0.5738,X, 
+820,Sampson County Schools,384,Union Elementary,0.603,X, 
+820,Sampson County Schools,385,Union Intermediate School,0.5799,X, 
+820,Sampson County Schools,388,Union High,0.4453,X, 
+821,Clinton City Schools,304,Butler Avenue Elementary,0.5182,X, 
+821,Clinton City Schools,308,Clinton High,0.372,, 
+821,Clinton City Schools,316,Langdon C Kerr Elem,0.5974,X, 
+821,Clinton City Schools,320,Sampson Middle,0.3962,, 
+821,Clinton City Schools,330,Sunset Avenue Elementary School,0.4617,X, 
+830,Scotland County Schools,304,Carver Middle,0.5859,X,X
+830,Scotland County Schools,312,Covington Street Elementary,0.6373,X,X
+830,Scotland County Schools,316,Shaw Academy,0.8028,X,X
+830,Scotland County Schools,320,I E Johnson Elementary,0.797,X,X
+830,Scotland County Schools,328,Laurel Hill Elementary,0.5795,X,X
+830,Scotland County Schools,336,North Laurinburg Elementary,0.8582,X,X
+830,Scotland County Schools,343,Scotland County High School,0.5017,X,X
+830,Scotland County Schools,348,Scotland Early College High School,0.3194,,X
+830,Scotland County Schools,349,Spring Hill Middle,0.504,X,X
+830,Scotland County Schools,356,South Scotland Elementary,0.5218,X,X
+830,Scotland County Schools,360,Wagram Primary,0.6512,X,X
+830,Scotland County Schools,364,Sycamore Lane Elementary,0.6714,X,X
+840,Stanly County Schools,302,Albemarle High,0.4534,X, 
+840,Stanly County Schools,303,Albemarle Middle,0.5836,X, 
+840,Stanly County Schools,304,Aquadale Elementary,0.3293,, 
+840,Stanly County Schools,308,Badin Elementary,0.4362,X, 
+840,Stanly County Schools,310,Central Elementary,0.6317,X,X
+840,Stanly County Schools,312,Endy Elementary,0.3228,, 
+840,Stanly County Schools,316,East Albemarle Elementary,0.6647,X,X
+840,Stanly County Schools,320,Locust Elementary,0.2358,, 
+840,Stanly County Schools,324,Millingport Elementary,0.3765,, 
+840,Stanly County Schools,328,North Stanly Middle School,0.2714,, 
+840,Stanly County Schools,332,North Stanly High,0.2252,, 
+840,Stanly County Schools,336,Norwood Elementary,0.4389,X, 
+840,Stanly County Schools,340,Oakboro Elementary,0.3631,, 
+840,Stanly County Schools,344,Richfield Elementary,0.3006,, 
+840,Stanly County Schools,350,West Stanly Middle School,0.2729,, 
+840,Stanly County Schools,356,South Stanly High,0.2517,, 
+840,Stanly County Schools,358,South Stanly Middle,0.3658,, 
+840,Stanly County Schools,360,Stanfield Elementary,0.3204,, 
+840,Stanly County Schools,361,Stanly Early College,0.2564,, 
+840,Stanly County Schools,368,West Stanly High,0.1835,, 
+840,Stanly County Schools,370,Stanly Academy,0.6,X, 
+850,Stokes County Schools,304,Chestnut Grove Middle,0.2906,, 
+850,Stokes County Schools,312,Germanton Elementary,0.3371,, 
+850,Stokes County Schools,314,Mount Olive Elementary,0.2572,, 
+850,Stokes County Schools,316,King Elementary,0.4154,X, 
+850,Stokes County Schools,320,Lawsonville Elementary,0.3131,, 
+850,Stokes County Schools,324,Meadowbrook School,0.5647,X, 
+850,Stokes County Schools,328,Nancy Reynolds Elementary,0.4551,X, 
+850,Stokes County Schools,332,North Stokes High,0.2667,, 
+850,Stokes County Schools,336,Pine Hall Elementary,0.4525,X, 
+850,Stokes County Schools,338,Piney Grove Middle,0.3607,, 
+850,Stokes County Schools,340,Pinnacle Elementary,0.4126,X, 
+850,Stokes County Schools,342,Popular Springs Elementary,0.287,, 
+850,Stokes County Schools,348,Sandy Ridge  Elem,0.3388,, 
+850,Stokes County Schools,350,Southeastern Stokes Middle,0.3443,, 
+850,Stokes County Schools,352,South Stokes High,0.2432,, 
+850,Stokes County Schools,354,London Elementary,0.4017,X, 
+850,Stokes County Schools,356,Walnut Cove Elementary,0.4845,X, 
+850,Stokes County Schools,358,West Stokes High,0.2177,, 
+850,Stokes County Schools,360,Stokes Early College,0.1974,, 
+860,Surry County Schools,302,Cedar Ridge Elementary,0.5208,X, 
+860,Surry County Schools,306,Central Middle,0.406,X, 
+860,Surry County Schools,308,Copeland Elementary,0.506,X, 
+860,Surry County Schools,312,Dobson Elementary,0.3879,, 
+860,Surry County Schools,316,East Surry High,0.2459,, 
+860,Surry County Schools,320,Flat Rock Elementary,0.6322,X,X
+860,Surry County Schools,324,Franklin Elementary,0.5223,X, 
+860,Surry County Schools,326,J Sam Gentry Middle,0.3515,, 
+860,Surry County Schools,330,Meadowview Middle,0.4659,X, 
+860,Surry County Schools,332,Mountain Park Elementary,0.5309,X, 
+860,Surry County Schools,336,North Surry High,0.3447,, 
+860,Surry County Schools,339,Pilot Mountain Elementary,0.3441,, 
+860,Surry County Schools,340,Pilot Mountain Middle,0.3484,, 
+860,Surry County Schools,344,Rockford Elementary,0.4934,X, 
+860,Surry County Schools,348,Shoals Elementary,0.3251,, 
+860,Surry County Schools,352,Surry Central High,0.357,, 
+860,Surry County Schools,354,Surry Early College High School of Design,0.361,, 
+860,Surry County Schools,356,Westfield Elementary,0.4741,X, 
+860,Surry County Schools,360,White Plains Elementary,0.3935,, 
+861,Elkin City Schools,304,Elkin Elementary,0.411,X, 
+861,Elkin City Schools,308,Elkin High,0.3427,, 
+861,Elkin City Schools,312,Elkin Middle,0.3199,, 
+862,Mount Airy City Schools,308,Bruce H Tharrington Elem,0.433,X, 
+862,Mount Airy City Schools,310,Jones Intermediate,0.3967,, 
+862,Mount Airy City Schools,312,Mount Airy High,0.2323,, 
+862,Mount Airy City Schools,316,Mount Airy Middle,0.3422,, 
+870,Swain County Schools,314,Swain County High,0.2476,, 
+870,Swain County Schools,318,Swain County Middle,0.3121,, 
+870,Swain County Schools,320,Swain Co East Elementary,0.375,, 
+870,Swain County Schools,324,Swain Co West Elementary,0.3673,,X
+880,Transylvania County Schools,304,Brevard Elementary,0.5466,X, 
+880,Transylvania County Schools,308,Brevard High,0.2861,, 
+880,Transylvania County Schools,312,Brevard Middle,0.4163,X, 
+880,Transylvania County Schools,318,Pisgah Forest Elementary,0.4436,X, 
+880,Transylvania County Schools,320,Davidson River School,0.675,X,X
+880,Transylvania County Schools,324,Rosman Elementary,0.5353,X, 
+880,Transylvania County Schools,328,Rosman High,0.3563,, 
+880,Transylvania County Schools,330,Rosman Middle,0.4363,X, 
+880,Transylvania County Schools,336,T C Henderson Elementary,0.6124,X, 
+890,Tyrrell County Schools,304,Columbia High,0.3272,, 
+890,Tyrrell County Schools,306,Columbia Middle,0.4912,X, 
+890,Tyrrell County Schools,308,Tyrrell Elementary,0.4577,X, 
+900,Union County Public Schools,270,Walter Bickett Education Center,0.8045,X, 
+900,Union County Public Schools,302,Antioch Elementary,0.0423,, 
+900,Union County Public Schools,303,Rea View Elementary,0.0227,, 
+900,Union County Public Schools,304,Benton Heights Elementary,0.5167,X, 
+900,Union County Public Schools,305,New Town Elementary,0.0355,, 
+900,Union County Public Schools,306,East Elementary,0.7266,X, 
+900,Union County Public Schools,307,Rocky River Elementary,0.3813,, 
+900,Union County Public Schools,308,East Union Middle,0.4673,X, 
+900,Union County Public Schools,310,Cuthbertson Middle School,0.0278,, 
+900,Union County Public Schools,311,Cuthbertson High School,0.0501,, 
+900,Union County Public Schools,312,Fairview Elementary,0.1858,, 
+900,Union County Public Schools,314,Monroe Middle,0.5561,X, 
+900,Union County Public Schools,316,Forest Hills High,0.4077,X, 
+900,Union County Public Schools,318,Hemby Bridge Elementary,0.1828,, 
+900,Union County Public Schools,320,Indian Trail Elementary,0.1962,, 
+900,Union County Public Schools,328,Kensington Elementary,0.0429,, 
+900,Union County Public Schools,332,Marshville Elementary,0.5299,X, 
+900,Union County Public Schools,334,Marvin Elementary,0.0182,, 
+900,Union County Public Schools,336,Monroe High,0.4848,X, 
+900,Union County Public Schools,340,New Salem Elementary,0.2609,, 
+900,Union County Public Schools,341,Porter Ridge Elementary,0.244,, 
+900,Union County Public Schools,342,Porter Ridge High School,0.1423,, 
+900,Union County Public Schools,343,Porter Ridge Middle School,0.1856,, 
+900,Union County Public Schools,344,Parkwood High,0.2082,, 
+900,Union County Public Schools,346,Parkwood Middle,0.2402,, 
+900,Union County Public Schools,347,Poplin Elementary,0.1738,, 
+900,Union County Public Schools,348,Piedmont High,0.1249,, 
+900,Union County Public Schools,350,Piedmont Middle,0.1555,, 
+900,Union County Public Schools,351,Rock Rest Elementary,0.6263,X, 
+900,Union County Public Schools,352,Prospect Elementary,0.3622,, 
+900,Union County Public Schools,353,Sandy Ridge Elementary School,0.0179,, 
+900,Union County Public Schools,354,Sardis Elementary,0.3226,, 
+900,Union County Public Schools,356,Shiloh Elementary,0.2692,, 
+900,Union County Public Schools,358,Stallings Elementary School,0.2,, 
+900,Union County Public Schools,360,Sun Valley High,0.1388,, 
+900,Union County Public Schools,362,Sun Valley Middle,0.1532,, 
+900,Union County Public Schools,363,Sun Valley Elementary Schools,0.1532,, 
+900,Union County Public Schools,364,Union Elementary,0.4362,X, 
+900,Union County Public Schools,365,South Providence,0.6689,X, 
+900,Union County Public Schools,366,Central Academy,0.0994,, 
+900,Union County Public Schools,367,Union County Early College,0.161,, 
+900,Union County Public Schools,368,Unionville Elementary,0.2182,, 
+900,Union County Public Schools,370,Walter Bickett Elementary,0.6645,X, 
+900,Union County Public Schools,372,Waxhaw Elementary,0.2585,, 
+900,Union County Public Schools,376,Weddington Elementary,0.0399,, 
+900,Union County Public Schools,377,Weddington High,0.0356,, 
+900,Union County Public Schools,378,Weddington Middle,0.0341,, 
+900,Union County Public Schools,380,Wesley Chapel Elementary,0.072,, 
+900,Union County Public Schools,384,Western Union Elementary,0.2669,, 
+900,Union County Public Schools,388,Wingate Elementary,0.595,X, 
+900,Union County Public Schools,391,Marvin Ridge Middle,0.0228,, 
+900,Union County Public Schools,392,Wolfe School,0.2703,, 
+900,Union County Public Schools,393,Marvin Ridge High School,0.0136,, 
+910,Vance County Schools,304,Aycock Elementary,0.6368,X,X
+910,Vance County Schools,308,Carver Elementary,0.7124,X,X
+910,Vance County Schools,311,Clarke Elementary,0.751,X,X
+910,Vance County Schools,314,Dabney Elementary,0.6649,X,X
+910,Vance County Schools,316,Eaton-Johnson Middle,0.724,X,X
+910,Vance County Schools,320,Henderson Middle,0.7126,X,X
+910,Vance County Schools,340,New Hope Elementary,0.7526,X,X
+910,Vance County Schools,346,E O Young Jr Elementary,0.7169,X,X
+910,Vance County Schools,356,Pinkston Street Elementary,0.798,X,X
+910,Vance County Schools,360,E M Rollins Elementary,0.7422,X,X
+910,Vance County Schools,364,Southern Vance High,0.5829,X,X
+910,Vance County Schools,368,Western Vance High,0.75,X,X
+910,Vance County Schools,370,Northern Vance High,0.5251,X,X
+910,Vance County Schools,376,L B Yancey Elementary,0.7979,X,X
+910,Vance County Schools,380,Zeb Vance Elementary,0.649,X,X
+910,Vance County Schools,382,Vance County Early College High School,0.252,,X
+910,Vance County Schools,384,STEM Early High School,0.4871,X,X
+920,Wake County Schools,302,River Bend Elementary,0.3893,, 
+920,Wake County Schools,303,Abbott's Creek Elementary,0.1816,, 
+920,Wake County Schools,304,Adams Elementary,0.2503,, 
+920,Wake County Schools,306,Herbert Akins Elementary,0.1552,, 
+920,Wake County Schools,307,Alston Ridge Elementary,0.0535,, 
+920,Wake County Schools,308,Apex Elementary,0.1667,, 
+920,Wake County Schools,312,Apex Middle,0.1032,, 
+920,Wake County Schools,316,Apex High,0.0673,, 
+920,Wake County Schools,317,Apex Friendship High School,0.0558,, 
+920,Wake County Schools,318,Athens Drive High,0.2487,, 
+920,Wake County Schools,320,Aversboro Elementary,0.3523,, 
+920,Wake County Schools,324,Longview,0.4231,X, 
+920,Wake County Schools,325,Banks Road Elementary,0.2057,, 
+920,Wake County Schools,326,Baileywick Road Elementary,0.3668,, 
+920,Wake County Schools,327,Ballentine Elementary,0.1844,, 
+920,Wake County Schools,328,Baucom Elementary,0.1132,, 
+920,Wake County Schools,329,Bar Well Road Elementary,0.5109,X, 
+920,Wake County Schools,332,Project Enlightenment,0.3846,, 
+920,Wake County Schools,334,Brassfield Elementary,0.1597,, 
+920,Wake County Schools,336,Brentwood Elementary,0.445,X, 
+920,Wake County Schools,340,Briarcliff Elementary,0.2407,, 
+920,Wake County Schools,342,Brier Creek Elementary,0.1866,, 
+920,Wake County Schools,344,Brooks Elementary,0.1706,, 
+920,Wake County Schools,348,Needham Broughton High,0.2489,, 
+920,Wake County Schools,352,Bugg Elementary,0.445,X, 
+920,Wake County Schools,356,Carnage Middle,0.2316,, 
+920,Wake County Schools,358,Carpenter Elementary,0.126,, 
+920,Wake County Schools,360,Carroll Middle,0.3114,, 
+920,Wake County Schools,362,Carver Elementary,0.3785,, 
+920,Wake County Schools,364,Cary Elementary,0.2482,, 
+920,Wake County Schools,368,Cary High,0.1627,, 
+920,Wake County Schools,369,Cedar Fork Elementary,0.0565,, 
+920,Wake County Schools,370,Centennial Campus Middle,0.2436,, 
+920,Wake County Schools,376,Combs Elementary,0.2456,, 
+920,Wake County Schools,380,Conn Elementary,0.3877,, 
+920,Wake County Schools,384,Creech Road Elementary,0.5359,X, 
+920,Wake County Schools,388,Daniels Middle,0.2407,, 
+920,Wake County Schools,390,Davis Drive Elementary,0.019,, 
+920,Wake County Schools,391,Davis Drive Middle,0.0378,, 
+920,Wake County Schools,393,Dillard Drive Elementary,0.3944,, 
+920,Wake County Schools,394,Dillard Drive Middle,0.3068,, 
+920,Wake County Schools,396,Douglas Elementary,0.2861,, 
+920,Wake County Schools,398,Durant Road Elementary,0.2585,, 
+920,Wake County Schools,399,Durant Road Middle,0.2168,, 
+920,Wake County Schools,400,Reedy Creek Middle,0.2469,, 
+920,Wake County Schools,402,East Cary Middle,0.1184,, 
+920,Wake County Schools,403,East Garner Elementary,0.5331,X, 
+920,Wake County Schools,404,East Garner Middle,0.331,, 
+920,Wake County Schools,408,East Millbrook Middle,0.4144,X, 
+920,Wake County Schools,410,East Wake Middle,0.3713,, 
+920,Wake County Schools,411,East Wake High,0.3057,, 
+920,Wake County Schools,412,William G Enloe High,0.2078,, 
+920,Wake County Schools,413,Forestville Road Elementary,0.3209,, 
+920,Wake County Schools,414,Farmington Woods Elementary,0.2016,, 
+920,Wake County Schools,415,Fox Road Elementary,0.4594,X, 
+920,Wake County Schools,416,Fuller Elementary,0.3258,, 
+920,Wake County Schools,417,Forest Pines Elementary,0.2267,, 
+920,Wake County Schools,420,Fuquay-Varina Elementary,0.2082,, 
+920,Wake County Schools,424,Fuquay-Varina Middle,0.245,, 
+920,Wake County Schools,428,Fuquay-Varina High,0.1493,, 
+920,Wake County Schools,436,Garner High,0.2339,, 
+920,Wake County Schools,438,River Oaks Middle,0.4658,X, 
+920,Wake County Schools,439,Green Hope Elementary,0.0468,, 
+920,Wake County Schools,440,Green Elementary,0.5317,X, 
+920,Wake County Schools,441,Green Hope High,0.0473,, 
+920,Wake County Schools,442,Hilburn Drive Elementary,0.1584,, 
+920,Wake County Schools,443,Highcroft Elementary,0.0273,, 
+920,Wake County Schools,444,Heritage Middle,0.099,, 
+920,Wake County Schools,445,Heritage High,0.1153,, 
+920,Wake County Schools,446,Hodge Road Elementary,0.4103,X, 
+920,Wake County Schools,447,Holly Springs Elementary,0.1161,, 
+920,Wake County Schools,448,Hunter Elementary,0.3251,, 
+920,Wake County Schools,449,Holly Ridge Elementary,0.1422,, 
+920,Wake County Schools,450,Holly Ridge Middle,0.1246,, 
+920,Wake County Schools,451,Harris Creek Elementary,0.2077,, 
+920,Wake County Schools,452,Jeffreys Grove Elementary,0.2068,, 
+920,Wake County Schools,453,Jones Dairy Elementary,0.0919,, 
+920,Wake County Schools,454,Heritage Elementary,0.1293,, 
+920,Wake County Schools,455,Holly Springs High,0.0735,, 
+920,Wake County Schools,456,Joyner Elementary,0.1789,, 
+920,Wake County Schools,457,Holly Grove Elementary,0.0451,, 
+920,Wake County Schools,458,Holly Grove Middle,0.1185,, 
+920,Wake County Schools,460,Kingswood Elementary,0.2222,, 
+920,Wake County Schools,464,Knightdale Elementary,0.415,X, 
+920,Wake County Schools,466,Knightdale High,0.262,, 
+920,Wake County Schools,467,Laurel Park Elementary,0.1046,, 
+920,Wake County Schools,468,Lacy Elementary,0.1989,, 
+920,Wake County Schools,469,Leesville Road Elementary,0.214,, 
+920,Wake County Schools,470,Lead Mine Elementary,0.2626,, 
+920,Wake County Schools,471,Leesville Road Middle,0.1878,, 
+920,Wake County Schools,472,Ligon Middle,0.2215,, 
+920,Wake County Schools,473,Leesville Road High,0.1107,, 
+920,Wake County Schools,474,Lake Myra Elementary,0.3288,, 
+920,Wake County Schools,476,Lincoln Heights Elementary,0.4516,X, 
+920,Wake County Schools,480,Lockhart Elementary,0.3733,, 
+920,Wake County Schools,484,Lufkin Road Middle,0.1042,, 
+920,Wake County Schools,488,Lynn Road Elementary,0.3554,, 
+920,Wake County Schools,492,Martin Middle,0.1919,, 
+920,Wake County Schools,494,Middle Creek Elementary,0.1256,, 
+920,Wake County Schools,495,Middle Creek High,0.153,, 
+920,Wake County Schools,496,Millbrook Elementary,0.4186,X, 
+920,Wake County Schools,500,Millbrook High,0.1947,, 
+920,Wake County Schools,501,Mills Park Elementary,0.0441,, 
+920,Wake County Schools,502,Mills Park Middle,0.0431,, 
+920,Wake County Schools,504,Morrisville Elementary,0.05,, 
+920,Wake County Schools,506,Moore Square Museum Magnet Mid,0.2808,, 
+920,Wake County Schools,508,Mount Vernon,0.554,X, 
+920,Wake County Schools,512,North Garner Middle,0.2987,, 
+920,Wake County Schools,514,North Forest Pines Elementary,0.1817,, 
+920,Wake County Schools,516,North Ridge Elementary,0.2869,, 
+920,Wake County Schools,520,Northwoods Elementary,0.2358,, 
+920,Wake County Schools,522,Oak Grove Elementary,0.14,, 
+920,Wake County Schools,523,Olive Chapel Elementary,0.0357,, 
+920,Wake County Schools,524,Olds Elementary,0.2346,, 
+920,Wake County Schools,525,Partnership Elementary,0.2557,, 
+920,Wake County Schools,526,Panther Creek High,0.0454,, 
+920,Wake County Schools,528,Phillips High,0.5577,X, 
+920,Wake County Schools,530,Penny Road Elementary,0.1719,, 
+920,Wake County Schools,531,Pleasant Union Elementary,0.1,, 
+920,Wake County Schools,532,Poe Elementary,0.5204,X, 
+920,Wake County Schools,536,Powell Elementary,0.4976,X, 
+920,Wake County Schools,540,Rand Road Elementary,0.2131,, 
+920,Wake County Schools,542,Reedy Creek Elementary,0.369,, 
+920,Wake County Schools,543,Richland Creek Elementary,0.2971,, 
+920,Wake County Schools,544,Rolesville Elementary,0.2601,, 
+920,Wake County Schools,545,Rolesville Middle School,0.1794,, 
+920,Wake County Schools,546,Rolesville High,0.2019,, 
+920,Wake County Schools,548,Root Elementary,0.1807,, 
+920,Wake County Schools,550,Salem Elementary,0.154,, 
+920,Wake County Schools,551,Salem Middle,0.102,, 
+920,Wake County Schools,552,Sanderson High,0.1924,, 
+920,Wake County Schools,554,Sanford Creek Elementary,0.1787,, 
+920,Wake County Schools,557,Scott's Ridge Elementary,0.0547,, 
+920,Wake County Schools,560,Smith Elementary,0.4594,X, 
+920,Wake County Schools,562,Southeast Raleigh High,0.3748,, 
+920,Wake County Schools,564,Stough Elementary,0.3369,, 
+920,Wake County Schools,568,Swift Creek Elementary,0.2594,, 
+920,Wake County Schools,569,Sycamore Creek Elementary,0.0221,, 
+920,Wake County Schools,570,Timber Drive Elementary,0.3278,, 
+920,Wake County Schools,571,Turner Creek Elementary,0.1314,, 
+920,Wake County Schools,572,Underwood Elementary,0.1641,, 
+920,Wake County Schools,576,Vance Elementary,0.2556,, 
+920,Wake County Schools,580,Vandora Springs Elementary,0.3976,, 
+920,Wake County Schools,581,Vernon Malone College (CTE),0.2281,, 
+920,Wake County Schools,582,Wake NCSU STEM Early College,0.1116,, 
+920,Wake County Schools,583,Wake Early College of Health and Science,0.1577,, 
+920,Wake County Schools,584,Wake Forest Elementary,0.3339,, 
+920,Wake County Schools,585,Wake Young Men's Leadership Academy,0.1535,, 
+920,Wake County Schools,586,Wake Young Women's Leadership Academy,0.1749,, 
+920,Wake County Schools,588,Wake Forest-Rolesville High,0.151,, 
+920,Wake County Schools,592,Wake Forest-Rolesville Mid,0.2421,, 
+920,Wake County Schools,593,Wakefield Elementary,0.3248,, 
+920,Wake County Schools,594,Wakefield Middle,0.1158,, 
+920,Wake County Schools,595,Wakefield High,0.1384,, 
+920,Wake County Schools,596,Washington Elementary,0.2341,, 
+920,Wake County Schools,597,Wakelon Elementary,0.5638,X, 
+920,Wake County Schools,598,Weatherstone Elementary,0.1902,, 
+920,Wake County Schools,599,Walnut Creek Elementary,0.5366,X, 
+920,Wake County Schools,600,Wendell Elementary,0.3532,, 
+920,Wake County Schools,601,Wendell Middle,0.3276,, 
+920,Wake County Schools,604,West Cary Middle,0.1006,, 
+920,Wake County Schools,606,West Lake Elementary,0.12,, 
+920,Wake County Schools,607,West Lake Middle,0.113,, 
+920,Wake County Schools,608,West Millbrook Middle,0.2612,, 
+920,Wake County Schools,616,Wilburn Elementary,0.3123,, 
+920,Wake County Schools,618,Wildwood Forest Elementary,0.3891,, 
+920,Wake County Schools,620,Wiley Elementary,0.2852,, 
+920,Wake County Schools,624,Willow Springs Elementary,0.1711,, 
+920,Wake County Schools,626,Yates Mill Elementary,0.3628,, 
+920,Wake County Schools,628,York Elementary,0.3418,, 
+920,Wake County Schools,632,Zebulon Elementary,0.4946,X, 
+920,Wake County Schools,636,Zebulon Middle,0.4164,X, 
+930,Warren County Schools,330,Mariam Boyd Elementary,0.6909,X,X
+930,Warren County Schools,340,Northside Elementary,0.6233,X,X
+930,Warren County Schools,344,South Warren Elementary,0.6256,X,X
+930,Warren County Schools,348,Vaughan Elementary,0.5922,X,X
+930,Warren County Schools,352,Warren County High,0.5965,X,X
+930,Warren County Schools,354,Warren County Middle,0.585,X,X
+930,Warren County Schools,360,Warren Early College,0.4397,X,X
+930,Warren County Schools,700,Warren New Tech High School,0.3952,,X
+940,Washington County Schools,306,Creswell Elementary,0.4394,X,X
+940,Washington County Schools,308,Creswell High,0.4,X,X
+940,Washington County Schools,314,Pines Elementary,0.7275,X,X
+940,Washington County Schools,316,Plymouth High,0.6208,X,X
+940,Washington County Schools,328,Washington County Union,0.6705,X,X
+950,Watauga County Schools,308,Bethel Elementary,0.3523,, 
+950,Watauga County Schools,312,Blowing Rock Elementary,0.136,, 
+950,Watauga County Schools,316,Cove Creek Elementary,0.2222,, 
+950,Watauga County Schools,320,Green Valley Elementary,0.3273,, 
+950,Watauga County Schools,322,Hardin Park Elementary,0.2397,, 
+950,Watauga County Schools,324,Mabel Elementary,0.3279,, 
+950,Watauga County Schools,328,Parkway Elementary,0.2167,, 
+950,Watauga County Schools,332,Valle Crucis Elementary,0.289,, 
+950,Watauga County Schools,336,Watauga High,0.1753,, 
+960,Wayne County Public Schools,312,Brogden Middle,0.6053,X,X
+960,Wayne County Public Schools,314,Brogden Primary,0.6733,X,X
+960,Wayne County Public Schools,316,Carver Elementary,0.586,X,X
+960,Wayne County Public Schools,318,Carver Heights,0.8598,X,X
+960,Wayne County Public Schools,324,Charles B Aycock High,0.2554,, 
+960,Wayne County Public Schools,326,Dillard Middle,0.8367,X,X
+960,Wayne County Public Schools,329,Eastern Wayne Elementary,0.5214,X,X
+960,Wayne County Public Schools,330,Eastern Wayne High,0.329,, 
+960,Wayne County Public Schools,331,Eastern Wayne Middle,0.4221,X, 
+960,Wayne County Public Schools,332,Edgewood Cmty Developmental,0.4146,X, 
+960,Wayne County Public Schools,334,Fremont Elementary,0.4412,X,X
+960,Wayne County Public Schools,335,Goldsboro High,0.6648,X,X
+960,Wayne County Public Schools,336,Grantham,0.4808,X, 
+960,Wayne County Public Schools,338,Gratham Middle School,0.4227,X, 
+960,Wayne County Public Schools,340,Greenwood Middle,0.4397,X, 
+960,Wayne County Public Schools,344,Meadow Lane Elementary,0.4157,X, 
+960,Wayne County Public Schools,348,Mount Olive Middle,0.4822,X,X
+960,Wayne County Public Schools,360,Norwayne Middle,0.3438,, 
+960,Wayne County Public Schools,370,Rosewood Elementary,0.3836,, 
+960,Wayne County Public Schools,372,Rosewood High,0.2594,, 
+960,Wayne County Public Schools,374,Rosewood Middle,0.3211,, 
+960,Wayne County Public Schools,376,School Street Elementary,0.8682,X,X
+960,Wayne County Public Schools,380,Southern Wayne High,0.4184,X, 
+960,Wayne County Public Schools,382,Spring Creek Elementary,0.5205,X,X
+960,Wayne County Public Schools,386,Spring Creek High,0.3359,, 
+960,Wayne County Public Schools,387,Spring Creek Middle School,0.4369,X, 
+960,Wayne County Public Schools,388,Tommys Road Elementary,0.4267,X, 
+960,Wayne County Public Schools,390,North Drive Elementary,0.8473,X,X
+960,Wayne County Public Schools,450,Northeast Elementary,0.428,X, 
+960,Wayne County Public Schools,454,Northwest Elementary,0.3651,, 
+960,Wayne County Public Schools,488,Wayne Academy,0.7075,X,X
+960,Wayne County Public Schools,490,Wayne Early/Middle College High,0.1967,, 
+960,Wayne County Public Schools,700,Wayne School of Engineering,0.1313,, 
+970,Wilkes County Schools,308,Boomer-Ferguson Elementary,0.6558,X,X
+970,Wilkes County Schools,310,C B Eller Elementary,0.4495,X,X
+970,Wilkes County Schools,312,C C Wright Elementary,0.5605,X,X
+970,Wilkes County Schools,315,Central Wilkes Middle,0.468,X,X
+970,Wilkes County Schools,320,East Wilkes High,0.3617,,X
+970,Wilkes County Schools,322,East Wilkes Middle,0.4584,X,X
+970,Wilkes County Schools,337,Millers Creek Elementary,0.4582,X,X
+970,Wilkes County Schools,340,Moravian Falls Elementary,0.6132,X,X
+970,Wilkes County Schools,344,Mount Pleasant Elementary,0.416,X,X
+970,Wilkes County Schools,348,Mountain View Elementary,0.5071,X,X
+970,Wilkes County Schools,352,Mulberry Elementary,0.5795,X,X
+970,Wilkes County Schools,356,North Wilkes High,0.3639,,X
+970,Wilkes County Schools,358,North Wilkes Middle,0.4783,X,X
+970,Wilkes County Schools,360,North Wilkesboro Elementary,0.7125,X,X
+970,Wilkes County Schools,368,Roaring River Elementary,0.468,X,X
+970,Wilkes County Schools,370,Ronda-Clingman Elementary,0.4159,X,X
+970,Wilkes County Schools,376,Traphill Elementary,0.5547,X,X
+970,Wilkes County Schools,388,West Wilkes High,0.2945,,X
+970,Wilkes County Schools,389,West Wilkes Middle,0.3647,,X
+970,Wilkes County Schools,390,Wilkes Central High,0.4133,X,X
+970,Wilkes County Schools,392,Wilkesboro Elementary,0.4142,X,X
+970,Wilkes County Schools,393,Wilkes Early College High,0.3868,,X
+980,Wilson County Schools,306,Milton M Daniels Learning Ctr.,0.6614,X, 
+980,Wilson County Schools,308,B O Barnes Elementary,0.787,X,X
+980,Wilson County Schools,317,Charles H Darden Middle,0.6805,X, 
+980,Wilson County Schools,318,Beddingfield High,0.4613,X, 
+980,Wilson County Schools,320,Elm City Elementary,0.5238,X,X
+980,Wilson County Schools,324,Elm City Middle,0.3468,, 
+980,Wilson County Schools,336,Fike High,0.3235,, 
+980,Wilson County Schools,338,Forest Hills Middle,0.4614,X, 
+980,Wilson County Schools,340,Gardners Elementary,0.4654,X,X
+980,Wilson County Schools,342,James Hunt High,0.2841,, 
+980,Wilson County Schools,344,John W. Jones Elementary,0.3744,,X
+980,Wilson County Schools,348,Lee Woodard Elementary,0.4585,X,X
+980,Wilson County Schools,352,Lucama Elementary,0.4734,X,X
+980,Wilson County Schools,356,Margaret Hearne Elementary,0.7612,X,X
+980,Wilson County Schools,357,Vick Elementary,0.7941,X,X
+980,Wilson County Schools,360,New Hope Elementary,0.2218,,X
+980,Wilson County Schools,364,Rock Ridge Elementary,0.2841,,X
+980,Wilson County Schools,380,Speight Middle,0.3675,, 
+980,Wilson County Schools,384,Springfield Middle,0.3295,, 
+980,Wilson County Schools,388,Stantonsburg Elementary,0.5267,X,X
+980,Wilson County Schools,390,Toisnot Middle,0.5175,X, 
+980,Wilson County Schools,392,Vinson-Bynum Elementary,0.4297,X,X
+980,Wilson County Schools,396,Wells Elementary,0.5064,X,X
+980,Wilson County Schools,398,Wilson Early College Academy,0.3237,, 
+980,Wilson County Schools,400,Winstead Elementary,0.672,X,X
+990,Yadkin County Schools,304,Boonville Elementary,0.2345,, 
+990,Yadkin County Schools,308,Courtney Elementary,0.2589,, 
+990,Yadkin County Schools,312,East Bend Elementary,0.3345,, 
+990,Yadkin County Schools,316,Fall Creek Elementary,0.2243,, 
+990,Yadkin County Schools,320,Forbush Elementary,0.1148,, 
+990,Yadkin County Schools,321,Forbush Middle School,0.3045,, 
+990,Yadkin County Schools,322,Forbush High,0.1842,, 
+990,Yadkin County Schools,324,Jonesville Elementary,0.4101,X, 
+990,Yadkin County Schools,325,Starmount Middle School,0.276,, 
+990,Yadkin County Schools,326,Starmount High,0.2097,, 
+990,Yadkin County Schools,328,West Yadkin Elementary,0.3103,, 
+990,Yadkin County Schools,332,Yadkin Early College,0.1869,, 
+990,Yadkin County Schools,336,Yadkinville Elementary,0.3748,, 
+990,Yadkin County Schools,340,Yadkin Success Academy,0.4615,X, 
+995,Yancey County Schools,304,Bald Creek Elementary,0.4545,X, 
+995,Yancey County Schools,308,Bee Log Elementary,0.2917,, 
+995,Yancey County Schools,312,Burnsville Elementary,0.5535,X, 
+995,Yancey County Schools,316,Cane River Middle,0.3874,, 
+995,Yancey County Schools,320,Clearmont Elementary,0.3932,, 
+995,Yancey County Schools,324,East Yancey Middle,0.3964,, 
+995,Yancey County Schools,328,Micaville Elementary,0.3626,, 
+995,Yancey County Schools,330,Mountain Heritage High,0.2826,, 
+995,Yancey County Schools,336,South Toe Elementary,0.4234,X, 
+1002,Camp Lejeune Schools,204,Brewster Middle School,0.0089,, 
+1002,Camp Lejeune Schools,205,Bitz Elementary,0.0086,, 
+1002,Camp Lejeune Schools,208,Delalio Elementary,0.0135,, 
+1002,Camp Lejeune Schools,212,Lejeune High,0.0175,, 
+1002,Camp Lejeune Schools,224,Johnson Primary,0.01,, 
+1002,Camp Lejeune Schools,228,Tarawa Terrace #2 Elementary,0.0059,, 
+1002,Camp Lejeune Schools,229,Heroes Elementary,0.0132,, 
+1007,Fort Bragg,1,Bowley Elementary,0.024,, 
+1007,Fort Bragg,2,Butner Primary,0.0119,, 
+1007,Fort Bragg,4,Irwin Intermediate,0.0165,, 
+1007,Fort Bragg,9,Albritton Middle,0.0274,, 
+1007,Fort Bragg,10,Devers Elementary,0.0228,, 
+1007,Fort Bragg,11,Gordon Elementary,0.0128,, 
+1007,Fort Bragg,12,Shuguart Elementary,0.0213,, 
+1007,Fort Bragg,13,Shuguart Middle,0.0258,, 
+1007,Fort Bragg,14,Hampton Primary,0.0087,, 
+1009,Cherokee Central School,1,Cherokee Elementary,0.3548,,X
+1009,Cherokee Central School,2,Cherokee High School,0.3163,,X
+1009,Cherokee Central School,3,Cherokee Middle School,0.3812,,X
+01B,River Mill Academy,1,River Mill Academy,0.1001,, 
+06B,Marjorie Williams Academy,1,Crossnore Academy,0.7768,X,X
+08A,Heritage Collegiate Leadership Academy,1,Heritage Collegiate Leadership Academy,0.6824,X,X
+13B,Cabarrus Charter Academy,1,Cabarrus Charter Academy,0.1313,, 
+20A,The Learning Center,1,The Learning Center,0.4032,X, 
+26C,Capitol Encore Academy,1,Capitol Encore Academy,0.3601,, 
+32A,Maureen Joy Charter,1,Maureen Joy Charter,0.5034,X, 
+32B,Healthy Start Academy,1,Healthy Start Academy,0.6972,X,X
+32C,Carter Community Charter,1,Carter Community Charter,0.7594,X, 
+32H,Research Triangle Charter,1,Research Triangle Charter,0.3433,, 
+32M,Global Scholars Academy,1,Global Scholars Academy,0.522,X, 
+32S,KIPP Durham College Preparatory,1,KIPP Durham College Preparatory,0.6593,X, 
+33A,North East Carolina Preparatory School,1,North East Carolina Preparatory School,0.3169,, 
+34B,Quality Education Academy,34B,Quality Education Academy,0.6269,X,X
+34D,C G Woodson Sch of Challenge,1,C G Woodson School of Challenge,0.9039,X, 
+34F,Forsyth Academy,1,Forsyth Academies,0.5236,X, 
+36C,Mountain Island Charter School,1,Mountain Island Charter School,0.1122,, 
+41C,Guilford Preparatory,41C,Guilford Preparatory,0.5726,X,X
+41F,Triad Math & Science Academy,1,Triad Math & Science Academy,0.3996,, 
+41H,The College Preparatory and Leadership Academy of High Point,1,The Point,0.6548,X,X
+41J,Summerfield Charter Academy,1,Summerfield Charter Academy,0.0805,, 
+42A,KIPP - Halifax College Preparatory,1,KIPP-Halifax College Preparatory,0.6914,X,X
+49D,Success Institute Charter,1,Success Institute Charter,0.6667,X,X
+49F,Langtree Charter Academy,2,Langtree Charter Academy,0.0501,, 
+54A,Children's Village Academy,2,Children's Village Academy-Dixon,0.787,X,X
+60B,Sugar Creek Charter,60B,Sugar Creek Charter,0.6105,X, 
+60C,Kennedy Charter,1,Kennedy Charter,0.8155,X,X
+60C,Kennedy Charter,2,Kennedy-Johnson C. Smith University,0.5,X,X
+60G,Queen's Grant Community,1,Queen's Grant Community,0.1322,, 
+60L,KIPP Charlotte,1,KIPP Charlotte,0.5459,X, 
+60N,Aristotle Preparatory Academy,1,Aristotle Preparatory Academy,0.686,X, 
+60P,Charlotte Choice Charter,1,Charlotte Choice Charter,0.5926,X, 
+60V,Charlotte Learning Academy,1,Charlotte Learning Academy,0.516,X, 
+64A,Rocky Mount Preparatory,64A,Rocky Mount Preparatory,0.426,X, 
+65C,Douglass Academy,1,Douglass Academy,0.6446,X, 
+66A,Gaston College Preparatory,1,Gaston College Preparatory,0.3157,, 
+67B,Z.E.C.A. School of Art and Technology,1,Z.E.C.A School of Art and Technology,0.5391,X, 
+69A,Arapahoe Charter School,1,Arapahoe Charter School,0.3106,, 
+73A,Bethel Hill Charter,1,Bethel Hill Charter,0.201,, 
+74C,Winterville Charter Academy,1,Winterville Charter Academy,0.2757,, 
+78A,CIS Academy,1,CIS Academy,0.4375,X, 
+91B,Henderson Collegiate,91B,Henderson Collegiate,0.4563,X,X
+92-L,Torchlight Academy,1,Torchlight Academy,0.5042,X,X
+92M,PreEminent Charter,1,PreEminent Charter,0.5357,X, 
+92Q,Hope Charter Leadership Academy,1,Hope Elementary,0.5984,X,X
+92V,Wake Forest Charter Academy,1,Wake Forest Charter Academy,0.0777,, 
+92W,Cardinal Charter Academy,1,Cardinal Charter Academy,0.029,, 
+93A,Haliwa-Saponi Tribal School,1,Haliwa-Saponi Tribal School,0.6012,X,X
+93J,PAVE Southeast Raleigh Charter School,1,PAVE Southeast Raleigh Charter School,0.6389,X, 
+96C,Dillard Academy,96C,Dillard Academy,0.9,X,X
+97D,Bridges Charter School,1,Bridges Charter School,0.6308,X,X
+98A,Sallie B Howard School,1,Sallie B. Howard,0.6571,X,X
+98B,Wilson Preparatory Academy,1,Wilson Preparatory Academy,0.2033,, 

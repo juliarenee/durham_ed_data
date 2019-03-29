@@ -334,43 +334,40 @@ df$pct_minority = df$pct_black + df$pct_hispanic
 # year as numeric
 df$ts = df$year %>% substr(., 0, 4) %>% as.numeric()
 
-### WORK HERE
-
 # read CEP school eligibility data
 elig = list.files("./data") %>%
-  grep("cep_annual_notif.xlsx$", ., value = TRUE)
-elig = lapply(paste("./data/",elig,sep=""), function(x) read_xlsx(x))
+  grep("cep_annual_notif.csv$", ., value = TRUE)
+elig = lapply(paste("./data/",elig,sep=""), function(x) read.csv(x, stringsAsFactors = FALSE))
+
+# adds years for merging
+for(y in 1:length(elig)) {
+  elig[[y]]$year = yrs[y+4]
+}
 
 # bind to one file
 elig = do.call(plyr::rbind.fill, elig)
 
-# fix up year
-elig$year = elig$year %>%
-  gsub("\\~\\$2015\\-", "2015-16", .)
-
-# read 2017-18 data (different format)
-cep1718 = read.csv("./data/2018_cep_annual_notif.csv")
-
-cep1718 = cep1718[,c(1,4,5,9)]
-
 # filter to durham
-elig = elig[elig$lea_id==320,]
-
-# select cols
-elig = elig[,c("school_id","year","pct_needy","cep")]
-
-# rename col
-colnames(elig) = c("school_no","year","isp","participating")
+elig = elig[elig$lea_name=="Durham Public Schools",]
 
 # indicators
-elig[,2] = ifelse(elig[,2]=="X",1,0)
-elig[,3] = ifelse(elig[,3]=="X",1,0)
-elig[,4] = ifelse(elig[,4]=="X",1,0)
+elig[,5] = ifelse(elig[,5]=="X",1,0)
+elig[,8] = ifelse(elig[,8]=="X",1,0)
 
-# add year for merging
-elig$year = "2017-18"
+# fill missing school numbers for 2014-15
+school_no_key = elig %>%
+  filter(!is.na(school_no)) %>%
+  select(school_name, school_no) %>%
+  unique()
+elig$school_no[elig$year=="2014-15"] = school_no_key$school_no[school_no_key$school_name %in% elig$school_name[elig$year=="2014-15"]]
 
-# merge eligibility data from 2017-18 with dataset
+# remove unnecessary cols
+elig = elig %>% select(-c("enrollment","school_name"))
+
+# fix isp for 2017-18
+elig$isp[elig$year=="2016-17"] = elig$isp[elig$year=="2016-17"]/100
+
+# merge cep data with master
 df = left_join(df, elig, by = c("year", "school_no"))
 
 write.csv(df, "./data/lunchdebt.csv", row.names = FALSE)

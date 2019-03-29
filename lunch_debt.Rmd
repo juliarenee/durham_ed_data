@@ -399,3 +399,17 @@ df %>%
   select(year, unpaid, debt_per_student)
 ```
 
+## CEP vs. ISP comparison
+```{r}
+df$isp_diff = df$pct_free_reduced - df$isp*1.6
+
+df %>%
+  filter(ts >= 2015,
+         eligible == 1,
+         participating == 0) %>%
+  group_by(school_name,
+           school_no) %>%
+  summarise(diff = mean(isp_diff)*100) %>%
+  arrange(-diff)
+```
+
