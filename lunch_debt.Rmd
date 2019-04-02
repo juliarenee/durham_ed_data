@@ -410,5 +410,11 @@ df %>%
            school_no) %>%
   summarise(diff = mean(isp_diff)*100) %>%
   arrange(-diff)
+
+df %>%
+  filter(year == "2017-18",
+         eligible == 1,
+         participating == 0) %>%
+  select(school_name, isp_diff)
 ```
 

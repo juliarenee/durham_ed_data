@@ -1,3 +1,5 @@
 .RHistory
 .gitconfig
 .DS_Store
+.RData
+.ai
