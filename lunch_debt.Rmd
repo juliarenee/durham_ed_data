@@ -53,7 +53,7 @@ hist(df$debt_per_student, main = "", xlab = "debt-per-student")
 ```
 Most schools have less than \$5 of lunch debt per student. In Durham, a full-priced lunch costs \$2.90, and a reduced-price lunch cost \$0.40, according to the Durham Public Schools \href{https://www.dpsnc.net/site/handlers/filedownload.ashx?moduleinstanceid=196&dataid=173&FileName=2018-19%20FR%20Lunch%20App_Eng.pdf}{website}. That's about two unpaid full-priced lunches per student, or just over 12 unpaid reduced-price lunches per student. For the rest of my EDA, I'll delve into which schools have more debt and whether we can find systematic issues. I'll also be looking at schools that are part of the Community Eligibility Provision, which means all students receive free lunch.
 
-### Debt and Demographics
+###Debt and Demographics
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
 # scatterplot of debt vs. pct needy
 ggplot(df[df$cep == 0,], aes(pct_free_reduced, debt_per_student)) +
@@ -120,7 +120,7 @@ ggplot(df, aes(pct_minority, pct_white)) +
 
 There is a weak positive correlation between the percentage of students who have free and reduced price lunch and the debt-per-student at each school. It looks like schools with CEP status generally have a higher percentage of students on free/reduced lunch. As for demographics, there is also a weak positive correlation between the percentage of black students and debt-per-student. Conversely, there is a weak negative correlation between the percent of white students and debt-per-student. There doesn't appear to be a much of a relationship between the percentage of hispanic students and debt-per-student. That being said, if we look at the total percentage of minority students --- the percentage of black \textit{and} hispanic students --- there is a positive correlation with debt-per-student. Schools that CEP status are also starkly segregated, with very few white students and primarily black and hispanic students.
 
-### Debt over time
+###Debt over time
 ```{r debt_over_time, fig.width=8, fig.height=4}
 # debt by school over time
 p1 = ggplot(df, aes(year, unpaid, group = school_no, col = cep_long)) +
@@ -153,7 +153,7 @@ plot_grid(p1, p2)
 
 Schools with CEP status generally had a large amount of debt until the 2014-15 school year, when they gained CEP status. That being said, other schools with similar amounts of debt did not gain CEP status.
 
-### Demographics and need
+###Demographics and need
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
 g1 = ggplot(df[df$cep == 0,], aes(pct_white, pct_free_reduced)) +
   geom_point(aes(col = cep_long)) +
@@ -184,7 +184,7 @@ plot_grid(g1, g2, g3, g4, ncol = 4)
 
 We can also see that race is a proxy for need. The percentage of black and hispanic schools have a strong, positive correlation with the percentage of students on free and reduced price lunch. For white students, this relationship is strong and negative.
 
-### Locale and debt, race
+###Locale and debt, race
 ```{r, fig.width=12, fig.height=4, fig.align="center"}
 b1 = ggplot(df[df$cep == 0,], aes(urban_centric_locale, unpaid)) +
   geom_boxplot()
@@ -217,7 +217,7 @@ plot_grid(b1, b2, b3, b4, ncol = 4)
 ```
 On average, we also don't see any major differences in race by locale. However, there is a subset of rural schools that seem to primarily be white.
 
-### Debt and grade
+###Debt and grade
 ```{r}
 df %>%
   filter(cep == 0) %>%
@@ -252,10 +252,10 @@ b2 = ggplot(df[df$cep == 0,], aes(grade_clean, debt_per_student)) +
 plot_grid(b1, b2, ncol = 2)
 ```
 
-## CEP Schools
+##CEP Schools
 In this section, I explore the differences between schools that gained CEP status and schools that did not.
 
-### Eligibility
+###Eligibility
 ```{r}
 # CEP as factor
 df$cep = df$cep %>% as.character() %>% as.numeric()
@@ -266,7 +266,7 @@ df %>%
             participating = sum(participating, na.rm = TRUE))
 ```
 
-### Eligible but non-participating CEP schools
+###Eligible but non-participating CEP schools
 ```{r}
 # total debt for eligible but not participating schools
 df %>%
@@ -283,7 +283,7 @@ sum(df$unpaid[(df$ts==2017) & (df$eligible==1) & (df$participating==0)])/sum(df$
 ```
 Last year, debt was concentrated in schools that were not eligible to participate in the CEP program. However, eligible but non-participating CEP schools accounted for nearly 40 percent of all debt in Durham county.
 
-### CEP Status and Grade Level
+###CEP Status and Grade Level
 ```{r}
 df %>%
   filter(ts==2017) %>%
@@ -370,7 +370,7 @@ ggplot(df[df$cep_long==1,], aes(year,debt_per_student, group=school_name)) +
         plot.title = element_text(size = 12))
 ```
 
-### Percent Minority
+###Percent Minority
 ```{r}
 df %>%
   group_by(cep_long) %>%
@@ -378,7 +378,7 @@ df %>%
 ```
 CEP schools also have a higher concentration of minority students, on average.
 
-### Debt before CEP status
+###Debt before CEP status
 ```{r}
 # TODO: quantify debt among CEP schools the year before they enrolled in the program
 # this is a slightly inaccurate representation of total debt
@@ -390,15 +390,16 @@ df %>%
 ```
 CEP schools also had, on average, higher debt and more debt per student than non-CEP schools prior to CEP assignments.
 
-## Individual school analysis
-### Neal Middle
+##Individual school analysis
+###Neal Middle
 ```{r}
 df %>%
   filter(school_name == "Neal") %>%
   select(year, unpaid, debt_per_student)
 ```
 
-## CEP vs. ISP comparison
+##CEP vs. ISP comparison
+###Comparing Percentages
 ```{r}
 df$isp_diff = df$isp*1.6 - df$pct_free_reduced
 
@@ -419,10 +420,14 @@ df %>%
   arrange(-isp_diff)
 ```
 
-### 2020 Eligibility
+###Banding
+```{r}
+bands = read.csv("./data/title1_banding_1718.csv")
+```
+
+##2020 Eligibility
 ```{r}
 elig = read.csv("./data/cep_eligibility_2019.csv")
 elig %>%
   summarise(eligible = sum(isp > .40))
 ```
-
