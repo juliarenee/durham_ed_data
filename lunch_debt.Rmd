@@ -416,13 +416,34 @@ df %>%
   filter(year == "2017-18",
          eligible == 1,
          participating == 0) %>%
-  select(school_name, isp, isp_diff) %>%
-  arrange(-isp_diff)
+  select(school_name, pct_free_reduced, isp, isp_diff) %>%
+  arrange(-school_name)
 ```
 
 ###Banding
 ```{r}
-bands = read.csv("./data/title1_banding_1718.csv")
+bands = read.csv("./data/banding_1718.csv")
+
+# Calculate Title 1 banding for 2017-18
+fps = bands$alloc_per_student %>% unique()
+limits = c()
+for(i in 1:length(fps)) {
+  limits[i] = max(bands$pct_low_income[bands$alloc_per_student==fps[i]])
+}
+
+# Compare low-income percentage data
+df.trimmed = df %>%
+  filter(year == "2017-18",
+         eligible == 1,
+         participating == 0) %>%
+  select(school_no, school_name, pct_free_reduced, isp)
+
+# TODO: Pull dates for Title I and ISP data don't match up, which means FRP/low-income percentages differ
+
+df.trimmed$isp_mult = df.trimmed$isp*1.6
+
+
+dat = left_join(df.trimmed, bands, )
 ```
 
 ##2020 Eligibility
