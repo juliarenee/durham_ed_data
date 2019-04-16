@@ -422,29 +422,44 @@ df %>%
 
 ###Banding
 ```{r}
-bands = read.csv("./data/banding_1718.csv")
+# Calculate Title 1 banding for 2018-19
+bands19 = read.csv("./data/banding_1819.csv")
 
-# Calculate Title 1 banding for 2017-18
-fps = bands$alloc_per_student %>% unique()
-limits = c()
-for(i in 1:length(fps)) {
-  limits[i] = max(bands$pct_low_income[bands$alloc_per_student==fps[i]])
+fps19 = bands$alloc_per_student %>% unique()
+limits19 = c()
+for(i in 1:length(fps19)) {
+  limits19[i] = max(bands19$pct_low_income[bands19$alloc_per_student==fps19[i]])
 }
 
-# Compare low-income percentage data
+# Calculate Title 1 banding for 2018-19
+bands18 = read.csv("./data/banding_1718.csv")
+
+fps18 = bands$alloc_per_student %>% unique()
+limits18 = c()
+for(i in 1:length(fps18)) {
+  limits18[i] = max(bands18$pct_low_income[bands18$alloc_per_student==fps18[i]])
+}
+
+limits18
+limits19
+
+## TODO: recalculate FRP percentages for schools with CEP in years where < 20% for reduced (set = 0)
+
+limits = c(1, .85, .74, .62)
+
+# How would banding change had eligible non-participating schools adopted CEP?
+# 17-18 school year data used to determine 18-19 funding
 df.trimmed = df %>%
   filter(year == "2017-18",
          eligible == 1,
          participating == 0) %>%
   select(school_no, school_name, pct_free_reduced, isp)
 
-# TODO: Pull dates for Title I and ISP data don't match up, which means FRP/low-income percentages differ
-
 df.trimmed$isp_mult = df.trimmed$isp*1.6
 
 
-dat = left_join(df.trimmed, bands, )
 ```
+Dr. Danner, director of federal programs for Durham Public Schools, said Title I banding changes every year, but the banding has been the same for the past two school years (2017-18 and 2018-19), which is where data is available.
 
 ##2020 Eligibility
 ```{r}
