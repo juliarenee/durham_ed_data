@@ -425,7 +425,7 @@ df %>%
 # Calculate Title 1 banding for 2018-19
 bands19 = read.csv("./data/banding_1819.csv")
 
-fps19 = bands$alloc_per_student %>% unique()
+fps19 = bands19$alloc_per_student %>% unique()
 limits19 = c()
 for(i in 1:length(fps19)) {
   limits19[i] = max(bands19$pct_low_income[bands19$alloc_per_student==fps19[i]])
@@ -434,7 +434,7 @@ for(i in 1:length(fps19)) {
 # Calculate Title 1 banding for 2018-19
 bands18 = read.csv("./data/banding_1718.csv")
 
-fps18 = bands$alloc_per_student %>% unique()
+fps18 = bands18$alloc_per_student %>% unique()
 limits18 = c()
 for(i in 1:length(fps18)) {
   limits18[i] = max(bands18$pct_low_income[bands18$alloc_per_student==fps18[i]])
@@ -445,7 +445,7 @@ limits19
 
 ## TODO: recalculate FRP percentages for schools with CEP in years where < 20% for reduced (set = 0)
 
-limits = c(1, .85, .74, .62)
+limits = c(1, .85, .74, .62, 0)
 
 # How would banding change had eligible non-participating schools adopted CEP?
 # 17-18 school year data used to determine 18-19 funding
@@ -455,9 +455,31 @@ df.trimmed = df %>%
          participating == 0) %>%
   select(school_no, school_name, pct_free_reduced, isp)
 
-df.trimmed$isp_mult = df.trimmed$isp*1.6
+# Rank schools for banding
+bands19$rank_before = seq(1,dim(bands19)[1])
 
+# Add new value for CEP eligible, not participating schools
+bands19$pct_w_cep = ifelse(bands19$school_no %in% df.trimmed$school_no,
+                           df.trimmed$isp*1.6,
+                           bands19$pct_low_income)
 
+# See how rank changes
+bands19 = bands19 %>% arrange(-pct_w_cep)
+bands19$rank_after = seq(1,dim(bands19)[1])
+
+# See how banding changes
+bands19$band_before = bands19$pct_low_income %>%
+  cut(., breaks = limits)
+bands19$band_after = bands19$pct_w_cep %>%
+  cut(., breaks = limits)
+
+# Approximate funding changes
+bands19$alloc_w_cep = bands19$alloc_per_student*(bands19$n_low_income/bands19$pct_low_income)*bands19$pct_w_cep
+bands19$alloc_diff = bands19$alloc_w_cep - bands19$total_alloc 
+
+bands19[bands19$band_before != bands19$band_after,] %>%
+  select(school_name, pct_low_income, pct_w_cep, band_before, band_after, alloc_diff) %>%
+  arrange(-alloc_diff)
 ```
 Dr. Danner, director of federal programs for Durham Public Schools, said Title I banding changes every year, but the banding has been the same for the past two school years (2017-18 and 2018-19), which is where data is available.
 
