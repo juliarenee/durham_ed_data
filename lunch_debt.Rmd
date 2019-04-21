@@ -371,11 +371,12 @@ ggplot(df[df$cep_long==1,], aes(year,debt_per_student, group=school_name)) +
         plot.title = element_text(size = 12))
 
 ggplot(df[df$elig_long==1,], aes(year, unpaid, group=school_name)) +
-  geom_line(aes(col=cep_long,
-                alpha=0)) +
+  geom_line(aes(col=cep_long),
+            alpha=.2) +
   geom_smooth(aes(group=cep_long,
                   col=cep_long),
-              se = FALSE) +
+              se = FALSE,
+              show_guide = FALSE) +
   ylab("unpaid meal debt") +
   xlab("year") +
   scale_y_continuous(labels = scales::dollar) +
