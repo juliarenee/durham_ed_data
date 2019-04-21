@@ -35,6 +35,7 @@ df %>%
 
 ggplot(df[df$year != '2010-11',], aes(year, unpaid)) + 
   geom_bar(stat="sum") +
+  ylab("unpaid meals") +
   scale_y_continuous(labels = scales::dollar) +
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
@@ -368,6 +369,23 @@ ggplot(df[df$cep_long==1,], aes(year,debt_per_student, group=school_name)) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
         axis.title.x = element_blank(),
         plot.title = element_text(size = 12))
+
+ggplot(df[df$elig_long==1,], aes(year, unpaid, group=school_name)) +
+  geom_line(aes(col=cep_long,
+                alpha=0)) +
+  geom_smooth(aes(group=cep_long,
+                  col=cep_long),
+              se = FALSE) +
+  ylab("unpaid meal debt") +
+  xlab("year") +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_color_manual(values = c("#ff3300","#33cccc"),
+                     name = "CEP participation",
+                     labels = c("eligible, non-participating", "participating")) +
+  annotate("rect", xmin = "2013-14", xmax = "2014-15", ymin = -Inf, ymax = Inf,
+        alpha = 0.2, fill = "pink") +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        axis.title.x = element_blank())
 ```
 
 ###Percent Minority
@@ -442,8 +460,6 @@ for(i in 1:length(fps18)) {
 
 limits18
 limits19
-
-## TODO: recalculate FRP percentages for schools with CEP in years where < 20% for reduced (set = 0)
 
 limits = c(1, .85, .74, .62, 0)
 
