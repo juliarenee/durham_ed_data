@@ -444,13 +444,14 @@ df %>%
 # Calculate Title 1 banding for 2018-19
 bands19 = read.csv("./data/banding_1819.csv")
 
+# Calculate poverty bands for 2018-19
 fps19 = bands19$alloc_per_student %>% unique()
 limits19 = c()
 for(i in 1:length(fps19)) {
   limits19[i] = max(bands19$pct_low_income[bands19$alloc_per_student==fps19[i]])
 }
 
-# Calculate Title 1 banding for 2018-19
+# Calculate poverty bands for 2017-18
 bands18 = read.csv("./data/banding_1718.csv")
 
 fps18 = bands18$alloc_per_student %>% unique()
@@ -470,29 +471,34 @@ df.trimmed = df %>%
   filter(year == "2017-18",
          eligible == 1,
          participating == 0) %>%
-  select(school_no, school_name, pct_free_reduced, isp)
+  select(school_no, school_name, isp)
 
 # Rank schools for banding
+# Sort by percent low-income to generate current ranks
+bands19 = bands19 %>%
+  arrange(-pct_low_income)
 bands19$rank_before = seq(1,dim(bands19)[1])
 
-# Add new value for CEP eligible, not participating schools
+# Recalculate percent low-income for eligible, non-participating schools based on ISP
 bands19$pct_w_cep = ifelse(bands19$school_no %in% df.trimmed$school_no,
                            df.trimmed$isp*1.6,
                            bands19$pct_low_income)
 
-# Calculate changes in rank 
-bands19 = bands19 %>% arrange(-pct_w_cep)
+# Calculate changes in rank
+# Sort by projected percent low-income to generate new ranks
+bands19 = bands19 %>%
+  arrange(-pct_w_cep)
 bands19$rank_after = seq(1,dim(bands19)[1])
+
+# How many schools switch ranks?
+bands19[bands19$rank_before != bands19$rank_after,] %>%
+  nrow()
 
 # Create variable for original banding
 bands19$orig_band = bands19$pct_low_income %>%
   cut(., breaks = limits)
 bands18$orig_band = bands19$pct_low_income %>%
   cut(., breaks = limits)
-
-# List for recalculating Title I funding after banding changes
-aps = list(460,470,480,490)
-names(aps) = levels(bands19$orig_band)
 
 # Are there the same number of schools in each band year-to-year?
 bands19 %>%
@@ -502,34 +508,32 @@ bands18 %>%
   group_by(orig_band) %>%
   summarise(n = n())
 
-# Recalculate bands based on percent low-income, ignoring rank
-bands19$isp_band = bands19$pct_w_cep %>%
-  cut(., breaks = limits)
+# List for recalculating Title I funding after banding changes
+aps = list(460,470,480,490)
+names(aps) = levels(bands19$orig_band)
 
-# Approximate funding changes based on percent low-income, ignoring rank
-bands19$alloc_band = unlist(aps[bands19$isp_band])*(bands19$n_low_income/bands19$pct_low_income)*bands19$pct_w_cep
-bands19$alloc_band_diff = bands19$alloc_band - bands19$total_alloc 
-
-bands19[bands19$orig_band != bands19$isp_band,] %>%
-  select(school_name, pct_low_income, pct_w_cep, orig_band, isp_band, alloc_band_diff) %>%
-  arrange(-alloc_band_diff)
-
-# Recalculate bands based only on rank
+# Recalculate bands based on projected rankings and same n in each band
 bands19 = bands19 %>%
-  arrange(-rank_after)
-bands19$rank_band = 0
-bands19$rank_band[1:10] = "(0.85,1]"
-bands19$rank_band[11:15] = "(0.74,0.85]"
-bands19$rank_band[16:24] = "(0.62,0.74]"
-bands19$rank_band[25:length(bands19$rank_band)] = "(0,0.62]"
+  arrange(-pct_w_cep)
+bands19$band_after = 0
+bands19$band_after[1:10] = paste0("(", min(bands19$pct_w_cep[1:10]), ",", max(bands19$pct_w_cep[1:10]), "]", sep = "")
+bands19$band_after[11:15] = paste0("(", min(bands19$pct_w_cep[11:15]), ",", min(bands19$pct_w_cep[1:10]), "]", sep = "")
+bands19$band_after[16:24] = paste0("(", min(bands19$pct_w_cep[16:24]), ",", min(bands19$pct_w_cep[11:15]), "]", sep = "")
+bands19$band_after[25:nrow(bands19)] = paste0("(", min(bands19$pct_w_cep[25:nrow(bands19)]), ",", min(bands19$pct_w_cep[16:24]), "]", sep = "")
 
-# Approximate funding changes based only on rank
-bands19$alloc_rank = unlist(aps[bands19$rank_band])*(bands19$n_low_income/bands19$pct_low_income)*bands19$pct_w_cep
-bands19$alloc_rank_diff = bands19$alloc_rank - bands19$total_alloc 
+# Create key for new banding allocations
+names = bands19$band_after %>% unique()
 
-bands19[bands19$orig_band != bands19$rank_band,] %>%
-  select(school_name, pct_low_income, pct_w_cep, orig_band, rank_band, alloc_rank_diff) %>%
-  arrange(-alloc_rank_diff)
+aps_after = aps
+names(aps_after) = rev(names)
+
+# Approximate funding changes based on projected bands
+bands19$alloc_after = unlist(aps_after[bands19$band_after])*(bands19$n_low_income/bands19$pct_low_income)*bands19$pct_w_cep
+bands19$alloc_diff = bands19$alloc_after - bands19$total_alloc 
+
+bands19 %>%
+  select(school_name, total_alloc, alloc_after, alloc_diff) %>%
+  arrange(-alloc_diff)
 ```
 Dr. Danner, director of federal programs for Durham Public Schools, said Title I banding changes every year, but the banding has been the same for the past two school years (2017-18 and 2018-19), which is where data is available.
 
